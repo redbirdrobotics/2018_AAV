@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/redbird-general/a_ws/src/localization/src/talker.cpp" "/home/redbird-general/a_ws/build/localization/CMakeFiles/talker.dir/src/talker.cpp.o"
+  "/home/redbird-general/Redbird18/dev_ws/src/localization/src/talker.cpp" "/home/redbird-general/Redbird18/dev_ws/build/localization/CMakeFiles/talker.dir/src/talker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,10 +17,10 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/redbird-general/a_ws/devel/include"
+  "/home/redbird-general/Redbird18/dev_ws/devel/include"
   "/opt/ros/kinetic/include/opencv-3.3.1"
   "/opt/ros/kinetic/include/opencv-3.3.1/opencv"
-  "/home/redbird-general/a_ws/src/localization/include"
+  "/home/redbird-general/Redbird18/dev_ws/src/localization/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

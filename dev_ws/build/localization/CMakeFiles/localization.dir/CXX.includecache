@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/redbird-general/a_ws/src/localization/include/Camera.h
+/home/redbird-general/Redbird18/dev_ws/src/localization/include/Camera.h
 iostream
 -
 opencv2/opencv.hpp
-/home/redbird-general/a_ws/src/localization/include/opencv2/opencv.hpp
+/home/redbird-general/Redbird18/dev_ws/src/localization/include/opencv2/opencv.hpp
 boost/make_shared.hpp
 -
 boost/thread/mutex.hpp
@@ -20,17 +20,17 @@ boost/thread.hpp
 X11/Xlib.h
 -
 
-/home/redbird-general/a_ws/src/localization/src/Camera.cpp
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/Camera.cpp
 Camera.h
-/home/redbird-general/a_ws/src/localization/src/Camera.h
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/Camera.h
 
-/home/redbird-general/a_ws/src/localization/src/localization.cpp
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/localization.cpp
 ros/ros.h
-/home/redbird-general/a_ws/src/localization/src/ros/ros.h
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/ros/ros.h
 std_msgs/String.h
-/home/redbird-general/a_ws/src/localization/src/std_msgs/String.h
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/std_msgs/String.h
 opencv2/opencv.hpp
-/home/redbird-general/a_ws/src/localization/src/opencv2/opencv.hpp
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/opencv2/opencv.hpp
 boost/make_shared.hpp
 -
 boost/thread.hpp
@@ -42,7 +42,7 @@ boost/filesystem.hpp
 X11/Xlib.h
 -
 Camera.h
-/home/redbird-general/a_ws/src/localization/src/Camera.h
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/Camera.h
 
 /opt/ros/kinetic/include/opencv-3.3.1/opencv/cxcore.h
 opencv2/core/core_c.h

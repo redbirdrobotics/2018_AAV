@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/redbird-general/a_ws/src
+CMAKE_SOURCE_DIR = /home/redbird-general/Redbird18/dev_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/redbird-general/a_ws/build
+CMAKE_BINARY_DIR = /home/redbird-general/Redbird18/dev_ws/build
 
 # Utility rule file for std_msgs_generate_messages_py.
 
@@ -63,10 +63,10 @@ localization/CMakeFiles/std_msgs_generate_messages_py.dir/build: std_msgs_genera
 .PHONY : localization/CMakeFiles/std_msgs_generate_messages_py.dir/build
 
 localization/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
-	cd /home/redbird-general/a_ws/build/localization && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/redbird-general/Redbird18/dev_ws/build/localization && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : localization/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 
 localization/CMakeFiles/std_msgs_generate_messages_py.dir/depend:
-	cd /home/redbird-general/a_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/redbird-general/a_ws/src /home/redbird-general/a_ws/src/localization /home/redbird-general/a_ws/build /home/redbird-general/a_ws/build/localization /home/redbird-general/a_ws/build/localization/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/redbird-general/Redbird18/dev_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/redbird-general/Redbird18/dev_ws/src /home/redbird-general/Redbird18/dev_ws/src/localization /home/redbird-general/Redbird18/dev_ws/build /home/redbird-general/Redbird18/dev_ws/build/localization /home/redbird-general/Redbird18/dev_ws/build/localization/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : localization/CMakeFiles/std_msgs_generate_messages_py.dir/depend
 
