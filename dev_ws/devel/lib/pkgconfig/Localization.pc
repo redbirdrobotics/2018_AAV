@@ -1,0 +1,8 @@
+prefix=/home/redbird-general/a_ws/devel
+
+Name: Localization
+Description: Description of Localization
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/redbird-general/a_ws/devel/lib 
+Requires: 
