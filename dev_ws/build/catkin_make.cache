@@ -1,0 +1,2 @@
+localization
+-DCATKIN_DEVEL_PREFIX=/home/redbird-general/a_ws/devel -DCMAKE_INSTALL_PREFIX=/home/redbird-general/a_ws/install -G Unix Makefiles
