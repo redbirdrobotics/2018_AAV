@@ -115,7 +115,7 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES localization Camera
+  LIBRARIES localization Camera Communication Robot
   CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
   DEPENDS Boost X11
 )
@@ -216,7 +216,7 @@ add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
 add_dependencies(listener localization_generate_messages_cpp)
 
-add_executable(localization src/localization.cpp src/Camera.cpp)
+add_executable(localization src/localization.cpp src/Camera.cpp src/Communication.cpp src/Robot.cpp)
 target_link_libraries(localization ${catkin_LIBRARIES} 
     ${OpenCV_LIBRARIES} 
     ${Boost_LIBRARIES} 

@@ -1,6 +1,3 @@
 #include "Robot.h"
 
-Robot::Robot(int color)
-{
-	a_color = color 
-}
+Robot::Robot(int color):a_color(color) {}

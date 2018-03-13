@@ -1,19 +1,24 @@
+#include <iostream>
+#include <vector>
+
 #ifndef ROBOT_CLASS
 #define ROBOT_CLASS
 
-class ROBOT
+class Robot
 {
 private:
 	int a_color;
 	int a_confidence;
 	float x, y;
 	float a_radius;
-	std::vector<int> a_thresh1 (6,0); 
-	std::vector<int> a_thresh2 (6,0);
 
 public:
-	ROBOT(int color);
-
+	Robot(int color);
+	std::vector<int> a_redThresh1 = {0,0,0,0,0,0}; 
+	std::vector<int> a_redThresh2 = {0,0,0,0,0,0};
+	std::vector<int> a_greenThresh = {0,0,0,0,0,0};
+	std::vector<int> a_whiteThresh = {0,0,0,0,0,0};
+	std::vector<int> a_blackThresh = {0,0,0,0,0,0};
 };
 
 #endif

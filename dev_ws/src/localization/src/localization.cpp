@@ -7,6 +7,7 @@
 #include <boost/filesystem.hpp>
 #include <X11/Xlib.h>
 #include "Camera.h"
+#include "Robot.h"
 
 int main(int argc, char **argv)
 {
@@ -26,6 +27,27 @@ int main(int argc, char **argv)
   // Initialize Cameras
   Camera Cam1("Augustus", 0);
   std::vector< Camera* > CamList = {&Cam1};
+
+  // Initialize Robots
+  // Red
+  Robot daredevil(0);
+  Robot deadpool(0);
+  Robot elmo(0);
+  Robot hellboy(0);
+  Robot flash(0);
+
+  // Green
+  Robot hulk(1);
+  Robot yoshi(1);
+  Robot yoda(1);
+  Robot arrow(1);
+  Robot beastboy(1);
+
+  // Obstacle (White)
+  Robot baymax(2);
+  Robot stayPuft(2);
+  Robot kingBoo(2);
+  Robot rorschach(2);
 
   // Check Connection to Cameras
   *advance = Camera::getListStatus(CamList, CamList.size());

@@ -83,16 +83,46 @@ localization/CMakeFiles/localization.dir/src/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization.dir/src/Camera.cpp.s"
 	cd /home/redbird-general/Redbird18/dev_ws/build/localization && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/redbird-general/Redbird18/dev_ws/src/localization/src/Camera.cpp -o CMakeFiles/localization.dir/src/Camera.cpp.s
 
+localization/CMakeFiles/localization.dir/src/Communication.cpp.o: localization/CMakeFiles/localization.dir/flags.make
+localization/CMakeFiles/localization.dir/src/Communication.cpp.o: /home/redbird-general/Redbird18/dev_ws/src/localization/src/Communication.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/redbird-general/Redbird18/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object localization/CMakeFiles/localization.dir/src/Communication.cpp.o"
+	cd /home/redbird-general/Redbird18/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/Communication.cpp.o -c /home/redbird-general/Redbird18/dev_ws/src/localization/src/Communication.cpp
+
+localization/CMakeFiles/localization.dir/src/Communication.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localization.dir/src/Communication.cpp.i"
+	cd /home/redbird-general/Redbird18/dev_ws/build/localization && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/redbird-general/Redbird18/dev_ws/src/localization/src/Communication.cpp > CMakeFiles/localization.dir/src/Communication.cpp.i
+
+localization/CMakeFiles/localization.dir/src/Communication.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization.dir/src/Communication.cpp.s"
+	cd /home/redbird-general/Redbird18/dev_ws/build/localization && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/redbird-general/Redbird18/dev_ws/src/localization/src/Communication.cpp -o CMakeFiles/localization.dir/src/Communication.cpp.s
+
+localization/CMakeFiles/localization.dir/src/Robot.cpp.o: localization/CMakeFiles/localization.dir/flags.make
+localization/CMakeFiles/localization.dir/src/Robot.cpp.o: /home/redbird-general/Redbird18/dev_ws/src/localization/src/Robot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/redbird-general/Redbird18/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object localization/CMakeFiles/localization.dir/src/Robot.cpp.o"
+	cd /home/redbird-general/Redbird18/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/Robot.cpp.o -c /home/redbird-general/Redbird18/dev_ws/src/localization/src/Robot.cpp
+
+localization/CMakeFiles/localization.dir/src/Robot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localization.dir/src/Robot.cpp.i"
+	cd /home/redbird-general/Redbird18/dev_ws/build/localization && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/redbird-general/Redbird18/dev_ws/src/localization/src/Robot.cpp > CMakeFiles/localization.dir/src/Robot.cpp.i
+
+localization/CMakeFiles/localization.dir/src/Robot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization.dir/src/Robot.cpp.s"
+	cd /home/redbird-general/Redbird18/dev_ws/build/localization && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/redbird-general/Redbird18/dev_ws/src/localization/src/Robot.cpp -o CMakeFiles/localization.dir/src/Robot.cpp.s
+
 # Object files for target localization
 localization_OBJECTS = \
 "CMakeFiles/localization.dir/src/localization.cpp.o" \
-"CMakeFiles/localization.dir/src/Camera.cpp.o"
+"CMakeFiles/localization.dir/src/Camera.cpp.o" \
+"CMakeFiles/localization.dir/src/Communication.cpp.o" \
+"CMakeFiles/localization.dir/src/Robot.cpp.o"
 
 # External object files for target localization
 localization_EXTERNAL_OBJECTS =
 
 /home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/localization.cpp.o
 /home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/Camera.cpp.o
+/home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/Communication.cpp.o
+/home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/Robot.cpp.o
 /home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/build.make
 /home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libroscpp.so
 /home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -186,7 +216,7 @@ localization_EXTERNAL_OBJECTS =
 /home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_imgproc3.so.3.3.1
 /home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_core3.so.3.3.1
 /home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/redbird-general/Redbird18/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/redbird-general/Redbird18/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/redbird-general/Redbird18/dev_ws/devel/lib/localization/localization"
 	cd /home/redbird-general/Redbird18/dev_ws/build/localization && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/localization.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

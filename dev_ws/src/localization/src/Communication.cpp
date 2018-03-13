@@ -17,6 +17,60 @@ void Communication::read(const cv::FileNode& node, MyData& x, const MyData& defa
 	}
 }
 
+void Communication::getRobotData(std::vector<Robot*> roboList)
+{
+	cv::FileStorage in;
+	in.open("Parameters.xml", cv::FileStorage::READ);
+
+	if(!in.isOpened())
+	{
+		std::cout<< "Failed to Open XML FILE \n";
+	}
+
+	for(int i=0; i<roboList.size(); i++)	
+	{
+		in["red1LowerH"] >> roboList[i]->a_redThresh1[0];
+		in["red1LowerS"] >> roboList[i]->a_redThresh1[1];
+		in["red1LowerV"] >> roboList[i]->a_redThresh1[2];
+
+		in["red1UpperH"] >> roboList[i]->a_redThresh1[3];
+		in["red1UpperS"] >> roboList[i]->a_redThresh1[4];
+		in["red1UpperV"] >> roboList[i]->a_redThresh1[5];
+
+		in["red2LowerH"] >> roboList[i]->a_redThresh2[0];
+		in["red2LowerS"] >> roboList[i]->a_redThresh2[1];
+		in["red2LowerV"] >> roboList[i]->a_redThresh2[2];
+
+		in["red2UpperH"] >> roboList[i]->a_redThresh2[3];
+		in["red2UpperS"] >> roboList[i]->a_redThresh2[4];
+		in["red2UpperV"] >> roboList[i]->a_redThresh2[5];
+
+		in["greenLowerH"] >> roboList[i]->a_greenThresh[0];
+		in["greenLowerS"] >> roboList[i]->a_greenThresh[1];
+		in["greenLowerV"] >> roboList[i]->a_greenThresh[2];
+
+		in["greenUpperH"] >> roboList[i]->a_greenThresh[3];
+		in["greenUpperS"] >> roboList[i]->a_greenThresh[4];
+		in["greenUpperV"] >> roboList[i]->a_greenThresh[5];
+
+		in["whiteLowerH"] >> roboList[i]->a_whiteThresh[0];
+		in["whiteLowerS"] >> roboList[i]->a_whiteThresh[1];
+		in["whiteLowerV"] >> roboList[i]->a_whiteThresh[2];
+
+		in["whiteUpperH"] >> roboList[i]->a_whiteThresh[3];
+		in["whiteUpperS"] >> roboList[i]->a_whiteThresh[4];
+		in["whiteUpperV"] >> roboList[i]->a_whiteThresh[5];
+
+		in["blackLowerH"] >> roboList[i]->a_blackThresh[0];
+		in["blackLowerS"] >> roboList[i]->a_blackThresh[1];
+		in["blackLowerV"] >> roboList[i]->a_blackThresh[2];
+
+		in["blackUpperH"] >> roboList[i]->a_blackThresh[3];
+		in["blackUpperS"] >> roboList[i]->a_blackThresh[4];
+		in["blackupperV"] >> roboList[i]->a_blackThresh[5];
+	}
+}
+
 // void Communication::getCalibration_XMLData(Stereo* pClass)
 // {
 // 	cv::FileStorage in;

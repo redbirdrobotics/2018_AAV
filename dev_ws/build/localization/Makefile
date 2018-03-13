@@ -644,6 +644,60 @@ src/Camera.cpp.s:
 	cd /home/redbird-general/Redbird18/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Camera.cpp.s
 .PHONY : src/Camera.cpp.s
 
+src/Communication.o: src/Communication.cpp.o
+
+.PHONY : src/Communication.o
+
+# target to build an object file
+src/Communication.cpp.o:
+	cd /home/redbird-general/Redbird18/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Communication.cpp.o
+.PHONY : src/Communication.cpp.o
+
+src/Communication.i: src/Communication.cpp.i
+
+.PHONY : src/Communication.i
+
+# target to preprocess a source file
+src/Communication.cpp.i:
+	cd /home/redbird-general/Redbird18/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Communication.cpp.i
+.PHONY : src/Communication.cpp.i
+
+src/Communication.s: src/Communication.cpp.s
+
+.PHONY : src/Communication.s
+
+# target to generate assembly for a file
+src/Communication.cpp.s:
+	cd /home/redbird-general/Redbird18/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Communication.cpp.s
+.PHONY : src/Communication.cpp.s
+
+src/Robot.o: src/Robot.cpp.o
+
+.PHONY : src/Robot.o
+
+# target to build an object file
+src/Robot.cpp.o:
+	cd /home/redbird-general/Redbird18/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Robot.cpp.o
+.PHONY : src/Robot.cpp.o
+
+src/Robot.i: src/Robot.cpp.i
+
+.PHONY : src/Robot.i
+
+# target to preprocess a source file
+src/Robot.cpp.i:
+	cd /home/redbird-general/Redbird18/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Robot.cpp.i
+.PHONY : src/Robot.cpp.i
+
+src/Robot.s: src/Robot.cpp.s
+
+.PHONY : src/Robot.s
+
+# target to generate assembly for a file
+src/Robot.cpp.s:
+	cd /home/redbird-general/Redbird18/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Robot.cpp.s
+.PHONY : src/Robot.cpp.s
+
 src/listener.o: src/listener.cpp.o
 
 .PHONY : src/listener.o
@@ -771,6 +825,12 @@ help:
 	@echo "... src/Camera.o"
 	@echo "... src/Camera.i"
 	@echo "... src/Camera.s"
+	@echo "... src/Communication.o"
+	@echo "... src/Communication.i"
+	@echo "... src/Communication.s"
+	@echo "... src/Robot.o"
+	@echo "... src/Robot.i"
+	@echo "... src/Robot.s"
 	@echo "... src/listener.o"
 	@echo "... src/listener.i"
 	@echo "... src/listener.s"
