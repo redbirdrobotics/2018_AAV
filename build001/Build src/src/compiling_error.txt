@@ -1,0 +1,4 @@
+/home/ghost/Documents/Coding/redBirdRobotics/project1/Source Code/src/simplemain.cpp:3:20: fatal error: Camera.h: No such file or directory
+ #include "Camera.h"
+                    ^
+compilation terminated.
