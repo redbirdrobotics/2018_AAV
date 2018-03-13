@@ -1,0 +1,2 @@
+set(Localization_MESSAGE_FILES "msg/Num.msg")
+set(Localization_SERVICE_FILES "")

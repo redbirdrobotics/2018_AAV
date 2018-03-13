@@ -1,0 +1,1 @@
+draws red rectangle (first step in roomba identification), that are increased by 50 pixels in all directions, around red objects.

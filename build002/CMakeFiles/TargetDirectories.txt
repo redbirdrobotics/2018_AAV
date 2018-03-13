@@ -1,0 +1,3 @@
+/home/ghost/Documents/Coding/redBirdRobotics/project1/Source Code/build002/CMakeFiles/edit_cache.dir
+/home/ghost/Documents/Coding/redBirdRobotics/project1/Source Code/build002/CMakeFiles/rebuild_cache.dir
+/home/ghost/Documents/Coding/redBirdRobotics/project1/Source Code/build002/CMakeFiles/stereo.dir
