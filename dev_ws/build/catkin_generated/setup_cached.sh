@@ -7,10 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/redbird-general/Redbird18/dev_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/redbird-general/Redbird18/dev_ws/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/redbird-general/Redbird18/dev_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LD_LIBRARY_PATH="/opt/ros/kinetic/lib"
+export PKG_CONFIG_PATH="/opt/ros/kinetic/lib/pkgconfig"
 export PWD="/home/redbird-general/Redbird18/dev_ws/build"
-export PYTHONPATH="/home/redbird-general/Redbird18/dev_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/redbird-general/Redbird18/dev_ws/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/redbird-general/Redbird18/dev_ws/src:$ROS_PACKAGE_PATH"
+export PYTHONPATH="/opt/ros/kinetic/lib/python2.7/dist-packages"

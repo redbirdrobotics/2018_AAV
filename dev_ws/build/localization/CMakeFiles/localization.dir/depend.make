@@ -272,6 +272,7 @@ localization/CMakeFiles/localization.dir/src/Robot.cpp.o: /home/redbird-general/
 localization/CMakeFiles/localization.dir/src/Robot.cpp.o: /home/redbird-general/Redbird18/dev_ws/src/localization/src/Robot.cpp
 
 localization/CMakeFiles/localization.dir/src/localization.cpp.o: /home/redbird-general/Redbird18/dev_ws/src/localization/include/Camera.h
+localization/CMakeFiles/localization.dir/src/localization.cpp.o: /home/redbird-general/Redbird18/dev_ws/src/localization/include/Communication.h
 localization/CMakeFiles/localization.dir/src/localization.cpp.o: /home/redbird-general/Redbird18/dev_ws/src/localization/include/Robot.h
 localization/CMakeFiles/localization.dir/src/localization.cpp.o: /home/redbird-general/Redbird18/dev_ws/src/localization/src/localization.cpp
 localization/CMakeFiles/localization.dir/src/localization.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1/opencv/cxcore.h

@@ -175,26 +175,26 @@ void Camera::showFrame(boost::shared_ptr< std::vector< cv::Mat > > frameList, bo
 			}
 		}
 
-		//MUTEX.lock();
-		if(toggle == true)
+	// 	//MUTEX.lock();
+	 	if(toggle == true)
 		{
-			int size = frameList->size();
+	// 		int size = frameList->size();
 
-			if(! (*frameList)[0].empty() )
+	 		if(! (*frameList)[0].empty() )
 			{
-				cv::imshow("window1", (*frameList)[0]);
+	 			cv::imshow("window1", (*frameList)[0]);
 			}
 
-			if(! (*frameList)[1].empty() )
-			{
-				cv::imshow("window2", (*frameList)[1]);
-			}
+	// 		if(! (*frameList)[1].empty() )
+	// 		{
+	// 			cv::imshow("window2", (*frameList)[1]);
+	// 		}
 
-			if(! (*frameList)[2].empty() )
-			{
-				cv::imshow("window3", (*frameList)[2]);
-			}
+	// 		if(! (*frameList)[2].empty() )
+	// 		{
+	// 			cv::imshow("window3", (*frameList)[2]);
+	// 		}
 		}	
-		//MUTEX.unlock();	
+	// 	//MUTEX.unlock();	
 	}
 }

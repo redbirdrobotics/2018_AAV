@@ -22,6 +22,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 ## Boost
 find_package(Boost REQUIRED COMPONENTS system filesystem thread)
+include_directories(${Boost_INCLUDE_DIRS})
 
 ## X11
 find_package(X11 REQUIRED)

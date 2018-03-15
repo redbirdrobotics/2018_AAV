@@ -8,6 +8,7 @@
 #include <X11/Xlib.h>
 #include "Camera.h"
 #include "Robot.h"
+#include "Communication.h"
 
 int main(int argc, char **argv)
 {
@@ -49,6 +50,9 @@ int main(int argc, char **argv)
   Robot kingBoo(2);
   Robot rorschach(2);
 
+  // Initialize Robot Vector
+  std::vector<Robot*> robotList = {&daredevil, &deadpool, &elmo, &hellboy, &flash, &hulk, &yoshi, &yoda, &arrow, &beastboy, &baymax, &stayPuft, &kingBoo, &rorschach};
+
   // Check Connection to Cameras
   *advance = Camera::getListStatus(CamList, CamList.size());
   if(!*advance)
@@ -57,42 +61,21 @@ int main(int argc, char **argv)
     return -1;
   }
 
+  // Get Robot Parameters
+  Communication::getRobotData(robotList);
+
   // Begin Visualization Thread
-  boost::thread workerThread1 (&Camera::showFrame, camStream, advance, capture, std::ref(MUTEX));
+  boost::thread workerThread1(&Camera::showFrame, camStream, advance, capture, std::ref(MUTEX));
 
   // Main Loop
   while(*advance)
-  {  
+  {
+  
     // Get Frame
     Camera::updateFrameList(camStream, CamList, CamList.size(), std::ref(MUTEX));
-
     
   }
 
-
-  /**
-   * The subscribe() call is how you tell ROS that you want to receive messages
-   * on a given topic.  This invokes a call to the ROS
-   * master node, which keeps a registry of who is publishing and who
-   * is subscribing.  Messages are passed to a callback function, here
-   * called chatterCallback.  subscribe() returns a Subscriber object that you
-   * must hold on to until you want to unsubscribe.  When all copies of the Subscriber
-   * object go out of scope, this callback will automatically be unsubscribed from
-   * this topic.
-   *
-   * The second parameter to the subscribe() function is the size of the message
-   * queue.  If messages are arriving faster than they are being processed, this
-   * is the number of messages that will be buffered up before beginning to throw
-   * away the oldest ones.
-   */
-  //ros::Subscriber sub = n.subscribe("chatter", 1000, chatterCallback);
-
-  /**
-   * ros::spin() will enter a loop, pumping callbacks.  With this version, all
-   * callbacks will be called from within this thread (the main one).  ros::spin()
-   * will exit when Ctrl-C is pressed, or the node is shutdown by the master.
-   */
   ros::spin();
-
   return 0;
 }
