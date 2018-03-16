@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=c++11 -lX11
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"localization\"
 
-CXX_INCLUDES = -I/home/redbird-general/a_ws/devel/include -I/opt/ros/kinetic/include/opencv-3.3.1 -I/opt/ros/kinetic/include/opencv-3.3.1/opencv -I/home/redbird-general/a_ws/src/localization/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/redbird-general/Redbird18/dev_ws/devel/include -I/opt/ros/kinetic/include/opencv-3.3.1 -I/opt/ros/kinetic/include/opencv-3.3.1/opencv -I/home/redbird-general/Redbird18/dev_ws/src/localization/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

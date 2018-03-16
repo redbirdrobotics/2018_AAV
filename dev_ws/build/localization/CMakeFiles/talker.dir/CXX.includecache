@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/redbird-general/a_ws/src/localization/src/talker.cpp
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/talker.cpp
 ros/ros.h
-/home/redbird-general/a_ws/src/localization/src/ros/ros.h
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/ros/ros.h
 std_msgs/String.h
-/home/redbird-general/a_ws/src/localization/src/std_msgs/String.h
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/std_msgs/String.h
 sstream
 -
 

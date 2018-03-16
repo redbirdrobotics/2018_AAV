@@ -67,14 +67,14 @@ set(localization_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(localization_SOURCE_PREFIX /home/redbird-general/a_ws/src/localization)
-  set(localization_DEVEL_PREFIX /home/redbird-general/a_ws/devel)
+  set(localization_SOURCE_PREFIX /home/redbird-general/Redbird18/dev_ws/src/localization)
+  set(localization_DEVEL_PREFIX /home/redbird-general/Redbird18/dev_ws/devel)
   set(localization_INSTALL_PREFIX "")
   set(localization_PREFIX ${localization_DEVEL_PREFIX})
 else()
   set(localization_SOURCE_PREFIX "")
   set(localization_DEVEL_PREFIX "")
-  set(localization_INSTALL_PREFIX /home/redbird-general/a_ws/install)
+  set(localization_INSTALL_PREFIX /home/redbird-general/Redbird18/dev_ws/install)
   set(localization_PREFIX ${localization_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(localization_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/redbird-general/a_ws/devel/include;/home/redbird-general/a_ws/src/localization/include;/usr/include " STREQUAL " ")
+if(NOT "/home/redbird-general/Redbird18/dev_ws/devel/include;/home/redbird-general/Redbird18/dev_ws/src/localization/include;/usr/include " STREQUAL " ")
   set(localization_INCLUDE_DIRS "")
-  set(_include_dirs "/home/redbird-general/a_ws/devel/include;/home/redbird-general/a_ws/src/localization/include;/usr/include")
+  set(_include_dirs "/home/redbird-general/Redbird18/dev_ws/devel/include;/home/redbird-general/Redbird18/dev_ws/src/localization/include;/usr/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,13 +110,13 @@ if(NOT "/home/redbird-general/a_ws/devel/include;/home/redbird-general/a_ws/src/
         message(FATAL_ERROR "Project 'localization' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'localization' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/redbird-general/a_ws/src/localization/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'localization' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/redbird-general/Redbird18/dev_ws/src/localization/${idir}'.  ${_report}")
     endif()
     _list_append_unique(localization_INCLUDE_DIRS ${include})
   endforeach()
 endif()
 
-set(libraries "localization;Camera;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libSM.so;/usr/lib/x86_64-linux-gnu/libICE.so;/usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so")
+set(libraries "localization;Camera;Communication;Robot;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libSM.so;/usr/lib/x86_64-linux-gnu/libICE.so;/usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/redbird-general/a_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/redbird-general/Redbird18/dev_ws/devel/lib;/home/redbird-general/Redbird18/dev_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

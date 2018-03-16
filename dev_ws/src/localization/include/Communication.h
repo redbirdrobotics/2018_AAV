@@ -62,7 +62,7 @@ public:
 	// static void getDisparity_XMLData(Stereo*);
 
 	// static void writeCalibration_XMLData(Stereo*);
-
+	static void getRobotData(std::vector<Robot*>);
 	static void storeIMG(boost::shared_ptr< std::vector< cv::Mat > >, std::string);
 	static void storeIMG(boost::shared_ptr< std::vector< std::vector< cv::Mat > > >, std::string);
 	// static void storeIMG(Stereo*);
