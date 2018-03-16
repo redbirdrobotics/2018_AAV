@@ -6,25 +6,6 @@ Detection::Detection(int camNum)
 	filteredImageList.resize(camNum);
 }
 
-
- void Detection::applyFilter(cv::Mat* inFrame, cv::Mat* outFrame, std::vector<int> threshold)
-{
-  cv::inRange(*inFrame, cv::Scalar(threshold[0], threshold[1], threshold[2]), cv::Scalar(threshold[3], threshold[4], threshold[5]), *outFrame);
-}
-
-void Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< std::vector<cv::Mat*> > outFrameList, std::vector< std::vector<int> > threshList)
-{
-  for(int i=0; i<threshList.size(); i++)
-  {
-    for(int j=0; j<outFrameList.size(); j++)
-    {
-      cv::Mat* frame;
-      outFrameList[j].push_back(frame);
-      applyFilter(inFrameList[j], outFrameList[j][i], threshList[i]);
-    }
-  }
-}
-
 // std::vector<cv::Mat> Detection::findColors(std::vector< cv::Mat > inputFrameList, std::vector<int> range ,std::vector<cv::Mat> outputFrameList){
 // 	if(!inputFrameList[0].empty()){
 // 		//Resize Vectors
@@ -68,7 +49,78 @@ void Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< 
 // 		cout<<"Fuck up in " __FILE__ << " Line: " << __LINE__ << " function: " << __FUNCTION__ <<endl;
 // 	}
 // }
-void Detection::search()
+
+// void Detection::findContours()
+// {
+// 	// Cameras
+// 	for(int i=0; i<a_filterImgList.size(); i++)
+// 	{
+// 		// Frames
+// 		for(int j=0; j<a_threshList.size(); j++)
+// 		{
+// 			cv::findContours(a_filterImgList[i][j], a_contours, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
+// 		}
+
+// 		a_contoursPoly.resize(a_contours.size());
+// 		a_rects.resize(contours.size());
+
+// 		for(uint8_t i = 0; i<contours.size(); i++)
+// 		{
+// 			// ARGS should be set from XML
+// 			// epsilon [dbl] closed [bool]
+// 			cv::approxPolyDP(cv::Mat(contours[i]), contoursPoly[i], 3, true);
+
+// 			rects[i]=cv::boundingRect(cv::Mat(contoursPoly[i]));
+
+// 			// Should Be its own function
+// 			for(int k=0; k<a_filterImgList.size(); k++)
+// 			{
+// 				if(cv::contourArea(contoursPoly[i])>1000)
+// 				{
+// 					rects[i] = cv::Rect(rects[i].tl().x-50, rects[i].tl().y-50, rects[i].br().x-rects[i].tl().x+100, rects[i].br().y-rects[i].tl().y+100);
+// 					if(rects[i].x >= 0 && rects[i].y >= 0 && rects[i].width + rects[i].x < frameList[j].cols && rects[i].height + rects[i].y < frameList[j].rows)
+// 					{
+// 						cv::Mat filteredROI = cv::Mat(filteredFrameList[j])(rects[i]);
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+//LUKAS HOLD OFF ON EDITING, MY CODE IS UNINTELLIGABLE ATM BUT WILL BE FIXED SOON
+
+void Detection::applyFilter(cv::Mat* inFrame, cv::Mat* outFrame, std::vector<int> threshold)
+{
+  cv::inRange(*inFrame, cv::Scalar(threshold[0], threshold[1], threshold[2]), cv::Scalar(threshold[3], threshold[4], threshold[5]), *outFrame);
+}
+
+void Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< std::vector<cv::Mat*> > outFrameList, std::vector< std::vector<int> > threshList)
+{
+  for(int i=0; i<threshList.size(); i++)
+  {
+    for(int j=0; j<outFrameList.size(); j++)
+    {
+      cv::Mat* frame;
+      outFrameList[j].push_back(frame);
+      applyFilter(inFrameList[j], outFrameList[j][i], threshList[i]);
+    }
+  }
+}
+
+// Get imglist
+
+// Get Img
+// Apply filter
+// Get contours
+// Get Bounding Box
+// Apply filter to new boxed image
+// Get contours
+// Get Bounding Box
+// ...
+// Cameras
+
+void Detection::Search()
 {
 	// Cameras
 	for(int i=0; i<a_filterImgList.size(); i++)
@@ -76,29 +128,89 @@ void Detection::search()
 		// Frames
 		for(int j=0; j<a_threshList.size(); j++)
 		{
-			cv::findContours(a_filterImgList[i][j], a_contours, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
-		}
-
-		a_contoursPoly.resize(a_contours.size());
-		a_rects.resize(contours.size());
-
-		for(size_t i = 0; i<contours.size(); i++)
-		{
-			cv::approxPolyDP(cv::Mat(contours[i]), contoursPoly[i], 3, true);
-			rects[i]=cv::boundingRect(cv::Mat(contoursPoly[i]));
-			for(int j =0; j<filteredFrameList.size(); j++)
+			// Search Level 1
+			if(j==0)
 			{
-				if(cv::contourArea(contoursPoly[i])>1000){
-					rects[i] = cv::Rect(rects[i].tl().x-50, rects[i].tl().y-50, rects[i].br().x-rects[i].tl().x+100, rects[i].br().y-rects[i].tl().y+100);
-					if(rects[i].x >= 0 && rects[i].y >= 0 && rects[i].width + rects[i].x < frameList[j].cols && rects[i].height + rects[i].y < frameList[j].rows){
-						cv::Mat filteredROI = cv::Mat(filteredFrameList[j])(rects[i]);
-					}
-				}
+				getContoursToBoxes(a_threshList[i][j]);
+			}
+
+			// Search Level 2 && 3
+			else if(!a_rect.empty())
+			{
+				searchROI(a_threshList[i][j], a_rects)
 			}
 		}
 	}
-	return frameList;
 }
+
+void Detection::getContoursToBoxes(cv::Mat mask, 
+									std::vector<cv::Rect*> rectList, 
+									std::vector< std::vector< cv::Point > > contourList1, 
+									std::vector< std::vector< cv::Point > > contourList2)
+{
+	cv::findContours(mask, contourList1, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
+
+	contourList2.resize(contourList1.size());
+	rectList.resize(contourList1.size());
+
+	downSampleContours(500, a_imgSz);
+}
+
+// pixThresh should be different for each threshold, ie less green than white, more white than black, less black than green
+// could be accomplished with a thresh struct
+
+void Detection::downSampleContours(std::vector<cv::Rect*> rectList,
+									std::vector< std::vector< cv::Point > > contourList1, 
+									std::vector< std::vector< cv::Point > > contourList2 
+									int pixThresh, 
+									cv::Size imgSz)
+{
+	for(uint8_t i=0; i<contourList1.size(); i++)
+	{
+		cv::approxPolyDP(contoursList1[i]; contourList2[i], 3, true);
+
+		if(cv::contourArea(contourList2[i]) > pixThresh)
+		{
+			(*rectList)[i] = cv::boundingRect(contourList2[i]);
+			Detection::addROIBuffer((*rectList)[i]);
+		}
+	}
+}
+
+// Need to add a_buffer, a_imgSz to header
+void Detection::addROIBuffer(cv::Rect rect)
+{
+	rect = cv::Rect(rects[i].tl().x-50, rects[i].tl().y-50, rects[i].br().x-rects[i].tl().x+100, rects[i].br().y-rects[i].tl().y+100);
+
+	if(rect.tl.x < 0) rect.tl.x = 0;
+	if(rect.tl.y < 0) rect.tl.y = 0;
+	if(rect.br.x > imgSz.x) rect.br.x = imgSz.x;
+	if(rect.br.y > imgSz.y) rect.br.y = imgSz.y;
+}
+
+void Detection::searchROI(cv::Mat mask, std::vector<cv::Rect> rectList)
+{
+	for(int i=0; i<rectList2.size(); i++)
+	{
+		getContoursToBoxes((mask)(rectList[i]));
+	}
+}
+
+// void Detection::findContours()
+// {
+// 	// Cameras
+// 	for(int i=0; i<a_filterImgList.size(); i++)
+// 	{
+// 		// Frames
+// 		for(int j=0; j<a_threshList.size(); j++)
+// 		{
+// 			cv::connectedComponentsWithStats(a_filterImgList[i][j], )
+// 		}
+// }
+
+
+
+
 // std::vector<cv::Mat> Detection::findRobots(std::vector<cv::Mat> inputFrameList, std::vector<cv::Mat> outputFrameList){
 // 		if(!frameList[0].empty()){
 // 			std::vector<cv::Mat> redRectFrameList=frameList;

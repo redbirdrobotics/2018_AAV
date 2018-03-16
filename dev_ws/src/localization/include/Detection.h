@@ -17,7 +17,7 @@
 		a_contours:
 		Group of contours calculated from an image
 		a_contoursPoly:
-		Group of closed contours calculated from vector of contours
+		A simpler, sparse representation of the previously calculated contours
 		a_hierarchy:
 		LOOK THIS UP
 
@@ -29,10 +29,21 @@
 class Detection
 {
 private:
-	std::vector<cv::Rect> a_rects;
-	std::vector< std::vector< cv::Point > > a_contours;
+	// Find Contours Containers
+	// Level 1 Search
+	std::vector<cv::Rect> a_rectList1;
+	std::vector< std::vector< cv::Point > > a_contours1;
 	std::vector< cv::Vec4i > a_hierarchy;
-	std::vector< std::vector< cv::Point > > a_contoursPoly;
+	std::vector< std::vector< cv::Point > > a_contoursPoly1;
+
+	//Level 2 Search
+	std::vector<cv::Rect> a_rectList2;
+	std::vector< std::vector< cv::Point > > a_contours2;
+	std::vector< std::vector< cv::Point > > a_contoursPoly2;
+
+
+	// Connected Components Containers
+
 
 	// Read from XML 
 	// CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE
