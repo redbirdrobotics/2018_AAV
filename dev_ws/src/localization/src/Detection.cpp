@@ -1,4 +1,3 @@
-#include "Camera.h"
 #include "Detection.h"
 using namespace std;
 

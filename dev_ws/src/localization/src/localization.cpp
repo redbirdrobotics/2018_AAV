@@ -9,6 +9,7 @@
 #include "Camera.h"
 #include "Robot.h"
 #include "Communication.h"
+#include "Detection.h"
 
 int main(int argc, char **argv)
 {
@@ -52,6 +53,9 @@ int main(int argc, char **argv)
 
   // Initialize Robot Vector
   std::vector<Robot*> robotList = {&daredevil, &deadpool, &elmo, &hellboy, &flash, &hulk, &yoshi, &yoda, &arrow, &beastboy, &baymax, &stayPuft, &kingBoo, &rorschach};
+
+  // Initialize Detection Instance
+  Detection Detect(CamList.size() );
 
   // Check Connection to Cameras
   *advance = Camera::getListStatus(CamList, CamList.size());
