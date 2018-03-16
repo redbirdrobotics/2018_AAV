@@ -11,6 +11,7 @@ private:
 
 public:
 	static std::vector<cv::Mat> toHSV(std::vector<cv::Mat>, std::vector<cv::Mat>);
+	static std::vector<cv::Mat> combineFilters(std::vector<cv::Mat>, std::vector<cv::Mat>, std::vector<cv::Mat>, std::vector<cv::Mat>);
 };
 
 #endif

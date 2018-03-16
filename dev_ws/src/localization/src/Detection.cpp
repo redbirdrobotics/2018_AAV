@@ -44,24 +44,40 @@ std::vector<cv::Mat> Detection::findColors(std::vector< cv::Mat > inputFrameList
 		cout<<"Fuck up in " __FILE__ << " Line: " << __LINE__ << " function: " << __FUNCTION__ <<endl;
 	}
 }
-// std::vector<cv::Mat> Detection::findRobots(std::vector<cv::Mat> inputFrameList, std::vector<cv::Mat> outputFrameList)
-// {
-// 		if(!frameList[0].empty())
-// 		{
-// 			std::vector<std::vector<cv::Point>> contours;
-// 			std::vector<cv::Vec4i> hierarchy;
-// 			std::vector<cv::Mat> redRectFrameList= inputFrameList;
+std::vector<cv::Mat> Detection::search(std::vector<cv::Mat> filteredFrameList, std::vector<cv::Rect> rects,
+	std::vector<std::vector<cv::Point>> contours, std::vector<cv::Vec4i> hierarchy,
+	std::vector<std::vector<cv::Point>> contoursPoly, std::vector<cv::Mat> frameList){
+	for(int i=0; i<frameList.size(); i++)
+	{
+		cv::findContours(filteredFrameList[i], contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
+	}
+	contoursPoly.resize(contours.size());
+	rects.resize(contours.size());
+	for(size_t i = 0; i<contours.size(); i++)
+	{
+		cv::approxPolyDP(cv::Mat(contours[i]), contoursPoly[i], 3, true);
+		rects[i]=cv::boundingRect(cv::Mat(contoursPoly[i]));
+		for(int j =0; j<frameList.size(); j++)
+		{
+			if(cv::contourArea(contoursPoly[i])>1000){
+				rects[i] = cv::Rect(rects[i].tl().x-50, rects[i].tl().y-50, rects[i].br().x-rects[i].tl().x+100, rects[i].br().y-rects[i].tl().y+100);
+				cv::rectangle(frameList[j], rects[i], cv::Scalar(127,127,127), 2, 8, 0);
+				if(rects[i].x >= 0 && rects[i].y >= 0 && rects[i].width + rects[i].x < frameList[j].cols && rects[i].height + rects[i].y < frameList[j].rows){
+					
+				}
+			}
+	}
+	return frameList;
+}
+// std::vector<cv::Mat> Detection::findRobots(std::vector<cv::Mat> inputFrameList, std::vector<cv::Mat> outputFrameList){
+// 		if(!frameList[0].empty()){
+// 			std::vector<cv::Mat> redRectFrameList=frameList;
 // 			std::vector<cv::Mat> blueRectFrameList;
 // 			std::vector<cv::Mat> greenRectFrameList;
-// 			std::vector<cv::Mat> redFrameList(inputFrameList.size());
+// 			std::vector<cv::Mat> redFrameList(frameList.size());
 // 			std::vector<cv::Mat> blackROIs;
-// 			int x = 0;
-// 			int y = 0;
-// 			int width = 0;
-// 			int height = 0;
-// 			int inputWidth =0;
-// 			int inputHeight =0;
-// 			redFrameList=BlobDetector::findColors(inputFrameList);
+// 			int x {0}, y{0}, width{0}, height{0}, inputWidth{0}, inputHeight{0};
+// 			redFrameList=BlobDetector::findReds(frameList);
 // 			cout<<__LINE__<<endl;
 // 			for(int i=0; i<frameList.size(); i++)
 // 			{
