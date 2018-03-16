@@ -1,71 +1,78 @@
 #include "Camera.h"
 #include "Detection.h"
 using namespace std;
-std::vector<cv::Mat> Detection::findColors(std::vector< cv::Mat > inputFrameList, std::vector<int> range ,std::vector<cv::Mat> outputFrameList){
-	if(!inputFrameList[0].empty()){
-		//Resize Vectors
-		outputFrameList.resize(inputFrameList.size());
-		//cycles through frameList for color detection
-		for(int i=0; i<inputFrameList.size();i++){
-			//Find colors in green range
-			cv::inRange(inputFrameList[i], cv::Scalar(range[0], range[1], range[2]), cv::Scalar(range[3], range[4], range[5]), outputFrameList[i]);
-			// Blur Image
-			cv::GaussianBlur(outputFrameList[i], outputFrameList[i], cv::Size(9, 9), 2, 2);
-		}
-		// return a filtered frameList for green things.
-		//	anything thing that is green things will be returned as white pixels and non green things will be returned with pixels
-		return outputFrameList;
-	}
-	else{
-	    cout<<"Fuck up in " __FILE__ << " Line: " << __LINE__ << " function: " << __FUNCTION__ <<endl;
-	}
-}
-std::vector<cv::Mat> Detection::findColors(std::vector< cv::Mat > inputFrameList, std::vector<int> range1, std::vector<int> range2, std::vector<cv::Mat> v,std::vector< cv::Mat > outputFrameList){
-		if(!inputFrameList[0].empty()){
-			outputFrameList.resize(inputFrameList.size());
-			v.resize(inputFrameList.size());
-			//cycles through frameList for color detection
-			for(int i=0; i<inputFrameList.size();i++){
-				// Mask
-				cv::inRange(inputFrameList[i], cv::Scalar(range1[0], range1[1], range1[2]), cv::Scalar(range1[3], range1[4], range1[5]), outputFrameList[i]);
-				cv::inRange(inputFrameList[i], cv::Scalar(range2[0], range2[1], range2[2]), cv::Scalar(range2[3], range2[4], range2[5]), v[i]);
 
-				// Combine the above two images
-				cv::addWeighted(outputFrameList[i], 1.0, v[i], 1.0, 0.0, outputFrameList[i]);
-
-				// Blur Image
-				cv::GaussianBlur(outputFrameList[i], outputFrameList[i], cv::Size(9, 9), 2, 2);
-			}
-		// return a filtered frameList for red things.
-		//	anything thing that is red things will be returned as white pixels and non red things will be returned with pixels
-		return outputFrameList;
-	}
-	else{
-		cout<<"Fuck up in " __FILE__ << " Line: " << __LINE__ << " function: " << __FUNCTION__ <<endl;
-	}
+Detection::Detection(int camNum){
+	std::vector<std::vector<cv::Mat*>> filteredImageList(camNum);
 }
-std::vector<cv::Mat> Detection::search(std::vector<cv::Mat> filteredFrameList, std::vector<cv::Rect> rects,
+
+// std::vector<cv::Mat> Detection::findColors(std::vector< cv::Mat > inputFrameList, std::vector<int> range ,std::vector<cv::Mat> outputFrameList){
+// 	if(!inputFrameList[0].empty()){
+// 		//Resize Vectors
+// 		outputFrameList.resize(inputFrameList.size());
+// 		//cycles through frameList for color detection
+// 		for(int i=0; i<inputFrameList.size();i++){
+// 			//Find colors in green range
+// 			cv::inRange(inputFrameList[i], cv::Scalar(range[0], range[1], range[2]), cv::Scalar(range[3], range[4], range[5]), outputFrameList[i]);
+// 			// Blur Image
+// 			cv::GaussianBlur(outputFrameList[i], outputFrameList[i], cv::Size(9, 9), 2, 2);
+// 		}
+// 		// return a filtered frameList for green things.
+// 		//	anything thing that is green things will be returned as white pixels and non green things will be returned with pixels
+// 		return outputFrameList;
+// 	}
+// 	else{
+// 	    cout<<"Fuck up in " __FILE__ << " Line: " << __LINE__ << " function: " << __FUNCTION__ <<endl;
+// 	}
+// }
+// std::vector<cv::Mat> Detection::findColors(std::vector< cv::Mat > inputFrameList, std::vector<int> range1, std::vector<int> range2, std::vector<cv::Mat> v,std::vector< cv::Mat > outputFrameList){
+// 		if(!inputFrameList[0].empty()){
+// 			outputFrameList.resize(inputFrameList.size());
+// 			v.resize(inputFrameList.size());
+// 			//cycles through frameList for color detection
+// 			for(int i=0; i<inputFrameList.size();i++){
+// 				// Mask
+// 				cv::inRange(inputFrameList[i], cv::Scalar(range1[0], range1[1], range1[2]), cv::Scalar(range1[3], range1[4], range1[5]), outputFrameList[i]);
+// 				cv::inRange(inputFrameList[i], cv::Scalar(range2[0], range2[1], range2[2]), cv::Scalar(range2[3], range2[4], range2[5]), v[i]);
+//
+// 				// Combine the above two images
+// 				cv::addWeighted(outputFrameList[i], 1.0, v[i], 1.0, 0.0, outputFrameList[i]);
+//
+// 				// Blur Image
+// 				cv::GaussianBlur(outputFrameList[i], outputFrameList[i], cv::Size(9, 9), 2, 2);
+// 			}
+// 		// return a filtered frameList for red things.
+// 		//	anything thing that is red things will be returned as white pixels and non red things will be returned with pixels
+// 		return outputFrameList;
+// 	}
+// 	else{
+// 		cout<<"Fuck up in " __FILE__ << " Line: " << __LINE__ << " function: " << __FUNCTION__ <<endl;
+// 	}
+// }
+std::vector<cv::Mat> Detection::search(Detection detect, std::vector<cv::Rect> rects,
 	std::vector<std::vector<cv::Point>> contours, std::vector<cv::Vec4i> hierarchy,
-	std::vector<std::vector<cv::Point>> contoursPoly, std::vector<cv::Mat> frameList){
-	for(int i=0; i<frameList.size(); i++)
-	{
-		cv::findContours(filteredFrameList[i], contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
-	}
-	contoursPoly.resize(contours.size());
-	rects.resize(contours.size());
-	for(size_t i = 0; i<contours.size(); i++)
-	{
-		cv::approxPolyDP(cv::Mat(contours[i]), contoursPoly[i], 3, true);
-		rects[i]=cv::boundingRect(cv::Mat(contoursPoly[i]));
-		for(int j =0; j<frameList.size(); j++)
+	std::vector<std::vector<cv::Point>> contoursPoly){
+	for(int i=0; i<detect.size(); i++){
+		for(int i=0; i<detect[i].size(); i++)
 		{
-			if(cv::contourArea(contoursPoly[i])>1000){
-				rects[i] = cv::Rect(rects[i].tl().x-50, rects[i].tl().y-50, rects[i].br().x-rects[i].tl().x+100, rects[i].br().y-rects[i].tl().y+100);
-				cv::rectangle(frameList[j], rects[i], cv::Scalar(127,127,127), 2, 8, 0);
-				if(rects[i].x >= 0 && rects[i].y >= 0 && rects[i].width + rects[i].x < frameList[j].cols && rects[i].height + rects[i].y < frameList[j].rows){
-					
+			cv::findContours(&detect[i][j], contours[], hierarchy[], CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
+		}
+		contoursPoly.resize(contours.size());
+		rects.resize(contours.size());
+		for(size_t i = 0; i<contours.size(); i++)
+		{
+			cv::approxPolyDP(cv::Mat(contours[i]), contoursPoly[i], 3, true);
+			rects[i]=cv::boundingRect(cv::Mat(contoursPoly[i]));
+			for(int j =0; j<filteredFrameList.size(); j++)
+			{
+				if(cv::contourArea(contoursPoly[i])>1000){
+					rects[i] = cv::Rect(rects[i].tl().x-50, rects[i].tl().y-50, rects[i].br().x-rects[i].tl().x+100, rects[i].br().y-rects[i].tl().y+100);
+					if(rects[i].x >= 0 && rects[i].y >= 0 && rects[i].width + rects[i].x < frameList[j].cols && rects[i].height + rects[i].y < frameList[j].rows){
+						cv::Mat filteredROI = cv::Mat(filteredFrameList[j])(rects[i]);
+					}
 				}
 			}
+		}
 	}
 	return frameList;
 }
