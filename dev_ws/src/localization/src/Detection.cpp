@@ -2,8 +2,28 @@
 #include "Detection.h"
 using namespace std;
 
-Detection::Detection(int camNum){
-	std::vector<std::vector<cv::Mat*>> filteredImageList(camNum);
+Detection::Detection(int camNum)
+{
+	filteredImageList.resize(camNum);
+}
+
+
+Detection::applyFilter(cv::Mat* inFrame, cv::Mat* outFrame, std::vector<int> threshold)
+{
+  cv::inRange(&inframe, cv::Scalar(threshold[0], threshold[1], threshold[2]), cv::Scalar(threshold[3], threshold[4], threshold[5]), &outFrame);
+}
+
+Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< std::vector<cv::Mat*> > outFrameList, std::vector< std::vector<int> > threshList)
+{
+  for(int i=0; i<threshList.size(); i++)
+  {
+    for(int j=0; j<outFrameList.size(); j++)
+    {
+      cv::Mat frame;
+      outFrameList[j].push_back(frame);
+      applyFilter(inFrameList[j], outFrameList[j][i], threshList[i]);
+    }
+  }
 }
 
 // std::vector<cv::Mat> Detection::findColors(std::vector< cv::Mat > inputFrameList, std::vector<int> range ,std::vector<cv::Mat> outputFrameList){
