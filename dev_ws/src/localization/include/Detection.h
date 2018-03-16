@@ -12,8 +12,8 @@
 
 class Detection{
 private:
-
 public:
+	std::vector<std::vector<cv::Mat*>> filteredImageList;
 	Detection(int);
 	static std::vector<cv::Mat> findColors(std::vector<cv::Mat>, std::vector<int>, std::vector<cv::Mat>);
 	static std::vector<cv::Mat> findColors(std::vector<cv::Mat>, std::vector<int>, std::vector<int>, std::vector<cv::Mat>, std::vector< cv::Mat >);
