@@ -7,18 +7,18 @@ Detection::Detection(int camNum)
 }
 
 
-Detection::applyFilter(cv::Mat* inFrame, cv::Mat* outFrame, std::vector<int> threshold)
+ void Detection::applyFilter(cv::Mat* inFrame, cv::Mat* outFrame, std::vector<int> threshold)
 {
-  cv::inRange(&inframe, cv::Scalar(threshold[0], threshold[1], threshold[2]), cv::Scalar(threshold[3], threshold[4], threshold[5]), &outFrame);
+  cv::inRange(*inFrame, cv::Scalar(threshold[0], threshold[1], threshold[2]), cv::Scalar(threshold[3], threshold[4], threshold[5]), *outFrame);
 }
 
-Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< std::vector<cv::Mat*> > outFrameList, std::vector< std::vector<int> > threshList)
+void Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< std::vector<cv::Mat*> > outFrameList, std::vector< std::vector<int> > threshList)
 {
   for(int i=0; i<threshList.size(); i++)
   {
     for(int j=0; j<outFrameList.size(); j++)
     {
-      cv::Mat frame;
+      cv::Mat* frame;
       outFrameList[j].push_back(frame);
       applyFilter(inFrameList[j], outFrameList[j][i], threshList[i]);
     }
@@ -68,16 +68,20 @@ Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< std::
 // 		cout<<"Fuck up in " __FILE__ << " Line: " << __LINE__ << " function: " << __FUNCTION__ <<endl;
 // 	}
 // }
-std::vector<cv::Mat> Detection::search(Detection detect, std::vector<cv::Rect> rects,
-	std::vector<std::vector<cv::Point>> contours, std::vector<cv::Vec4i> hierarchy,
-	std::vector<std::vector<cv::Point>> contoursPoly){
-	for(int i=0; i<detect.size(); i++){
-		for(int i=0; i<detect[i].size(); i++)
+void Detection::search()
+{
+	// Cameras
+	for(int i=0; i<a_filterImgList.size(); i++)
+	{
+		// Frames
+		for(int j=0; j<a_threshList.size(); j++)
 		{
-			cv::findContours(&detect[i][j], contours[], hierarchy[], CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
+			cv::findContours(a_filterImgList[i][j], a_contours, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
 		}
-		contoursPoly.resize(contours.size());
-		rects.resize(contours.size());
+
+		a_contoursPoly.resize(a_contours.size());
+		a_rects.resize(contours.size());
+
 		for(size_t i = 0; i<contours.size(); i++)
 		{
 			cv::approxPolyDP(cv::Mat(contours[i]), contoursPoly[i], 3, true);

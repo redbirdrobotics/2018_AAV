@@ -29,8 +29,16 @@ boost/filesystem.hpp
 -
 fstream
 -
-Robot.h
-/home/redbird-general/Redbird18/dev_ws/src/localization/include/Robot.h
+Detection.h
+/home/redbird-general/Redbird18/dev_ws/src/localization/include/Detection.h
+
+/home/redbird-general/Redbird18/dev_ws/src/localization/include/Detection.h
+iostream
+-
+opencv2/opencv.hpp
+/home/redbird-general/Redbird18/dev_ws/src/localization/include/opencv2/opencv.hpp
+opencv2/features2d.hpp
+/home/redbird-general/Redbird18/dev_ws/src/localization/include/opencv2/features2d.hpp
 
 /home/redbird-general/Redbird18/dev_ws/src/localization/include/Robot.h
 iostream
@@ -45,6 +53,10 @@ Camera.h
 /home/redbird-general/Redbird18/dev_ws/src/localization/src/Communication.cpp
 Communication.h
 -
+
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/Detection.cpp
+Detection.h
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/Detection.h
 
 /home/redbird-general/Redbird18/dev_ws/src/localization/src/Robot.cpp
 Robot.h
@@ -73,6 +85,8 @@ Robot.h
 /home/redbird-general/Redbird18/dev_ws/src/localization/src/Robot.h
 Communication.h
 /home/redbird-general/Redbird18/dev_ws/src/localization/src/Communication.h
+Detection.h
+/home/redbird-general/Redbird18/dev_ws/src/localization/src/Detection.h
 
 /opt/ros/kinetic/include/opencv-3.3.1/opencv/cxcore.h
 opencv2/core/core_c.h

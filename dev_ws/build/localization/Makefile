@@ -671,6 +671,33 @@ src/Communication.cpp.s:
 	cd /home/redbird-general/Redbird18/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Communication.cpp.s
 .PHONY : src/Communication.cpp.s
 
+src/Detection.o: src/Detection.cpp.o
+
+.PHONY : src/Detection.o
+
+# target to build an object file
+src/Detection.cpp.o:
+	cd /home/redbird-general/Redbird18/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Detection.cpp.o
+.PHONY : src/Detection.cpp.o
+
+src/Detection.i: src/Detection.cpp.i
+
+.PHONY : src/Detection.i
+
+# target to preprocess a source file
+src/Detection.cpp.i:
+	cd /home/redbird-general/Redbird18/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Detection.cpp.i
+.PHONY : src/Detection.cpp.i
+
+src/Detection.s: src/Detection.cpp.s
+
+.PHONY : src/Detection.s
+
+# target to generate assembly for a file
+src/Detection.cpp.s:
+	cd /home/redbird-general/Redbird18/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Detection.cpp.s
+.PHONY : src/Detection.cpp.s
+
 src/Robot.o: src/Robot.cpp.o
 
 .PHONY : src/Robot.o
@@ -828,6 +855,9 @@ help:
 	@echo "... src/Communication.o"
 	@echo "... src/Communication.i"
 	@echo "... src/Communication.s"
+	@echo "... src/Detection.o"
+	@echo "... src/Detection.i"
+	@echo "... src/Detection.s"
 	@echo "... src/Robot.o"
 	@echo "... src/Robot.i"
 	@echo "... src/Robot.s"

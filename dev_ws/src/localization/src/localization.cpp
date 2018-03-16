@@ -55,7 +55,7 @@ int main(int argc, char **argv)
   std::vector<Robot*> robotList = {&daredevil, &deadpool, &elmo, &hellboy, &flash, &hulk, &yoshi, &yoda, &arrow, &beastboy, &baymax, &stayPuft, &kingBoo, &rorschach};
 
   // Initialize Detection Instance
-  Detection Detect(CamList.size() );
+  Detection Detect(CamList.size());
 
   // Check Connection to Cameras
   *advance = Camera::getListStatus(CamList, CamList.size());
@@ -66,7 +66,7 @@ int main(int argc, char **argv)
   }
 
   // Get Robot Parameters
-  Communication::getRobotData(robotList);
+  Communication::getRobotData(&Detect);
 
   // Begin Visualization Thread
   boost::thread workerThread1(&Camera::showFrame, camStream, advance, capture, std::ref(MUTEX));

@@ -2,7 +2,7 @@
 #include <opencv2/opencv.hpp>
 #include <boost/filesystem.hpp>
 #include <fstream>
-#include "Robot.h"
+#include "Detection.h"
 //#include "Stereo.h"
 
 #ifndef COMMUNICATION_CLASS
@@ -62,7 +62,7 @@ public:
 	// static void getDisparity_XMLData(Stereo*);
 
 	// static void writeCalibration_XMLData(Stereo*);
-	static void getRobotData(std::vector<Robot*>);
+	static void getDetection_XMLData(Detection*);
 	static void storeIMG(boost::shared_ptr< std::vector< cv::Mat > >, std::string);
 	static void storeIMG(boost::shared_ptr< std::vector< std::vector< cv::Mat > > >, std::string);
 	// static void storeIMG(Stereo*);
