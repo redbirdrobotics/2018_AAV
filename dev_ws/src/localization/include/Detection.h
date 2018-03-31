@@ -56,6 +56,10 @@ public:
 	std::vector<int> a_blackThresh = {0,0,0,0,0,0};
 
 	std::vector< std::vector< int > > a_threshList = {a_redThresh1, a_redThresh2, a_greenThresh, a_whiteThresh, a_blackThresh};
+	std::vector< std::vector< int > > a_redRobotThresh = {a_redThresh1, a_redThresh2, a_blackThresh, a_whiteThresh};
+
+	std::vector< cv::Mat > a_HSVList;
+	cv::Mat* a_pMask;
 
 	std::vector< std::vector<cv::Mat*> > a_filterImgList;
 

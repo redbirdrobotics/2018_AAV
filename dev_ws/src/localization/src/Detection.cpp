@@ -90,7 +90,7 @@ Detection::Detection(int camNum)
 
 //LUKAS HOLD OFF ON EDITING, MY CODE IS UNINTELLIGABLE ATM BUT WILL BE FIXED SOON
 
-void Detection::applyFilter(cv::Mat* inFrame, cv::Mat* outFrame, std::vector<int> threshold)
+void Detection::applyFilter(cv::Mat inFrame, cv::Mat outFrame, std::vector<int> threshold)
 {
   cv::inRange(*inFrame, cv::Scalar(threshold[0], threshold[1], threshold[2]), cv::Scalar(threshold[3], threshold[4], threshold[5]), *outFrame);
 }
@@ -108,6 +108,17 @@ void Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< 
   }
 }
 
+void Detection::applyRedFilter(cv::Mat inFrame, cv::Mat* outFrame, std::vector<int> lower, std::vector<int> upper)
+{
+	cv::Mat frame1, frame2;
+	// Red1
+	applyFilter(inFrame, frame1, lower);
+	// Red2
+	applyFilter(inFrame, frame2, upper);
+	// Add Red1 and Red2 (upper and lower)
+	cv::addWeighted(frame1, 1, frame2, 1, 0.0, outFrame);
+}
+
 // Get imglist
 
 // Get Img
@@ -120,16 +131,26 @@ void Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< 
 // ...
 // Cameras
 
-void Detection::Search()
+void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList, )
 {
 	// Cameras
-	for(int i=0; i<a_filterImgList.size(); i++)
+	for(int i=0; i<pImgList->size(); i++)
 	{
-		// Frames
+		// Convert to HSV
+		cv::cvtColor((*pImgList)[i], a_HSVList[i], CV_BGR2HSV);
+
+		// For Red / Green / White Robots
+		// Red Search
+
+		applyRedFilter(a_HSVList[i], a_pMask, a_RedRobotThresh[0], a_redRobotThresh[1]);
+		
+		// green search
+		// white search
+
 		for(int j=0; j<a_threshList.size(); j++)
 		{
-			// Search Level 1
-			if(j==0)
+			// Search Level 1 Red/Green
+			if(/*Search level 1*/)
 			{
 				getContoursToBoxes(a_threshList[i][j]);
 			}
@@ -153,7 +174,7 @@ void Detection::getContoursToBoxes(cv::Mat mask,
 	contourList2.resize(contourList1.size());
 	rectList.resize(contourList1.size());
 
-	downSampleContours(500, a_imgSz);
+	downSampleContours(mask, rectList, 500, a_imgSz);
 }
 
 // pixThresh should be different for each threshold, ie less green than white, more white than black, less black than green
