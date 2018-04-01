@@ -31,8 +31,8 @@ class Detection
 private:
 	// Find Contours Containers
 	// Level 1 Search
-	std::vector<cv::Rect> a_rectList1;
-	std::vector< std::vector< cv::Point > > a_contours1;
+	std::vector<cv::Rect> a_rectList;
+	std::vector< std::vector< cv::Point > > a_contours1, a_contours2;
 	std::vector< cv::Vec4i > a_hierarchy;
 	std::vector< std::vector< cv::Point > > a_contoursPoly1;
 

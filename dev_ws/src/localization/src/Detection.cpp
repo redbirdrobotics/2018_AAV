@@ -143,57 +143,51 @@ void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList, )
 		// Red Search
 
 		applyRedFilter(a_HSVList[i], a_pMask, a_RedRobotThresh[0], a_redRobotThresh[1]);
-		
+		getContoursToBoxes();
+
 		// green search
 		// white search
 
-		for(int j=0; j<a_threshList.size(); j++)
-		{
-			// Search Level 1 Red/Green
-			if(/*Search level 1*/)
-			{
-				getContoursToBoxes(a_threshList[i][j]);
-			}
+		// for(int j=0; j<a_threshList.size(); j++)
+		// {
+		// 	// Search Level 1 Red/Green
+		// 	if(/*Search level 1*/)
+		// 	{
+		// 		getContoursToBoxes(a_threshList[i][j]);
+		// 	}
 
-			// Search Level 2 && 3
-			else if(!a_rect.empty())
-			{
-				searchROI(a_threshList[i][j], a_rects)
-			}
-		}
+		// 	// Search Level 2 && 3
+		// 	else if(!a_rect.empty())
+		// 	{
+		// 		searchROI(a_threshList[i][j], a_rects);
+		// 	}
+		// }
 	}
 }
 
-void Detection::getContoursToBoxes(cv::Mat mask, 
-									std::vector<cv::Rect*> rectList, 
-									std::vector< std::vector< cv::Point > > contourList1, 
-									std::vector< std::vector< cv::Point > > contourList2)
+void Detection::getContoursToBoxes()
 {
-	cv::findContours(mask, contourList1, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
+	cv::findContours((*a_pMask), a_contourList1, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
 
-	contourList2.resize(contourList1.size());
-	rectList.resize(contourList1.size());
+	a_contourList2.resize(a_contourList1.size());
+	a_rectList.resize(a_contourList1.size());
 
-	downSampleContours(mask, rectList, 500, a_imgSz);
+	downSampleContours(500, a_imgSz);
 }
 
 // pixThresh should be different for each threshold, ie less green than white, more white than black, less black than green
 // could be accomplished with a thresh struct
 
-void Detection::downSampleContours(std::vector<cv::Rect*> rectList,
-									std::vector< std::vector< cv::Point > > contourList1, 
-									std::vector< std::vector< cv::Point > > contourList2 
-									int pixThresh, 
-									cv::Size imgSz)
+void Detection::downSampleContours(int pixThresh, cv::Size imgSz)
 {
-	for(uint8_t i=0; i<contourList1.size(); i++)
+	for(uint8_t i=0; i<a_contourList1.size(); i++)
 	{
-		cv::approxPolyDP(contoursList1[i]; contourList2[i], 3, true);
+		cv::approxPolyDP(a_contoursList1[i]; a_contourList2[i], 3, true);
 
-		if(cv::contourArea(contourList2[i]) > pixThresh)
+		if(cv::contourArea(a_contourList2[i]) > pixThresh)
 		{
-			(*rectList)[i] = cv::boundingRect(contourList2[i]);
-			Detection::addROIBuffer((*rectList)[i]);
+			a_rectList = cv::boundingRect(a_contourList2[i]);
+			Detection::addROIBuffer(a_rectList[i]);
 		}
 	}
 }
