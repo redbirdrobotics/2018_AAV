@@ -1,8 +1,8 @@
-# Install script for directory: /usr/src/gtest
+# Install script for directory: /usr/src/gmock
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/redbird-general/Redbird18/dev_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,8 +32,9 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/gtest/gtest/cmake_install.cmake")
+
 endif()
 

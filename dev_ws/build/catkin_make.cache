@@ -1,2 +1,2 @@
 localization
--DCATKIN_DEVEL_PREFIX=/home/redbird-general/Redbird18/dev_ws/devel -DCMAKE_INSTALL_PREFIX=/home/redbird-general/Redbird18/dev_ws/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel -DCMAKE_INSTALL_PREFIX=/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/install -G Unix Makefiles

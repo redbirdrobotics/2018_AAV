@@ -67,14 +67,14 @@ set(localization_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(localization_SOURCE_PREFIX /home/redbird-general/Redbird18/dev_ws/src/localization)
-  set(localization_DEVEL_PREFIX /home/redbird-general/Redbird18/dev_ws/devel)
+  set(localization_SOURCE_PREFIX /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization)
+  set(localization_DEVEL_PREFIX /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel)
   set(localization_INSTALL_PREFIX "")
   set(localization_PREFIX ${localization_DEVEL_PREFIX})
 else()
   set(localization_SOURCE_PREFIX "")
   set(localization_DEVEL_PREFIX "")
-  set(localization_INSTALL_PREFIX /home/redbird-general/Redbird18/dev_ws/install)
+  set(localization_INSTALL_PREFIX /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/install)
   set(localization_PREFIX ${localization_INSTALL_PREFIX})
 endif()
 
@@ -110,13 +110,13 @@ if(NOT "include;/usr/include " STREQUAL " ")
         message(FATAL_ERROR "Project 'localization' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'localization' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/redbird-general/Redbird18/dev_ws/install/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'localization' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/install/${idir}'.  ${_report}")
     endif()
     _list_append_unique(localization_INCLUDE_DIRS ${include})
   endforeach()
 endif()
 
-set(libraries "localization;Camera;Communication;Robot;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libSM.so;/usr/lib/x86_64-linux-gnu/libICE.so;/usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so")
+set(libraries "localization;Camera;Communication;Robot;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libpthread.so;/usr/lib/x86_64-linux-gnu/libSM.so;/usr/lib/x86_64-linux-gnu/libICE.so;/usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/redbird-general/Redbird18/dev_ws/install/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/install/lib;/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
