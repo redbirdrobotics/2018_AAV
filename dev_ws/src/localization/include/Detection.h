@@ -7,10 +7,10 @@
 
 // Author: Lukas Armstrong & Alex Rickert
 // Date: 3/15/18
-// Description: 
+// Description:
 // Class which is used to set up and utilize detectors on images
 
-/* 
+/*
 	Container Descriptions:
 		a_rects:
 		ROI coordinates which contain possible objects of interest
@@ -45,11 +45,11 @@ private:
 	// Connected Components Containers
 
 
-	// Read from XML 
+	// Read from XML
 	// CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE
 
 public:
-	std::vector<int> a_redThresh1 = {0,0,0,0,0,0}; 
+	std::vector<int> a_redThresh1 = {0,0,0,0,0,0};
 	std::vector<int> a_redThresh2 = {0,0,0,0,0,0};
 	std::vector<int> a_greenThresh = {0,0,0,0,0,0};
 	std::vector<int> a_whiteThresh = {0,0,0,0,0,0};
@@ -62,6 +62,8 @@ public:
 	cv::Mat* a_pMask;
 
 	std::vector< std::vector<cv::Mat*> > a_filterImgList;
+
+	int a_pixelThresh;
 
 	Detection(int);
 	// static std::vector<cv::Mat> findColors(std::vector<cv::Mat>, std::vector<int>, std::vector<cv::Mat>);

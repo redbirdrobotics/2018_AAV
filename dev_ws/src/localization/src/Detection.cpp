@@ -4,6 +4,7 @@ using namespace std;
 Detection::Detection(int camNum)
 {
 	filteredImageList.resize(camNum);
+	a_pixelThresh = 500;
 }
 
 // std::vector<cv::Mat> Detection::findColors(std::vector< cv::Mat > inputFrameList, std::vector<int> range ,std::vector<cv::Mat> outputFrameList){
@@ -167,24 +168,25 @@ void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList, )
 
 void Detection::getContoursToBoxes()
 {
+	//TODO: add clearing function for counterlists and hierarchy
 	cv::findContours((*a_pMask), a_contourList1, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
 
 	a_contourList2.resize(a_contourList1.size());
 	a_rectList.resize(a_contourList1.size());
 
-	downSampleContours(500, a_imgSz);
+	downSampleContours(a_imgSz);
 }
 
 // pixThresh should be different for each threshold, ie less green than white, more white than black, less black than green
 // could be accomplished with a thresh struct
 
-void Detection::downSampleContours(int pixThresh, cv::Size imgSz)
+void Detection::downSampleContours(cv::Size imgSz)
 {
 	for(uint8_t i=0; i<a_contourList1.size(); i++)
 	{
 		cv::approxPolyDP(a_contoursList1[i]; a_contourList2[i], 3, true);
 
-		if(cv::contourArea(a_contourList2[i]) > pixThresh)
+		if(cv::contourArea(a_contourList2[i]) > a_pixelThresh)
 		{
 			a_rectList = cv::boundingRect(a_contourList2[i]);
 			Detection::addROIBuffer(a_rectList[i]);
@@ -195,7 +197,7 @@ void Detection::downSampleContours(int pixThresh, cv::Size imgSz)
 // Need to add a_buffer, a_imgSz to header
 void Detection::addROIBuffer(cv::Rect rect)
 {
-	rect = cv::Rect(rects[i].tl().x-50, rects[i].tl().y-50, rects[i].br().x-rects[i].tl().x+100, rects[i].br().y-rects[i].tl().y+100);
+	rect = cv::Rect(rects.tl().x-50, rects.tl().y-50, rects.br().x-rects.tl().x+100, rects.br().y-rects.tl().y+100);
 
 	if(rect.tl.x < 0) rect.tl.x = 0;
 	if(rect.tl.y < 0) rect.tl.y = 0;
