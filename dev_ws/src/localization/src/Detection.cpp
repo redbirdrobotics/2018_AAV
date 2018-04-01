@@ -90,11 +90,6 @@ Detection::Detection(int camNum)
 
 //LUKAS HOLD OFF ON EDITING, MY CODE IS UNINTELLIGABLE ATM BUT WILL BE FIXED SOON
 
-void Detection::applyFilter(cv::Mat inFrame, cv::Mat outFrame, std::vector<int> threshold)
-{
-  cv::inRange(*inFrame, cv::Scalar(threshold[0], threshold[1], threshold[2]), cv::Scalar(threshold[3], threshold[4], threshold[5]), *outFrame);
-}
-
 void Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< std::vector<cv::Mat*> > outFrameList, std::vector< std::vector<int> > threshList)
 {
   for(int i=0; i<threshList.size(); i++)
@@ -137,34 +132,32 @@ void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList, )
 	for(int i=0; i<pImgList->size(); i++)
 	{
 		// Convert to HSV
-		cv::cvtColor((*pImgList)[i], a_HSVList[i], CV_BGR2HSV);
+		cv::cvtColor((*pImgList)[i], (*a_HSVImg), CV_BGR2HSV);
 
 		// For Red / Green / White Robots
-		// Red Search
 
-		applyRedFilter(a_HSVList[i], a_pMask, a_RedRobotThresh[0], a_redRobotThresh[1]);
-		getContoursToBoxes();
-
+		// RedSearch()
+		redRobotSearch(a_HSVImg);
+		
 		// green search
 		// white search
-
-		// for(int j=0; j<a_threshList.size(); j++)
-		// {
-		// 	// Search Level 1 Red/Green
-		// 	if(/*Search level 1*/)
-		// 	{
-		// 		getContoursToBoxes(a_threshList[i][j]);
-		// 	}
-
-		// 	// Search Level 2 && 3
-		// 	else if(!a_rect.empty())
-		// 	{
-		// 		searchROI(a_threshList[i][j], a_rects);
-		// 	}
-		// }
 	}
 }
 
+void Detection::redRobotSearch(cv::Mat* img)
+{
+	applyRedFilter(img, a_pMask, a_RedRobotThresh[0], a_redRobotThresh[1]);
+	getContoursToBoxes();
+	for(int i=0; i<a_rectList.size(); i++)
+	{
+		applyFilter(img(a_rectList[i]), a_pMask, a_blackThresh);
+
+	}
+}
+
+// Takes Mask stored in a_pMask
+// Finds contours associated with mask
+// Down-samples and populates a_rectList with bounding rectangles
 void Detection::getContoursToBoxes()
 {
 	cv::findContours((*a_pMask), a_contourList1, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
@@ -173,6 +166,11 @@ void Detection::getContoursToBoxes()
 	a_rectList.resize(a_contourList1.size());
 
 	downSampleContours(500, a_imgSz);
+}
+
+void Detection::applyFilter(cv::Mat inFrame, cv::Mat* outFrame, std::vector<int> threshold)
+{
+  cv::inRange(*inFrame, cv::Scalar(threshold[0], threshold[1], threshold[2]), cv::Scalar(threshold[3], threshold[4], threshold[5]), *outFrame);
 }
 
 // pixThresh should be different for each threshold, ie less green than white, more white than black, less black than green
@@ -195,20 +193,12 @@ void Detection::downSampleContours(int pixThresh, cv::Size imgSz)
 // Need to add a_buffer, a_imgSz to header
 void Detection::addROIBuffer(cv::Rect rect)
 {
-	rect = cv::Rect(rects[i].tl().x-50, rects[i].tl().y-50, rects[i].br().x-rects[i].tl().x+100, rects[i].br().y-rects[i].tl().y+100);
+	rect = cv::Rect(rect.tl().x-50, rect.tl().y-50, rect.br().x-rect.tl().x+100, rect.br().y-rect.tl().y+100);
 
 	if(rect.tl.x < 0) rect.tl.x = 0;
 	if(rect.tl.y < 0) rect.tl.y = 0;
 	if(rect.br.x > imgSz.x) rect.br.x = imgSz.x;
 	if(rect.br.y > imgSz.y) rect.br.y = imgSz.y;
-}
-
-void Detection::searchROI(cv::Mat mask, std::vector<cv::Rect> rectList)
-{
-	for(int i=0; i<rectList2.size(); i++)
-	{
-		getContoursToBoxes((mask)(rectList[i]));
-	}
 }
 
 // void Detection::findContours()
