@@ -1,6 +1,7 @@
 #include <iostream>
 #include "opencv2/opencv.hpp"
 #include "opencv2/features2d.hpp"
+#include "Robot.h"
 
 #ifndef DETECTION_CLASS
 #define DETECTION_CLASS
@@ -30,8 +31,12 @@ class Detection
 {
 private:
 	// Find Contours Containers
+
 	// Level 1 Search
-	std::vector<cv::Rect> a_rectList;
+	std::vector<cv::Rect> a_greenRectList;
+	std::vector<cv::Rect> a_redRectList;
+	std::vector<cv::Rect> a_blackRectList;
+	std::vector<cv::Rect> a_whiteRectList;
 	std::vector< std::vector< cv::Point > > a_contours1, a_contours2;
 	std::vector< cv::Vec4i > a_hierarchy;
 	std::vector< std::vector< cv::Point > > a_contoursPoly1;
@@ -43,6 +48,32 @@ private:
 
 
 	// Connected Components Containers
+
+	//Robots
+	std::vector<std::vector<Robot*>> robotList = { {&daredevil, &deadpool, &elmo, &hellboy, &flash}, {&hulk, &yoshi, &yoda, &arrow, &beastboy}, {&baymax, &stayPuft, &kingBoo, &rorschach}};
+
+	// Initialize Robots
+  // Red
+  Robot daredevil(0);
+  Robot deadpool(0);
+  Robot elmo(0);
+  Robot hellboy(0);
+  Robot flash(0);
+
+  // Green
+  Robot hulk(1);
+  Robot yoshi(1);
+  Robot yoda(1);
+  Robot arrow(1);
+  Robot beastboy(1);
+
+  // Obstacle (White)
+  Robot baymax(2);
+  Robot stayPuft(2);
+  Robot kingBoo(2);
+  Robot rorschach(2);
+
+  // Initialize Robot Vector
 
 
 	// Read from XML

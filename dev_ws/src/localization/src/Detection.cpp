@@ -148,26 +148,27 @@ void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList, )
 void Detection::redRobotSearch(cv::Mat* img)
 {
 	applyRedFilter(img, a_pMask, a_RedRobotThresh[0], a_redRobotThresh[1]);
-	getContoursToBoxes();
-	for(int i=0; i<a_rectList.size(); i++)
+	getContoursToBoxes("Red");
+	for(int i=0; i<a_redRectList.size(); i++)
 	{
-		applyFilter(img(a_rectList[i]), a_pMask, a_blackThresh);
-
+		applyFilter(img(a_redRectList[i]), a_pMask, a_blackThresh);
+		getContoursToBoxes("Black");
+		if(!a_blackRectList.empty()){
+			applyFilter(img(a_redRectList[i]), a_pMask, a_whiteThresh);
+			getContoursToBoxes("White");
+		}
 	}
 }
 
 // Takes Mask stored in a_pMask
 // Finds contours associated with mask
 // Down-samples and populates a_rectList with bounding rectangles
-void Detection::getContoursToBoxes()
+void Detection::getContoursToBoxes(std::string type)
 {
+	a_contourList1.resize(1);
 	//TODO: add clearing function for counterlists and hierarchy
 	cv::findContours((*a_pMask), a_contourList1, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
-
-	a_contourList2.resize(a_contourList1.size());
-	a_rectList.resize(a_contourList1.size());
-
-	downSampleContours(a_imgSz);
+	downSampleContours(a_imgSz, type);
 }
 
 void Detection::applyFilter(cv::Mat inFrame, cv::Mat* outFrame, std::vector<int> threshold)
@@ -178,15 +179,28 @@ void Detection::applyFilter(cv::Mat inFrame, cv::Mat* outFrame, std::vector<int>
 // pixThresh should be different for each threshold, ie less green than white, more white than black, less black than green
 // could be accomplished with a thresh struct
 
-void Detection::downSampleContours(cv::Size imgSz)
+void Detection::downSampleContours(cv::Size imgSz, std::string type)
 {
+	a_contourList2.resize(a_contourList1.size());
+	a_rectList.resize(a_contourList1.size());
 	for(uint8_t i=0; i<a_contourList1.size(); i++)
 	{
 		cv::approxPolyDP(a_contoursList1[i]; a_contourList2[i], 3, true);
 
 		if(cv::contourArea(a_contourList2[i]) > a_pixelThresh)
 		{
-			a_rectList = cv::boundingRect(a_contourList2[i]);
+			if(type == "Green"){
+				a_greenRectList = cv::boundingRect(a_contourList2[i]);
+			}
+			if(type == "Red"){
+				a_redRectList = cv::boudingRect(a_contourList2[i]);
+			}
+			if(type == "Black"){
+				a_blackRectList = cv::boudingRect(a_contourList2[i]);
+			}
+			if(type == "White"){
+				a_whiteRectList = cv::boudingRect(a_contourList2[i]);
+			}
 			Detection::addROIBuffer(a_rectList[i]);
 		}
 	}

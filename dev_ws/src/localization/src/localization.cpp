@@ -52,7 +52,7 @@ int main(int argc, char **argv)
   Robot rorschach(2);
 
   // Initialize Robot Vector
-  std::vector<Robot*> robotList = {&daredevil, &deadpool, &elmo, &hellboy, &flash, &hulk, &yoshi, &yoda, &arrow, &beastboy, &baymax, &stayPuft, &kingBoo, &rorschach};
+  
 
   // Initialize Detection Instance
   Detection Detect(CamList.size());
@@ -74,10 +74,10 @@ int main(int argc, char **argv)
   // Main Loop
   while(*advance)
   {
-  
+
     // Get Frame
     Camera::updateFrameList(camStream, CamList, CamList.size(), std::ref(MUTEX));
-    
+
   }
 
   ros::spin();
