@@ -1,6 +1,3 @@
-#include <iostream>
-#include "opencv2/opencv.hpp"
-#include "opencv2/features2d.hpp"
 #include "Robot.h"
 
 #ifndef DETECTION_CLASS
@@ -73,9 +70,6 @@ private:
   Robot kingBoo(2);
   Robot rorschach(2);
 
-  // Initialize Robot Vector
-
-
 	// Read from XML
 	// CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE
 
@@ -102,6 +96,13 @@ public:
 
 	void applyFilter(cv::Mat*, cv::Mat*, std::vector<int>);
 	void applyAllFilters(std::vector<cv::Mat*>, std::vector< std::vector<cv::Mat*> >, std::vector< std::vector<int> >);
+	void applyRedFilter(cv::Mat, cv::Mat, std::vector<int>, std::vector<int>);
+	void Search(boost::shared_ptr<std::vector<cv::Mat>);
+	void redRobotSearch(cv::Mat*);
+	void getContoursToBoxes(std::string);
+	void downSampleContours(cv::Size, std::string);
+	void addROIBuffer(cv::Rect);
+	void populateRobot(size_t);
 
 	static std::vector<cv::Mat> findRobots(std::vector<cv::Mat>, std::vector<cv::Mat>);
 	//static std::vector<cv::Mat> search(std::vector<cv:, std::vector<cv::Rect>, std::vector<std::vector<cv::Point>>, std::vector<cv::Vec4i>, std::vector<std::vector<cv::Point>>, std::vector<cv::Mat>);

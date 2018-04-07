@@ -127,7 +127,7 @@ void Detection::applyRedFilter(cv::Mat inFrame, cv::Mat* outFrame, std::vector<i
 // ...
 // Cameras
 
-void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList, )
+void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList)
 {
 	// Cameras
 	for(int i=0; i<pImgList->size(); i++)
@@ -156,6 +156,9 @@ void Detection::redRobotSearch(cv::Mat* img)
 		if(!a_blackRectList.empty()){
 			applyFilter(img(a_redRectList[i]), a_pMask, a_whiteThresh);
 			getContoursToBoxes("White");
+			if(!a_whiteRectList.empty() && a_whiteRectList.size()<6){
+				populateRobots(0);
+			}
 		}
 	}
 }
@@ -218,6 +221,11 @@ void Detection::addROIBuffer(cv::Rect rect) //explain
 	if(rect.br.y > imgSz.y) rect.br.y = imgSz.y;
 }
 
+void Detection::populateRobots(size_t index){
+	for(size_t i=0; i< a_whiteRectList.size(); i++){
+		robotList[index][i].coordinates = a_whiteRectList[i].tl();
+	}
+}
 // void Detection::findContours()
 // {
 // 	// Cameras
