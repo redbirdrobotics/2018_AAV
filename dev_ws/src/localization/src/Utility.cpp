@@ -55,7 +55,7 @@ std::vector<cv::Mat> Detection::search(std::vector<cv::Mat> filteredFrameList, s
         rects[i] = cv::Rect(rects[i].tl().x-50, rects[i].tl().y-50, rects[i].br().x-rects[i].tl().x+100, rects[i].br().y-rects[i].tl().y+100);
         cv::rectangle(frameList[j], rects[i], cv::Scalar(127,127,127), 2, 8, 0);
         if(rects[i].x >= 0 && rects[i].y >= 0 && rects[i].width + rects[i].x < frameList[j].cols && rects[i].height + rects[i].y < frameList[j].rows){
-          
+
         }
       }
   }
@@ -65,4 +65,17 @@ std::vector<cv::Mat> Detection::search(std::vector<cv::Mat> filteredFrameList, s
 Detection::search(std::vector<cv::Mat*> inFrameList, std::vector< std::vector<cv::Mat*> > outFrameList, std::vector<Robot> robotList, std::vector<cv::Rect> rectList)
 {
   Utility::applyAllFilters(inFrameList, outFramelist, robotList[0]->thresList);
-} 
+}
+
+// void Utility::drawRect(cv::Mat* img, cv::Rect rect)
+// {
+//   cv::rectangle(*img, rect, cv::Scalar(180,105,255));
+// }
+
+void Utility::drawRect(cv::Mat* img, std::vector<cv:Rect> rectList)
+{
+  for(int i=0; i<rectList.size(); i++)
+  {
+    cv::rectangle(*img, rectList[i], cv::Scalar(180,105,255));
+  }
+}

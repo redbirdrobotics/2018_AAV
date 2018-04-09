@@ -1,4 +1,5 @@
 #include "Robot.h"
+#include <boost/make_shared.hpp>
 
 #ifndef DETECTION_CLASS
 #define DETECTION_CLASS
@@ -36,10 +37,10 @@ private:
 	std::vector<cv::Rect> a_whiteRectList;
 	std::vector< std::vector< cv::Point > > a_contours1;
 	std::vector< cv::Vec4i > a_hierarchy;
-	std::vector< std::vector< cv::Point > > a_contoursPoly1;
+	std::vector< std::vector< cv::Point > > a_contoursPoly;
 
 	//Level 2 Search
-	std::vector<cv::Rect> a_rectList2;
+	std::vector<cv::Rect> a_rect, a_rectList2;
 	std::vector< std::vector< cv::Point > > a_contours2;
 	std::vector< std::vector< cv::Point > > a_contoursPoly2;
 
@@ -65,23 +66,28 @@ public:
 
 	std::vector< std::vector<cv::Mat*> > a_filterImgList;
 
+	std::vector<Robot*>* a_pRedRobotList;
+	std::vector<Robot*>* a_pGreenRobotList;
+	std::vector<Robot*>* a_pWhiteRobotList;
 	int a_pixelThresh;
 
 	Detection(int);
 	// static std::vector<cv::Mat> findColors(std::vector<cv::Mat>, std::vector<int>, std::vector<cv::Mat>);
 	// static std::vector<cv::Mat> findColors(std::vector<cv::Mat>, std::vector<int>, std::vector<int>, std::vector<cv::Mat>, std::vector< cv::Mat >);
 
-	void applyFilter(cv::Mat*, cv::Mat*, std::vector<int>);
 	void applyAllFilters(std::vector<cv::Mat*>, std::vector< std::vector<cv::Mat*> >, std::vector< std::vector<int> >);
-	void applyRedFilter(cv::Mat, cv::Mat, std::vector<int>, std::vector<int>);
-	void Search(boost::shared_ptr<std::vector<cv::Mat>>);
+	void applyFilter(cv::Mat, cv::Mat*, std::vector<int>);
+	void applyRedFilter(cv::Mat, cv::Mat*, std::vector<int>, std::vector<int>);
 	void redRobotSearch(cv::Mat*);
+	void Search(boost::shared_ptr<std::vector<cv::Mat>>);
 	void getContoursToBoxes(std::string);
-	void downSampleContours(cv::Size, std::string);
+	void downSampleContours(std::string);
 	void addROIBuffer(cv::Rect);
-	void populateRobot(size_t);
-
-	static std::vector<cv::Mat> findRobots(std::vector<cv::Mat>, std::vector<cv::Mat>);
+	void populateRedRobots();
+	void setRedRobots(std::vector<Robot*>*);
+	void setGreenRobots(std::vector<Robot*>*);
+	void setWhiteRobots(std::vector<Robot*>*);
+	std::vector<cv::Mat> findRobots(std::vector<cv::Mat>, std::vector<cv::Mat>);
 	//static std::vector<cv::Mat> search(std::vector<cv:, std::vector<cv::Rect>, std::vector<std::vector<cv::Point>>, std::vector<cv::Vec4i>, std::vector<std::vector<cv::Point>>, std::vector<cv::Mat>);
 
 };

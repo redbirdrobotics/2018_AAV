@@ -52,10 +52,18 @@ int main(int argc, char **argv)
   Robot rorschach(2);
 
   // Initialize Robot Vector
-
+  //Robots
+	std::vector<Robot*> redRobotList = {&daredevil, &deadpool, &elmo, &hellboy, &flash};
+  std::vector<Robot*> greenRobotList = {&hulk, &yoshi, &yoda, &arrow, &beastboy};
+  std::vector<Robot*> whiteRobotList = {&baymax, &stayPuft, &kingBoo, &rorschach};
 
   // Initialize Detection Instance
   Detection Detect(CamList.size());
+
+
+  Detect.setRedRobots(&redRobotList);
+  Detect.setGreenRobots(&greenRobotList);
+  Detect.setWhiteRobots(&whiteRobotList);
 
   // Check Connection to Cameras
   *advance = Camera::getListStatus(CamList, CamList.size());
@@ -77,6 +85,8 @@ int main(int argc, char **argv)
 
     // Get Frame
     Camera::updateFrameList(camStream, CamList, CamList.size(), std::ref(MUTEX));
+
+    Detect.Search(camStream);
 
   }
 

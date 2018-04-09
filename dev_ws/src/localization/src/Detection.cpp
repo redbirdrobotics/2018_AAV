@@ -3,35 +3,19 @@ using namespace std;
 
 Detection::Detection(int camNum)
 {
-	filteredImageList.resize(camNum);
+	a_filterImgList.resize(camNum);
 	a_pixelThresh = 500;
-
-	// Initialize Robots
-  // Red
-  Robot daredevil(0);
-  Robot deadpool(0);
-  Robot elmo(0);
-  Robot hellboy(0);
-  Robot flash(0);
-
-  // Green
-  Robot hulk(1);
-  Robot yoshi(1);
-  Robot yoda(1);
-  Robot arrow(1);
-  Robot beastboy(1);
-
-  // Obstacle (White)
-  Robot baymax(2);
-  Robot stayPuft(2);
-  Robot kingBoo(2);
-  Robot rorschach(2);
-
-	//Robots
-	std::vector<std::vector<Robot*>> robotList = { {&daredevil, &deadpool, &elmo, &hellboy, &flash}, {&hulk, &yoshi, &yoda, &arrow, &beastboy}, {&baymax, &stayPuft, &kingBoo, &rorschach}};
-
 }
 
+void Detection::setRedRobots(std::vector<Robot*>* redBots){
+	a_pRedRobotList = redBots;
+}
+void Detection::setGreenRobots(std::vector<Robot*>* greenBots){
+	a_pGreenRobotList = greenBots;
+}
+void Detection::setWhiteRobots(std::vector<Robot*>* whiteBots){
+	a_pWhiteRobotList = whiteBots;
+}
 // std::vector<cv::Mat> Detection::findColors(std::vector< cv::Mat > inputFrameList, std::vector<int> range ,std::vector<cv::Mat> outputFrameList){
 // 	if(!inputFrameList[0].empty()){
 // 		//Resize Vectors
@@ -116,28 +100,28 @@ Detection::Detection(int camNum)
 
 //LUKAS HOLD OFF ON EDITING, MY CODE IS UNINTELLIGABLE ATM BUT WILL BE FIXED SOON
 
-void Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< std::vector<cv::Mat*> > outFrameList, std::vector< std::vector<int> > threshList)
-{
-  for(int i=0; i<threshList.size(); i++)
-  {
-    for(int j=0; j<outFrameList.size(); j++)
-    {
-      cv::Mat* frame;
-      outFrameList[j].push_back(frame);
-      applyFilter(inFrameList[j], outFrameList[j][i], threshList[i]);
-    }
-  }
-}
+// void Detection::applyAllFilters(std::vector<cv::Mat*> inFrameList, std::vector< std::vector<cv::Mat*> > outFrameList, std::vector< std::vector<int> > threshList)
+// {
+//   for(int i=0; i<threshList.size(); i++)
+//   {
+//     for(int j=0; j<outFrameList.size(); j++)
+//     {
+//       cv::Mat* frame;
+//       outFrameList[j].push_back(frame);
+//       applyFilter(inFrameList[j], outFrameList[j][i], threshList[i]);
+//     }
+//   }
+// }
 
 void Detection::applyRedFilter(cv::Mat inFrame, cv::Mat* outFrame, std::vector<int> lower, std::vector<int> upper)
 {
 	cv::Mat frame1, frame2;
 	// Red1
-	applyFilter(inFrame, frame1, lower);
+	applyFilter(inFrame, &frame1, lower);
 	// Red2
-	applyFilter(inFrame, frame2, upper);
+	applyFilter(inFrame, &frame2, upper);
 	// Add Red1 and Red2 (upper and lower)
-	cv::addWeighted(frame1, 1, frame2, 1, 0.0, outFrame);
+	cv::addWeighted(frame1, 1, frame2, 1, 0.0, *outFrame);
 }
 
 // Get imglist
@@ -158,12 +142,12 @@ void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList)
 	for(int i=0; i<pImgList->size(); i++)
 	{
 		// Convert to HSV
-		cv::cvtColor((*pImgList)[i], (*a_HSVImg), CV_BGR2HSV);
+		cv::cvtColor((*pImgList)[i], (*a_pHSVImg), CV_BGR2HSV);
 
 		// For Red / Green / White Robots
 
 		// RedSearch()
-		redRobotSearch(a_HSVImg);
+		redRobotSearch(a_pHSVImg);
 
 		// green search
 		// white search
@@ -172,85 +156,91 @@ void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList)
 
 void Detection::redRobotSearch(cv::Mat* img)
 {
-	applyRedFilter(img, a_pMask, a_RedRobotThresh[0], a_redRobotThresh[1]);
+	applyRedFilter(*img, a_pMask, a_redRobotThresh[0], a_redRobotThresh[1]);
 	getContoursToBoxes("Red");
 	for(int i=0; i<a_redRectList.size(); i++)
 	{
-		applyFilter(img(a_redRectList[i]), a_pMask, a_blackThresh);
+		applyFilter((*img)(a_redRectList[i]), a_pMask, a_blackThresh);
 		getContoursToBoxes("Black");
-		if(!a_blackRectList.empty()){
-			applyFilter(img(a_redRectList[i]), a_pMask, a_whiteThresh);
-			getContoursToBoxes("White");
-			if(!a_whiteRectList.empty() && a_whiteRectList.size()<6){
-				populateRobots(0);
-			}
+	}
+	if(!a_blackRectList.empty()){
+		for(int i=0; i<a_blackRectList.size(); i++){
+		applyFilter((*img)(a_redRectList[i]), a_pMask, a_whiteThresh);
+		getContoursToBoxes("White");
 		}
 	}
+	if(!a_whiteRectList.empty() && a_whiteRectList.size()<6){
+		populateRedRobots();
+	}
 }
+
 
 // Takes Mask stored in a_pMask
 // Finds contours associated with mask
 // Down-samples and populates a_rectList with bounding rectangles
-void Detection::getContoursToBoxes(std::string type)
-{
-	a_contourList1.resize(1);
+void Detection::getContoursToBoxes(std::string type){
+	a_contours1.resize(1);
 	//TODO: add clearing function for counterlists and hierarchy
-	cv::findContours((*a_pMask), a_contourList1, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
-	downSampleContours(a_imgSz, type);
+	cv::findContours((*a_pMask), a_contours1, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
+	//a_imgSz,
+	downSampleContours(type);
 }
 
 void Detection::applyFilter(cv::Mat inFrame, cv::Mat* outFrame, std::vector<int> threshold)
 {
-  cv::inRange(*inFrame, cv::Scalar(threshold[0], threshold[1], threshold[2]), cv::Scalar(threshold[3], threshold[4], threshold[5]), *outFrame);
+  cv::inRange(inFrame, cv::Scalar(threshold[0], threshold[1], threshold[2]), cv::Scalar(threshold[3], threshold[4], threshold[5]), *outFrame);
 }
 
 // pixThresh should be different for each threshold, ie less green than white, more white than black, less black than green
 // could be accomplished with a thresh struct
 
-void Detection::downSampleContours(cv::Size imgSz, std::string type)
+void Detection::downSampleContours(std::string type)
 {
-	a_contourList2.resize(a_contourList1.size());
-	a_rectList.resize(a_contourList1.size());
-	for(uint8_t i=0; i<a_contourList1.size(); i++)
+	a_contoursPoly.resize(a_contours1.size());
+	a_rect.resize(a_contours1.size());
+	for(uint8_t i=0; i<a_contours1.size(); i++)
 	{
-		cv::approxPolyDP(a_contoursList1[i]; a_contourList2[i], 3, true);
+		cv::approxPolyDP(cv::Mat(a_contours1[i]), a_contoursPoly[i], 3, true);
 
-		if(cv::contourArea(a_contourList2[i]) > a_pixelThresh)
+		if(cv::contourArea(a_contoursPoly[i]) > a_pixelThresh)
 		{
 			if(type == "Green"){
-				a_greenRectList = cv::boundingRect(a_contourList2[i]);
+				a_greenRectList.push_back(cv::boundingRect(cv::Mat(a_contoursPoly[i])));
 			}
 			if(type == "Red"){
-				a_redRectList = cv::boudingRect(a_contourList2[i]);
+				a_redRectList.push_back(cv::boundingRect(cv::Mat(a_contoursPoly[i])));
 			}
 			if(type == "Black"){
-				a_blackRectList = cv::boudingRect(a_contourList2[i]);
+				a_blackRectList.push_back(cv::boundingRect(cv::Mat(a_contoursPoly[i])));
 			}
 			if(type == "White"){
-				a_whiteRectList = cv::boudingRect(a_contourList2[i]);
+				a_whiteRectList.push_back(cv::boundingRect(cv::Mat(a_contoursPoly[i])));
 			}
-			Detection::addROIBuffer(a_rectList[i]);
+			//TODO:change to pass in associated rectlist in each if
+			//Detection::addROIBuffer(a_rect[i]);
 		}
 	}
 }
 
 // Need to add a_buffer, a_imgSz to header
-void Detection::addROIBuffer(cv::Rect rect) //explain
-{
-	//IDEA: remove the 50s? I say we make it 10% of a_pixelThresh
-	rect = cv::Rect(rect.tl().x-50, rect.tl().y-50, rect.br().x-rect.tl().x+100, rect.br().y-rect.tl().y+100);
+// void Detection::addROIBuffer(cv::Rect rect) //explain
+// {
+// 	//IDEA: remove the 50s? I say we make it 10% of a_pixelThresh
+// 	rect = cv::Rect(rect.tl().x-50, rect.tl().y-50, rect.br().x-rect.tl().x+100, rect.br().y-rect.tl().y+100);
+//
+// 	if(rect.tl.x < 0) rect.tl.x = 0;
+// 	if(rect.tl.y < 0) rect.tl.y = 0;
+// 	if(rect.br.x > imgSz.x) rect.br.x = imgSz.x;
+// 	if(rect.br.y > imgSz.y) rect.br.y = imgSz.y;
+// }
 
-	if(rect.tl.x < 0) rect.tl.x = 0;
-	if(rect.tl.y < 0) rect.tl.y = 0;
-	if(rect.br.x > imgSz.x) rect.br.x = imgSz.x;
-	if(rect.br.y > imgSz.y) rect.br.y = imgSz.y;
-}
-
-void Detection::populateRobots(size_t index){
+void Detection::populateRedRobots(){
 	for(size_t i=0; i< a_whiteRectList.size(); i++){
-		robotList[index][i].coordinates = a_whiteRectList[i].tl();
+		(*a_pRedRobotList)[i]->a_coordinates = a_whiteRectList[i].tl();
 	}
 }
+
+
 // void Detection::findContours()
 // {
 // 	// Cameras

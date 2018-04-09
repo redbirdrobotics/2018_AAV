@@ -11,11 +11,11 @@ class Robot
 protected:
 	int a_color;
 	int a_confidence;
-	cv::Point a_coordinates;
 	float a_radius;
 
 public:
 	Robot(int color);
+	cv::Point a_coordinates;
 };
 
 #endif

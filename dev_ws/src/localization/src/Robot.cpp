@@ -3,6 +3,7 @@
 
 Robot::Robot(int color):a_color(color) {}
 
+
 // void Robot::getRobotColor(){ return a_color;}
 // void Robot::setRobotColor(){ a_color}
 //
