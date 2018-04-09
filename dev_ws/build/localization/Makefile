@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src
+CMAKE_SOURCE_DIR = /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build
+CMAKE_BINARY_DIR = /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/CMakeFiles /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization/CMakeFiles/progress.marks
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/CMakeFiles 0
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/CMakeFiles /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization/CMakeFiles/progress.marks
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/clean
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/preinstall
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/preinstall
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 localization/CMakeFiles/listener.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/listener.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/listener.dir/rule
 .PHONY : localization/CMakeFiles/listener.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ listener: localization/CMakeFiles/listener.dir/rule
 
 # fast build rule for target.
 listener/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/listener.dir/build.make localization/CMakeFiles/listener.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/listener.dir/build.make localization/CMakeFiles/listener.dir/build
 .PHONY : listener/fast
 
 # Convenience name for target.
 localization/CMakeFiles/talker.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/talker.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/talker.dir/rule
 .PHONY : localization/CMakeFiles/talker.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ talker: localization/CMakeFiles/talker.dir/rule
 
 # fast build rule for target.
 talker/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/talker.dir/build.make localization/CMakeFiles/talker.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/talker.dir/build.make localization/CMakeFiles/talker.dir/build
 .PHONY : talker/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_generate_messages_py.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_py.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_py.dir/rule
 .PHONY : localization/CMakeFiles/localization_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ localization_generate_messages_py: localization/CMakeFiles/localization_generate
 
 # fast build rule for target.
 localization_generate_messages_py/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_py.dir/build.make localization/CMakeFiles/localization_generate_messages_py.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_py.dir/build.make localization/CMakeFiles/localization_generate_messages_py.dir/build
 .PHONY : localization_generate_messages_py/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_gennodejs.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_gennodejs.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_gennodejs.dir/rule
 .PHONY : localization/CMakeFiles/localization_gennodejs.dir/rule
 
 # Convenience name for target.
@@ -222,12 +222,12 @@ localization_gennodejs: localization/CMakeFiles/localization_gennodejs.dir/rule
 
 # fast build rule for target.
 localization_gennodejs/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_gennodejs.dir/build.make localization/CMakeFiles/localization_gennodejs.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_gennodejs.dir/build.make localization/CMakeFiles/localization_gennodejs.dir/build
 .PHONY : localization_gennodejs/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_generate_messages_nodejs.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_nodejs.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_nodejs.dir/rule
 .PHONY : localization/CMakeFiles/localization_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -237,12 +237,12 @@ localization_generate_messages_nodejs: localization/CMakeFiles/localization_gene
 
 # fast build rule for target.
 localization_generate_messages_nodejs/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_nodejs.dir/build.make localization/CMakeFiles/localization_generate_messages_nodejs.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_nodejs.dir/build.make localization/CMakeFiles/localization_generate_messages_nodejs.dir/build
 .PHONY : localization_generate_messages_nodejs/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_genlisp.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_genlisp.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_genlisp.dir/rule
 .PHONY : localization/CMakeFiles/localization_genlisp.dir/rule
 
 # Convenience name for target.
@@ -252,12 +252,12 @@ localization_genlisp: localization/CMakeFiles/localization_genlisp.dir/rule
 
 # fast build rule for target.
 localization_genlisp/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_genlisp.dir/build.make localization/CMakeFiles/localization_genlisp.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_genlisp.dir/build.make localization/CMakeFiles/localization_genlisp.dir/build
 .PHONY : localization_genlisp/fast
 
 # Convenience name for target.
 localization/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : localization/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -267,12 +267,12 @@ std_msgs_generate_messages_py: localization/CMakeFiles/std_msgs_generate_message
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/std_msgs_generate_messages_py.dir/build.make localization/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/std_msgs_generate_messages_py.dir/build.make localization/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 localization/CMakeFiles/_localization_generate_messages_check_deps_Num.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/_localization_generate_messages_check_deps_Num.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/_localization_generate_messages_check_deps_Num.dir/rule
 .PHONY : localization/CMakeFiles/_localization_generate_messages_check_deps_Num.dir/rule
 
 # Convenience name for target.
@@ -282,12 +282,12 @@ _localization_generate_messages_check_deps_Num: localization/CMakeFiles/_localiz
 
 # fast build rule for target.
 _localization_generate_messages_check_deps_Num/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/_localization_generate_messages_check_deps_Num.dir/build.make localization/CMakeFiles/_localization_generate_messages_check_deps_Num.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/_localization_generate_messages_check_deps_Num.dir/build.make localization/CMakeFiles/_localization_generate_messages_check_deps_Num.dir/build
 .PHONY : _localization_generate_messages_check_deps_Num/fast
 
 # Convenience name for target.
 localization/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/roscpp_generate_messages_py.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : localization/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -297,12 +297,12 @@ roscpp_generate_messages_py: localization/CMakeFiles/roscpp_generate_messages_py
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/roscpp_generate_messages_py.dir/build.make localization/CMakeFiles/roscpp_generate_messages_py.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/roscpp_generate_messages_py.dir/build.make localization/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_genpy.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_genpy.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_genpy.dir/rule
 .PHONY : localization/CMakeFiles/localization_genpy.dir/rule
 
 # Convenience name for target.
@@ -312,12 +312,12 @@ localization_genpy: localization/CMakeFiles/localization_genpy.dir/rule
 
 # fast build rule for target.
 localization_genpy/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_genpy.dir/build.make localization/CMakeFiles/localization_genpy.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_genpy.dir/build.make localization/CMakeFiles/localization_genpy.dir/build
 .PHONY : localization_genpy/fast
 
 # Convenience name for target.
 localization/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 .PHONY : localization/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -327,12 +327,12 @@ rosgraph_msgs_generate_messages_eus: localization/CMakeFiles/rosgraph_msgs_gener
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make localization/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make localization/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 localization/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 .PHONY : localization/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -342,12 +342,12 @@ rosgraph_msgs_generate_messages_nodejs: localization/CMakeFiles/rosgraph_msgs_ge
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make localization/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make localization/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_geneus.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_geneus.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_geneus.dir/rule
 .PHONY : localization/CMakeFiles/localization_geneus.dir/rule
 
 # Convenience name for target.
@@ -357,12 +357,12 @@ localization_geneus: localization/CMakeFiles/localization_geneus.dir/rule
 
 # fast build rule for target.
 localization_geneus/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_geneus.dir/build.make localization/CMakeFiles/localization_geneus.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_geneus.dir/build.make localization/CMakeFiles/localization_geneus.dir/build
 .PHONY : localization_geneus/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization.dir/rule
 .PHONY : localization/CMakeFiles/localization.dir/rule
 
 # Convenience name for target.
@@ -372,12 +372,12 @@ localization: localization/CMakeFiles/localization.dir/rule
 
 # fast build rule for target.
 localization/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/build
 .PHONY : localization/fast
 
 # Convenience name for target.
 localization/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : localization/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -387,12 +387,12 @@ roscpp_generate_messages_cpp: localization/CMakeFiles/roscpp_generate_messages_c
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make localization/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make localization/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
 localization/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : localization/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -402,12 +402,12 @@ rosgraph_msgs_generate_messages_cpp: localization/CMakeFiles/rosgraph_msgs_gener
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make localization/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make localization/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 localization/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : localization/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -417,12 +417,12 @@ std_msgs_generate_messages_cpp: localization/CMakeFiles/std_msgs_generate_messag
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make localization/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make localization/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 localization/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 .PHONY : localization/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -432,12 +432,12 @@ roscpp_generate_messages_eus: localization/CMakeFiles/roscpp_generate_messages_e
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/roscpp_generate_messages_eus.dir/build.make localization/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/roscpp_generate_messages_eus.dir/build.make localization/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
 localization/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : localization/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -447,12 +447,12 @@ rosgraph_msgs_generate_messages_py: localization/CMakeFiles/rosgraph_msgs_genera
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make localization/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make localization/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 localization/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 .PHONY : localization/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -462,12 +462,12 @@ rosgraph_msgs_generate_messages_lisp: localization/CMakeFiles/rosgraph_msgs_gene
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make localization/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make localization/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 localization/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 .PHONY : localization/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -477,12 +477,12 @@ roscpp_generate_messages_nodejs: localization/CMakeFiles/roscpp_generate_message
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make localization/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make localization/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 # Convenience name for target.
 localization/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 .PHONY : localization/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -492,12 +492,12 @@ std_msgs_generate_messages_nodejs: localization/CMakeFiles/std_msgs_generate_mes
 
 # fast build rule for target.
 std_msgs_generate_messages_nodejs/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make localization/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make localization/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 localization/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : localization/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -507,12 +507,12 @@ roscpp_generate_messages_lisp: localization/CMakeFiles/roscpp_generate_messages_
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make localization/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make localization/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
 localization/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 .PHONY : localization/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -522,12 +522,12 @@ std_msgs_generate_messages_eus: localization/CMakeFiles/std_msgs_generate_messag
 
 # fast build rule for target.
 std_msgs_generate_messages_eus/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make localization/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make localization/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 localization/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 .PHONY : localization/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -537,12 +537,12 @@ std_msgs_generate_messages_lisp: localization/CMakeFiles/std_msgs_generate_messa
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make localization/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make localization/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_generate_messages.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages.dir/rule
 .PHONY : localization/CMakeFiles/localization_generate_messages.dir/rule
 
 # Convenience name for target.
@@ -552,12 +552,12 @@ localization_generate_messages: localization/CMakeFiles/localization_generate_me
 
 # fast build rule for target.
 localization_generate_messages/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages.dir/build.make localization/CMakeFiles/localization_generate_messages.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages.dir/build.make localization/CMakeFiles/localization_generate_messages.dir/build
 .PHONY : localization_generate_messages/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_generate_messages_cpp.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_cpp.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_cpp.dir/rule
 .PHONY : localization/CMakeFiles/localization_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -567,12 +567,12 @@ localization_generate_messages_cpp: localization/CMakeFiles/localization_generat
 
 # fast build rule for target.
 localization_generate_messages_cpp/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_cpp.dir/build.make localization/CMakeFiles/localization_generate_messages_cpp.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_cpp.dir/build.make localization/CMakeFiles/localization_generate_messages_cpp.dir/build
 .PHONY : localization_generate_messages_cpp/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_gencpp.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_gencpp.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_gencpp.dir/rule
 .PHONY : localization/CMakeFiles/localization_gencpp.dir/rule
 
 # Convenience name for target.
@@ -582,12 +582,12 @@ localization_gencpp: localization/CMakeFiles/localization_gencpp.dir/rule
 
 # fast build rule for target.
 localization_gencpp/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_gencpp.dir/build.make localization/CMakeFiles/localization_gencpp.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_gencpp.dir/build.make localization/CMakeFiles/localization_gencpp.dir/build
 .PHONY : localization_gencpp/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_generate_messages_eus.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_eus.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_eus.dir/rule
 .PHONY : localization/CMakeFiles/localization_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -597,12 +597,12 @@ localization_generate_messages_eus: localization/CMakeFiles/localization_generat
 
 # fast build rule for target.
 localization_generate_messages_eus/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_eus.dir/build.make localization/CMakeFiles/localization_generate_messages_eus.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_eus.dir/build.make localization/CMakeFiles/localization_generate_messages_eus.dir/build
 .PHONY : localization_generate_messages_eus/fast
 
 # Convenience name for target.
 localization/CMakeFiles/localization_generate_messages_lisp.dir/rule:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_lisp.dir/rule
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f CMakeFiles/Makefile2 localization/CMakeFiles/localization_generate_messages_lisp.dir/rule
 .PHONY : localization/CMakeFiles/localization_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -612,7 +612,7 @@ localization_generate_messages_lisp: localization/CMakeFiles/localization_genera
 
 # fast build rule for target.
 localization_generate_messages_lisp/fast:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_lisp.dir/build.make localization/CMakeFiles/localization_generate_messages_lisp.dir/build
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization_generate_messages_lisp.dir/build.make localization/CMakeFiles/localization_generate_messages_lisp.dir/build
 .PHONY : localization_generate_messages_lisp/fast
 
 src/Camera.o: src/Camera.cpp.o
@@ -621,7 +621,7 @@ src/Camera.o: src/Camera.cpp.o
 
 # target to build an object file
 src/Camera.cpp.o:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Camera.cpp.o
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Camera.cpp.o
 .PHONY : src/Camera.cpp.o
 
 src/Camera.i: src/Camera.cpp.i
@@ -630,7 +630,7 @@ src/Camera.i: src/Camera.cpp.i
 
 # target to preprocess a source file
 src/Camera.cpp.i:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Camera.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Camera.cpp.i
 .PHONY : src/Camera.cpp.i
 
 src/Camera.s: src/Camera.cpp.s
@@ -639,7 +639,7 @@ src/Camera.s: src/Camera.cpp.s
 
 # target to generate assembly for a file
 src/Camera.cpp.s:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Camera.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Camera.cpp.s
 .PHONY : src/Camera.cpp.s
 
 src/Communication.o: src/Communication.cpp.o
@@ -648,7 +648,7 @@ src/Communication.o: src/Communication.cpp.o
 
 # target to build an object file
 src/Communication.cpp.o:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Communication.cpp.o
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Communication.cpp.o
 .PHONY : src/Communication.cpp.o
 
 src/Communication.i: src/Communication.cpp.i
@@ -657,7 +657,7 @@ src/Communication.i: src/Communication.cpp.i
 
 # target to preprocess a source file
 src/Communication.cpp.i:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Communication.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Communication.cpp.i
 .PHONY : src/Communication.cpp.i
 
 src/Communication.s: src/Communication.cpp.s
@@ -666,7 +666,7 @@ src/Communication.s: src/Communication.cpp.s
 
 # target to generate assembly for a file
 src/Communication.cpp.s:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Communication.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Communication.cpp.s
 .PHONY : src/Communication.cpp.s
 
 src/Detection.o: src/Detection.cpp.o
@@ -675,7 +675,7 @@ src/Detection.o: src/Detection.cpp.o
 
 # target to build an object file
 src/Detection.cpp.o:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Detection.cpp.o
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Detection.cpp.o
 .PHONY : src/Detection.cpp.o
 
 src/Detection.i: src/Detection.cpp.i
@@ -684,7 +684,7 @@ src/Detection.i: src/Detection.cpp.i
 
 # target to preprocess a source file
 src/Detection.cpp.i:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Detection.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Detection.cpp.i
 .PHONY : src/Detection.cpp.i
 
 src/Detection.s: src/Detection.cpp.s
@@ -693,7 +693,7 @@ src/Detection.s: src/Detection.cpp.s
 
 # target to generate assembly for a file
 src/Detection.cpp.s:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Detection.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Detection.cpp.s
 .PHONY : src/Detection.cpp.s
 
 src/Robot.o: src/Robot.cpp.o
@@ -702,7 +702,7 @@ src/Robot.o: src/Robot.cpp.o
 
 # target to build an object file
 src/Robot.cpp.o:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Robot.cpp.o
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Robot.cpp.o
 .PHONY : src/Robot.cpp.o
 
 src/Robot.i: src/Robot.cpp.i
@@ -711,7 +711,7 @@ src/Robot.i: src/Robot.cpp.i
 
 # target to preprocess a source file
 src/Robot.cpp.i:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Robot.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Robot.cpp.i
 .PHONY : src/Robot.cpp.i
 
 src/Robot.s: src/Robot.cpp.s
@@ -720,7 +720,7 @@ src/Robot.s: src/Robot.cpp.s
 
 # target to generate assembly for a file
 src/Robot.cpp.s:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Robot.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/Robot.cpp.s
 .PHONY : src/Robot.cpp.s
 
 src/listener.o: src/listener.cpp.o
@@ -729,7 +729,7 @@ src/listener.o: src/listener.cpp.o
 
 # target to build an object file
 src/listener.cpp.o:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/listener.dir/build.make localization/CMakeFiles/listener.dir/src/listener.cpp.o
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/listener.dir/build.make localization/CMakeFiles/listener.dir/src/listener.cpp.o
 .PHONY : src/listener.cpp.o
 
 src/listener.i: src/listener.cpp.i
@@ -738,7 +738,7 @@ src/listener.i: src/listener.cpp.i
 
 # target to preprocess a source file
 src/listener.cpp.i:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/listener.dir/build.make localization/CMakeFiles/listener.dir/src/listener.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/listener.dir/build.make localization/CMakeFiles/listener.dir/src/listener.cpp.i
 .PHONY : src/listener.cpp.i
 
 src/listener.s: src/listener.cpp.s
@@ -747,7 +747,7 @@ src/listener.s: src/listener.cpp.s
 
 # target to generate assembly for a file
 src/listener.cpp.s:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/listener.dir/build.make localization/CMakeFiles/listener.dir/src/listener.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/listener.dir/build.make localization/CMakeFiles/listener.dir/src/listener.cpp.s
 .PHONY : src/listener.cpp.s
 
 src/localization.o: src/localization.cpp.o
@@ -756,7 +756,7 @@ src/localization.o: src/localization.cpp.o
 
 # target to build an object file
 src/localization.cpp.o:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/localization.cpp.o
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/localization.cpp.o
 .PHONY : src/localization.cpp.o
 
 src/localization.i: src/localization.cpp.i
@@ -765,7 +765,7 @@ src/localization.i: src/localization.cpp.i
 
 # target to preprocess a source file
 src/localization.cpp.i:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/localization.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/localization.cpp.i
 .PHONY : src/localization.cpp.i
 
 src/localization.s: src/localization.cpp.s
@@ -774,7 +774,7 @@ src/localization.s: src/localization.cpp.s
 
 # target to generate assembly for a file
 src/localization.cpp.s:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/localization.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/localization.dir/build.make localization/CMakeFiles/localization.dir/src/localization.cpp.s
 .PHONY : src/localization.cpp.s
 
 src/talker.o: src/talker.cpp.o
@@ -783,7 +783,7 @@ src/talker.o: src/talker.cpp.o
 
 # target to build an object file
 src/talker.cpp.o:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/talker.dir/build.make localization/CMakeFiles/talker.dir/src/talker.cpp.o
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/talker.dir/build.make localization/CMakeFiles/talker.dir/src/talker.cpp.o
 .PHONY : src/talker.cpp.o
 
 src/talker.i: src/talker.cpp.i
@@ -792,7 +792,7 @@ src/talker.i: src/talker.cpp.i
 
 # target to preprocess a source file
 src/talker.cpp.i:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/talker.dir/build.make localization/CMakeFiles/talker.dir/src/talker.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/talker.dir/build.make localization/CMakeFiles/talker.dir/src/talker.cpp.i
 .PHONY : src/talker.cpp.i
 
 src/talker.s: src/talker.cpp.s
@@ -801,7 +801,7 @@ src/talker.s: src/talker.cpp.s
 
 # target to generate assembly for a file
 src/talker.cpp.s:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(MAKE) -f localization/CMakeFiles/talker.dir/build.make localization/CMakeFiles/talker.dir/src/talker.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(MAKE) -f localization/CMakeFiles/talker.dir/build.make localization/CMakeFiles/talker.dir/src/talker.cpp.s
 .PHONY : src/talker.cpp.s
 
 # Help Target
@@ -879,6 +879,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

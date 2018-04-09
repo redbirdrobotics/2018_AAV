@@ -7,5 +7,10 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build"
-export ROS_PACKAGE_PATH="/home/redbird-general/Redbird18/dev_ws/src:/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src:/opt/ros/kinetic/share"
+export CMAKE_PREFIX_PATH="/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD="/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build"
+export PYTHONPATH="/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/redbird-general/Redbird18/dev_ws/src:/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src:/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src:$ROS_PACKAGE_PATH"

@@ -52,7 +52,7 @@ int main(int argc, char **argv)
   Robot rorschach(2);
 
   // Initialize Robot Vector
-  
+
 
   // Initialize Detection Instance
   Detection Detect(CamList.size());
@@ -65,8 +65,8 @@ int main(int argc, char **argv)
     return -1;
   }
 
-  // Get Robot Parameters
-  Communication::getRobotData(&Detect);
+  // // Get Robot Parameters
+  Communication::getDetection_XMLData(&Detect);
 
   // Begin Visualization Thread
   boost::thread workerThread1(&Camera::showFrame, camStream, advance, capture, std::ref(MUTEX));

@@ -34,7 +34,7 @@ private:
 	std::vector<cv::Rect> a_redRectList;
 	std::vector<cv::Rect> a_blackRectList;
 	std::vector<cv::Rect> a_whiteRectList;
-	std::vector< std::vector< cv::Point > > a_contours1, a_contours2;
+	std::vector< std::vector< cv::Point > > a_contours1;
 	std::vector< cv::Vec4i > a_hierarchy;
 	std::vector< std::vector< cv::Point > > a_contoursPoly1;
 
@@ -46,29 +46,6 @@ private:
 
 	// Connected Components Containers
 
-	//Robots
-	std::vector<std::vector<Robot*>> robotList = { {&daredevil, &deadpool, &elmo, &hellboy, &flash}, {&hulk, &yoshi, &yoda, &arrow, &beastboy}, {&baymax, &stayPuft, &kingBoo, &rorschach}};
-
-	// Initialize Robots
-  // Red
-  Robot daredevil(0);
-  Robot deadpool(0);
-  Robot elmo(0);
-  Robot hellboy(0);
-  Robot flash(0);
-
-  // Green
-  Robot hulk(1);
-  Robot yoshi(1);
-  Robot yoda(1);
-  Robot arrow(1);
-  Robot beastboy(1);
-
-  // Obstacle (White)
-  Robot baymax(2);
-  Robot stayPuft(2);
-  Robot kingBoo(2);
-  Robot rorschach(2);
 
 	// Read from XML
 	// CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE
@@ -97,7 +74,7 @@ public:
 	void applyFilter(cv::Mat*, cv::Mat*, std::vector<int>);
 	void applyAllFilters(std::vector<cv::Mat*>, std::vector< std::vector<cv::Mat*> >, std::vector< std::vector<int> >);
 	void applyRedFilter(cv::Mat, cv::Mat, std::vector<int>, std::vector<int>);
-	void Search(boost::shared_ptr<std::vector<cv::Mat>);
+	void Search(boost::shared_ptr<std::vector<cv::Mat>>);
 	void redRobotSearch(cv::Mat*);
 	void getContoursToBoxes(std::string);
 	void downSampleContours(cv::Size, std::string);

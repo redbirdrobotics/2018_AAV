@@ -1,8 +1,8 @@
-# Install script for directory: /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization
+# Install script for directory: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,53 +33,53 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization/msg" TYPE FILE FILES "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/msg/Num.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization/msg" TYPE FILE FILES "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization/cmake" TYPE FILE FILES "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization/catkin_generated/installspace/localization-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization/cmake" TYPE FILE FILES "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization/catkin_generated/installspace/localization-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/include/localization")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/include/localization")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/share/roseus/ros/localization")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/share/roseus/ros/localization")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/share/common-lisp/ros/localization")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/share/common-lisp/ros/localization")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/share/gennodejs/ros/localization")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/share/gennodejs/ros/localization")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/python2.7/dist-packages/localization")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/python2.7/dist-packages/localization")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/python2.7/dist-packages/localization")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/python2.7/dist-packages/localization")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization/catkin_generated/installspace/localization.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization/catkin_generated/installspace/localization.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization/cmake" TYPE FILE FILES "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization/catkin_generated/installspace/localization-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization/cmake" TYPE FILE FILES "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization/catkin_generated/installspace/localization-msg-extras.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization/cmake" TYPE FILE FILES
-    "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization/catkin_generated/installspace/localizationConfig.cmake"
-    "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization/catkin_generated/installspace/localizationConfig-version.cmake"
+    "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization/catkin_generated/installspace/localizationConfig.cmake"
+    "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization/catkin_generated/installspace/localizationConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization" TYPE FILE FILES "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization" TYPE FILE FILES "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/package.xml")
 endif()
 

@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/listener.cpp
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/listener.cpp
 ros/ros.h
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/ros/ros.h
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/ros/ros.h
 std_msgs/String.h
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/std_msgs/String.h
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/std_msgs/String.h
 
 /opt/ros/kinetic/include/ros/advertise_options.h
 ros/forwards.h

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src
+CMAKE_SOURCE_DIR = /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build
+CMAKE_BINARY_DIR = /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

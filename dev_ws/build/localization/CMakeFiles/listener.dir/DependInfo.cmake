@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/listener.cpp" "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization/CMakeFiles/listener.dir/src/listener.cpp.o"
+  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/listener.cpp" "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization/CMakeFiles/listener.dir/src/listener.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,10 +17,10 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/include"
+  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/include"
   "/opt/ros/kinetic/include/opencv-3.3.1"
   "/opt/ros/kinetic/include/opencv-3.3.1/opencv"
-  "/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/include"
+  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

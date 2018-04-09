@@ -5,6 +5,31 @@ Detection::Detection(int camNum)
 {
 	filteredImageList.resize(camNum);
 	a_pixelThresh = 500;
+
+	// Initialize Robots
+  // Red
+  Robot daredevil(0);
+  Robot deadpool(0);
+  Robot elmo(0);
+  Robot hellboy(0);
+  Robot flash(0);
+
+  // Green
+  Robot hulk(1);
+  Robot yoshi(1);
+  Robot yoda(1);
+  Robot arrow(1);
+  Robot beastboy(1);
+
+  // Obstacle (White)
+  Robot baymax(2);
+  Robot stayPuft(2);
+  Robot kingBoo(2);
+  Robot rorschach(2);
+
+	//Robots
+	std::vector<std::vector<Robot*>> robotList = { {&daredevil, &deadpool, &elmo, &hellboy, &flash}, {&hulk, &yoshi, &yoda, &arrow, &beastboy}, {&baymax, &stayPuft, &kingBoo, &rorschach}};
+
 }
 
 // std::vector<cv::Mat> Detection::findColors(std::vector< cv::Mat > inputFrameList, std::vector<int> range ,std::vector<cv::Mat> outputFrameList){

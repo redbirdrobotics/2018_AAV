@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src
+CMAKE_SOURCE_DIR = /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build
+CMAKE_BINARY_DIR = /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build
 
 # Include any dependencies generated for this target.
 include localization/CMakeFiles/localization.dir/depend.make
@@ -58,17 +58,17 @@ include localization/CMakeFiles/localization.dir/progress.make
 include localization/CMakeFiles/localization.dir/flags.make
 
 localization/CMakeFiles/localization.dir/src/localization.cpp.o: localization/CMakeFiles/localization.dir/flags.make
-localization/CMakeFiles/localization.dir/src/localization.cpp.o: /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/localization.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object localization/CMakeFiles/localization.dir/src/localization.cpp.o"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/localization.cpp.o -c /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/localization.cpp
+localization/CMakeFiles/localization.dir/src/localization.cpp.o: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/localization.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object localization/CMakeFiles/localization.dir/src/localization.cpp.o"
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/localization.cpp.o -c /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/localization.cpp
 
 localization/CMakeFiles/localization.dir/src/localization.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localization.dir/src/localization.cpp.i"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/localization.cpp > CMakeFiles/localization.dir/src/localization.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/localization.cpp > CMakeFiles/localization.dir/src/localization.cpp.i
 
 localization/CMakeFiles/localization.dir/src/localization.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization.dir/src/localization.cpp.s"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/localization.cpp -o CMakeFiles/localization.dir/src/localization.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/localization.cpp -o CMakeFiles/localization.dir/src/localization.cpp.s
 
 localization/CMakeFiles/localization.dir/src/localization.cpp.o.requires:
 
@@ -82,17 +82,17 @@ localization/CMakeFiles/localization.dir/src/localization.cpp.o.provides.build: 
 
 
 localization/CMakeFiles/localization.dir/src/Camera.cpp.o: localization/CMakeFiles/localization.dir/flags.make
-localization/CMakeFiles/localization.dir/src/Camera.cpp.o: /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object localization/CMakeFiles/localization.dir/src/Camera.cpp.o"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/Camera.cpp.o -c /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Camera.cpp
+localization/CMakeFiles/localization.dir/src/Camera.cpp.o: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object localization/CMakeFiles/localization.dir/src/Camera.cpp.o"
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/Camera.cpp.o -c /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Camera.cpp
 
 localization/CMakeFiles/localization.dir/src/Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localization.dir/src/Camera.cpp.i"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Camera.cpp > CMakeFiles/localization.dir/src/Camera.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Camera.cpp > CMakeFiles/localization.dir/src/Camera.cpp.i
 
 localization/CMakeFiles/localization.dir/src/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization.dir/src/Camera.cpp.s"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Camera.cpp -o CMakeFiles/localization.dir/src/Camera.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Camera.cpp -o CMakeFiles/localization.dir/src/Camera.cpp.s
 
 localization/CMakeFiles/localization.dir/src/Camera.cpp.o.requires:
 
@@ -106,17 +106,17 @@ localization/CMakeFiles/localization.dir/src/Camera.cpp.o.provides.build: locali
 
 
 localization/CMakeFiles/localization.dir/src/Communication.cpp.o: localization/CMakeFiles/localization.dir/flags.make
-localization/CMakeFiles/localization.dir/src/Communication.cpp.o: /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Communication.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object localization/CMakeFiles/localization.dir/src/Communication.cpp.o"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/Communication.cpp.o -c /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Communication.cpp
+localization/CMakeFiles/localization.dir/src/Communication.cpp.o: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Communication.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object localization/CMakeFiles/localization.dir/src/Communication.cpp.o"
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/Communication.cpp.o -c /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Communication.cpp
 
 localization/CMakeFiles/localization.dir/src/Communication.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localization.dir/src/Communication.cpp.i"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Communication.cpp > CMakeFiles/localization.dir/src/Communication.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Communication.cpp > CMakeFiles/localization.dir/src/Communication.cpp.i
 
 localization/CMakeFiles/localization.dir/src/Communication.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization.dir/src/Communication.cpp.s"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Communication.cpp -o CMakeFiles/localization.dir/src/Communication.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Communication.cpp -o CMakeFiles/localization.dir/src/Communication.cpp.s
 
 localization/CMakeFiles/localization.dir/src/Communication.cpp.o.requires:
 
@@ -130,17 +130,17 @@ localization/CMakeFiles/localization.dir/src/Communication.cpp.o.provides.build:
 
 
 localization/CMakeFiles/localization.dir/src/Robot.cpp.o: localization/CMakeFiles/localization.dir/flags.make
-localization/CMakeFiles/localization.dir/src/Robot.cpp.o: /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Robot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object localization/CMakeFiles/localization.dir/src/Robot.cpp.o"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/Robot.cpp.o -c /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Robot.cpp
+localization/CMakeFiles/localization.dir/src/Robot.cpp.o: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Robot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object localization/CMakeFiles/localization.dir/src/Robot.cpp.o"
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/Robot.cpp.o -c /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Robot.cpp
 
 localization/CMakeFiles/localization.dir/src/Robot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localization.dir/src/Robot.cpp.i"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Robot.cpp > CMakeFiles/localization.dir/src/Robot.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Robot.cpp > CMakeFiles/localization.dir/src/Robot.cpp.i
 
 localization/CMakeFiles/localization.dir/src/Robot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization.dir/src/Robot.cpp.s"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Robot.cpp -o CMakeFiles/localization.dir/src/Robot.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Robot.cpp -o CMakeFiles/localization.dir/src/Robot.cpp.s
 
 localization/CMakeFiles/localization.dir/src/Robot.cpp.o.requires:
 
@@ -154,17 +154,17 @@ localization/CMakeFiles/localization.dir/src/Robot.cpp.o.provides.build: localiz
 
 
 localization/CMakeFiles/localization.dir/src/Detection.cpp.o: localization/CMakeFiles/localization.dir/flags.make
-localization/CMakeFiles/localization.dir/src/Detection.cpp.o: /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Detection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object localization/CMakeFiles/localization.dir/src/Detection.cpp.o"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/Detection.cpp.o -c /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Detection.cpp
+localization/CMakeFiles/localization.dir/src/Detection.cpp.o: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Detection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object localization/CMakeFiles/localization.dir/src/Detection.cpp.o"
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization.dir/src/Detection.cpp.o -c /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Detection.cpp
 
 localization/CMakeFiles/localization.dir/src/Detection.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localization.dir/src/Detection.cpp.i"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Detection.cpp > CMakeFiles/localization.dir/src/Detection.cpp.i
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Detection.cpp > CMakeFiles/localization.dir/src/Detection.cpp.i
 
 localization/CMakeFiles/localization.dir/src/Detection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization.dir/src/Detection.cpp.s"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization/src/Detection.cpp -o CMakeFiles/localization.dir/src/Detection.cpp.s
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Detection.cpp -o CMakeFiles/localization.dir/src/Detection.cpp.s
 
 localization/CMakeFiles/localization.dir/src/Detection.cpp.o.requires:
 
@@ -188,109 +188,109 @@ localization_OBJECTS = \
 # External object files for target localization
 localization_EXTERNAL_OBJECTS =
 
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/localization.cpp.o
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/Camera.cpp.o
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/Communication.cpp.o
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/Robot.cpp.o
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/Detection.cpp.o
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/build.make
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libroscpp.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librostime.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libcpp_common.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_stitching3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_superres3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_videostab3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_aruco3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_bgsegm3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_bioinspired3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_ccalib3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_cvv3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_dpm3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_face3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_fuzzy3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_hdf3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_img_hash3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_line_descriptor3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_optflow3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_reg3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_rgbd3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_saliency3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_stereo3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_structured_light3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_surface_matching3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_tracking3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_xfeatures2d3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_ximgproc3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_xobjdetect3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_xphoto3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libSM.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libICE.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libX11.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libXext.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librostime.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libcpp_common.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libSM.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libICE.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libX11.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libXext.so
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_shape3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_photo3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_calib3d3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_viz3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_phase_unwrapping3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_video3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_datasets3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_plot3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_text3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_dnn3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_features2d3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_flann3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_highgui3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_ml3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_videoio3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_imgcodecs3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_objdetect3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_imgproc3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_core3.so.3.3.1
-/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization"
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/localization.dir/link.txt --verbose=$(VERBOSE)
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/localization.cpp.o
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/Camera.cpp.o
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/Communication.cpp.o
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/Robot.cpp.o
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/src/Detection.cpp.o
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/build.make
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libroscpp.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librostime.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libcpp_common.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_stitching3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_superres3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_videostab3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_aruco3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_bgsegm3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_bioinspired3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_ccalib3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_cvv3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_dpm3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_face3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_fuzzy3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_hdf3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_img_hash3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_line_descriptor3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_optflow3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_reg3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_rgbd3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_saliency3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_stereo3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_structured_light3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_surface_matching3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_tracking3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_xfeatures2d3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_ximgproc3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_xobjdetect3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_xphoto3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libSM.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libICE.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libX11.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libXext.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/librostime.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libcpp_common.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libSM.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libICE.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libX11.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /usr/lib/x86_64-linux-gnu/libXext.so
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_shape3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_photo3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_calib3d3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_viz3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_phase_unwrapping3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_video3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_datasets3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_plot3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_text3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_dnn3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_features2d3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_flann3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_highgui3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_ml3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_videoio3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_imgcodecs3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_objdetect3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_imgproc3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: /opt/ros/kinetic/lib/libopencv_core3.so.3.3.1
+/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization: localization/CMakeFiles/localization.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable /home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization"
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/localization.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-localization/CMakeFiles/localization.dir/build: /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/devel/lib/localization/localization
+localization/CMakeFiles/localization.dir/build: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization
 
 .PHONY : localization/CMakeFiles/localization.dir/build
 
@@ -303,10 +303,10 @@ localization/CMakeFiles/localization.dir/requires: localization/CMakeFiles/local
 .PHONY : localization/CMakeFiles/localization.dir/requires
 
 localization/CMakeFiles/localization.dir/clean:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization && $(CMAKE_COMMAND) -P CMakeFiles/localization.dir/cmake_clean.cmake
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && $(CMAKE_COMMAND) -P CMakeFiles/localization.dir/cmake_clean.cmake
 .PHONY : localization/CMakeFiles/localization.dir/clean
 
 localization/CMakeFiles/localization.dir/depend:
-	cd /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/src/localization /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization /home/lukas/Desktop/redBirdRobotics/2017-2018/localization/dev_ws/build/localization/CMakeFiles/localization.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization/CMakeFiles/localization.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : localization/CMakeFiles/localization.dir/depend
 
