@@ -175,9 +175,10 @@ void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList)
 				// Troubleshooting
 				cv::Mat temp;
 				applyRedFilter(*a_pHSVImg, &temp, a_redRobotThresh[0], a_redRobotThresh[1]);
+				(*pImgList)[0]=temp;
 				// if(pImgList->size() == 1)
 				// {
-				// 	pImgList->push_back(temp);
+				//  	pImgList->push_back(temp);
 				// }
 				// else {(*pImgList)[1]=temp;}
 

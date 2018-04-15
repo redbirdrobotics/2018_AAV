@@ -52,8 +52,8 @@ private:
 	// CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE
 
 public:
-	std::vector<int> a_redThresh1 = {0,0,0,0,0,0};
-	std::vector<int> a_redThresh2 = {0,0,0,0,0,0};
+	std::vector<int> a_redThresh1 = {0, 100, 100, 10, 255, 255};
+	std::vector<int> a_redThresh2 = {160, 100, 100, 180, 255, 255};
 	std::vector<int> a_greenThresh = {0,0,0,0,0,0};
 	std::vector<int> a_whiteThresh = {0,0,0,0,0,0};
 	std::vector<int> a_blackThresh = {0,0,0,0,0,0};
