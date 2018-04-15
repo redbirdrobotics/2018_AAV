@@ -2,7 +2,7 @@
 <opencv_storage>
 
 <!-- COLOR DETECTION -->
-	
+
 	<!-- NOTES -->
 
 	<!-- INPUT PARAMETERS -->
@@ -13,7 +13,7 @@
 		<red1LowerS> 100 </red1LowerS>
 	 	<red1LowerV> 100 </red1LowerV>
 
-	 	<red1UpperH> 7 </red1UpperH>
+	 	<red1UpperH> 10 </red1UpperH>
 	 	<red1UpperS> 255 </red1UpperS>
 	 	<red1UpperV> 255 </red1UpperV>
 
@@ -44,7 +44,7 @@
 		<blackLowerH> 0 </blackLowerH>
 		<blackLowerS> 0 </blackLowerS>
 		<blackLowerV> 0 </blackLowerV>
-		
+
 		<blackUpperH> 255 </blackUpperH>
 		<blackUpperS> 155 </blackUpperS>
 		<blackupperV> 40 </blackupperV>
@@ -60,32 +60,32 @@
 			This is the number of squares in a row/column minus 1. -->
 
 		<!-- ZERO ZONE:
-			The area at the intersection of squares which does not 
+			The area at the intersection of squares which does not
 			belong to a square. It is the horizontal and vertical
-			line thickness. (-1, -1) denotes that such an area does 
-			not exist. If there is a dead zone, the parameters 
+			line thickness. (-1, -1) denotes that such an area does
+			not exist. If there is a dead zone, the parameters
 			are half of the determined size. -->
 
 		<!-- SEARCH WINDOW:
-			When corners are being refined, a gradient of the 
+			When corners are being refined, a gradient of the
 			image is taken. Corners are refined by iterating over
 			groups of pixels in the neighborhood of a determined
 			corner area and making sure the normal is perpendicular
 			to one of the gradients of the image. The search window
 			contains the points which are being compared at any
-			instant in the calculation.  The parameters are roughly 
+			instant in the calculation.  The parameters are roughly
 			half of the calculated size minus 1.
 			EX.) Paramters(5,5)->Size(11,11) -->
 
 		<!-- MAXIMUM ITERATIONS:
 			When a calculation that involes iterating over data,
-			there must be termination criteria.  One type of 
+			there must be termination criteria.  One type of
 			termination criteria is to stop iterating after a
 			specified number.  Maximum iterations is this number. -->
 
 		<!-- EPSILON:
 			Epsilon is another termination condition.  Iterate
-			until a specified variable is minimized to a 
+			until a specified variable is minimized to a
 			specified value.  Epsilon is this value. -->
 
 	<!-- - INPUT PARAMETERS - -->
@@ -104,7 +104,7 @@
 
 		<!-- </BoardData> -->
 
-		<!-- - SYSTEM DATA - --> 
+		<!-- - SYSTEM DATA - -->
 
 			<!-- <Directory> calibrate </Directory> --> 				<!-- [string] -->
 
@@ -130,7 +130,7 @@
 
 			<!-- - Stereo Block Matching (SteroBM):
 				This is a technique for calculating disparities between images.
-				When the values of a block or window of a specified size is 
+				When the values of a block or window of a specified size is
 				found to match that of another block in the partner image, a
 				disparity is calculated The block is shifted over the entire image
 				to map all disparities
@@ -150,38 +150,38 @@
 				The type of filter applied to image before disparity is calculated.
 
 					CV_STEREO_BM_XSOBEL (Sobel Filter):
-						A faster but less accurate differential filter using 
+						A faster but less accurate differential filter using
 						convolution
 
 					CV_STEREO_NORMALIZED_RESPONSE:
-						Normalizes the image. This means it maximizes the intensity 
+						Normalizes the image. This means it maximizes the intensity
 						range of the image and thus increases contrast- -->
 
 			<!-- - PreFilter Size:
 				Only applies to CV_STEREO_NORMALIZED_RESPONSE
-				Normalization is done by shifting a window across the screen. The 
-				default size of this window is (7x7) and the maximum is (21x21). 
+				Normalization is done by shifting a window across the screen. The
+				default size of this window is (7x7) and the maximum is (21x21).
 				The size must be odd to accomodate a center pixel- -->
 
 			<!-- - PreFilter Cap:
 				Only applies to CV_STEREO_NORMALIZED_RESPONSE
-				As the window shifts, it performs the calculation 
+				As the window shifts, it performs the calculation
 				min(max(Ic - I, - Icap),Icap) where:
 				Ic: center pixel intensity
 				I: average intensity inside window
 				Icap: preset cap (default = 30)- -->
 
 			<!-- - Texture Threshold:
-				A minimum amount of texture to be present before disparity calculation 
+				A minimum amount of texture to be present before disparity calculation
 				begins.
 				i.e. Don't compare 2 windows of purely black pixels- -->
 
 			<!-- - Sum of Absolute Differences Window Size (SADWindowSize):
 				AKA BlockSize
 				When searching for a similar block in the partner image, the window
-				shifts and calculates the difference between each pixel in the 
-				cooresponding image.  When the differences are at a minimum, a 
-				disparity is created This Parameter is the size of the shifting 
+				shifts and calculates the difference between each pixel in the
+				cooresponding image.  When the differences are at a minimum, a
+				disparity is created This Parameter is the size of the shifting
 				window in pixels. Should be an odd number since absolute center
 				needs to be calculated for matching- -->
 
@@ -190,11 +190,11 @@
 
 			<!-- - Uniqueness Ratio:
 				The degree of difference needed for 2 disparities to be considered
-				unique. Typical values range from 5 to 15- --> 
+				unique. Typical values range from 5 to 15- -->
 
 			<!-- - Speckle Window Size:
-				Speckles are outlier/false disparities that have made their way through the 
-				whole process. The speckle window is the maximum size of a blob that 
+				Speckles are outlier/false disparities that have made their way through the
+				whole process. The speckle window is the maximum size of a blob that
 				you	wish to consider a speckle. Any  disparity grouping that is smaller
 				than the speckle window size will be removed- -->
 

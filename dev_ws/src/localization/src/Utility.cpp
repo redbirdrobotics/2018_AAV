@@ -72,7 +72,7 @@ Detection::search(std::vector<cv::Mat*> inFrameList, std::vector< std::vector<cv
 //   cv::rectangle(*img, rect, cv::Scalar(180,105,255));
 // }
 
-void Utility::drawRect(cv::Mat* img, std::vector<cv:Rect> rectList)
+void Utility::drawRect(cv::Mat* img, std::vector<cv::Rect> rectList)
 {
   for(int i=0; i<rectList.size(); i++)
   {

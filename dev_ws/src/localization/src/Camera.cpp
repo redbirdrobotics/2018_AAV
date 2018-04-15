@@ -142,7 +142,7 @@ void Camera::updateFrameList(boost::shared_ptr< std::vector< std::vector< cv::Ma
 			*connected = false;
 			//cv::destroyWindow(window);
 			return;
-		}		
+		}
 	}
 }*/
 
@@ -185,16 +185,16 @@ void Camera::showFrame(boost::shared_ptr< std::vector< cv::Mat > > frameList, bo
 	 			cv::imshow("window1", (*frameList)[0]);
 			}
 
-	// 		if(! (*frameList)[1].empty() )
-	// 		{
-	// 			cv::imshow("window2", (*frameList)[1]);
-	// 		}
+			if(! (*frameList)[1].empty() )
+			{
+				cv::imshow("window2", (*frameList)[1]);
+			}
 
 	// 		if(! (*frameList)[2].empty() )
 	// 		{
 	// 			cv::imshow("window3", (*frameList)[2]);
 	// 		}
-		}	
-	// 	//MUTEX.unlock();	
+		}
+	// 	//MUTEX.unlock();
 	}
 }

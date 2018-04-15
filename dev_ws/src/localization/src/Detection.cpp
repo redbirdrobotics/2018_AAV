@@ -1,4 +1,5 @@
 #include "Detection.h"
+#include "Utility.h"
 using namespace std;
 
 Detection::Detection(int camNum)
@@ -15,6 +16,14 @@ void Detection::setGreenRobots(std::vector<Robot*>* greenBots){
 }
 void Detection::setWhiteRobots(std::vector<Robot*>* whiteBots){
 	a_pWhiteRobotList = whiteBots;
+}
+void Detection::drawRect(cv::Mat* img, std::vector<cv::Rect> rectList)
+{
+  for(int i=0; i<rectList.size(); i++)
+  {
+    cv::rectangle(*img, rectList[i], cv::Scalar(180,105,255));
+		cout<<"Rectangle: "<<i<<endl;
+  }
 }
 // std::vector<cv::Mat> Detection::findColors(std::vector< cv::Mat > inputFrameList, std::vector<int> range ,std::vector<cv::Mat> outputFrameList){
 // 	if(!inputFrameList[0].empty()){
@@ -124,6 +133,19 @@ void Detection::applyRedFilter(cv::Mat inFrame, cv::Mat* outFrame, std::vector<i
 	cv::addWeighted(frame1, 1, frame2, 1, 0.0, *outFrame);
 }
 
+void Detection::getRedThreshParameters(){
+	for(int i=0; i< a_redThresh1.size();i++){
+		cout<<i<<": "<<a_redThresh1[i];
+	}
+	cout<<endl;
+	for(int i=0; i< a_redThresh2.size();i++){
+		cout<<i<<": "<<a_redThresh2[i];
+	}
+	cout<<endl;
+}
+cv::Mat Detection::showMask(){
+	return *a_pMask;
+}
 // Get imglist
 
 // Get Img
@@ -138,38 +160,59 @@ void Detection::applyRedFilter(cv::Mat inFrame, cv::Mat* outFrame, std::vector<i
 
 void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList)
 {
-	// Cameras
-	for(int i=0; i<pImgList->size(); i++)
-	{
-		// Convert to HSV
-		cv::cvtColor((*pImgList)[i], (*a_pHSVImg), CV_BGR2HSV);
+	if(!pImgList->empty()){
+		// Cameras
+		for(int i=0; i<pImgList->size(); i++)
+		{
+			if((*pImgList)[i].rows>0 && (*pImgList)[i].cols>0){
 
-		// For Red / Green / White Robots
+				// Convert to HSV
+				cv::cvtColor((*pImgList)[i], (*a_pHSVImg), CV_BGR2HSV);
 
-		// RedSearch()
-		redRobotSearch(a_pHSVImg);
+				// For Red / Green / White Robots
+		    std::cout<<" Line: " << __LINE__ <<std::endl;
 
-		// green search
-		// white search
+				// Troubleshooting
+				cv::Mat temp;
+				applyRedFilter(*a_pHSVImg, &temp, a_redRobotThresh[0], a_redRobotThresh[1]);
+				// if(pImgList->size() == 1)
+				// {
+				// 	pImgList->push_back(temp);
+				// }
+				// else {(*pImgList)[1]=temp;}
+
+
+				// RedSearch()
+				// redRobotSearch(a_pHSVImg);
+
+		    std::cout<<" Line: " << __LINE__ <<std::endl;
+				//Detection::drawRect(&((*pImgList)[i]),a_redRectList);
+				// green search
+				// white search
+				}
+		}
 	}
 }
 
 void Detection::redRobotSearch(cv::Mat* img)
 {
 	applyRedFilter(*img, a_pMask, a_redRobotThresh[0], a_redRobotThresh[1]);
-	getContoursToBoxes("Red");
+	getContoursToBoxes(a_redRectList);
+	cout<< "a_redRectList size: "<<a_redRectList.size()<<endl;
 	for(int i=0; i<a_redRectList.size(); i++)
 	{
 		applyFilter((*img)(a_redRectList[i]), a_pMask, a_blackThresh);
-		getContoursToBoxes("Black");
+		getContoursToBoxes(a_blackRectList);
 	}
 	if(!a_blackRectList.empty()){
+
 		for(int i=0; i<a_blackRectList.size(); i++){
 		applyFilter((*img)(a_redRectList[i]), a_pMask, a_whiteThresh);
-		getContoursToBoxes("White");
+		getContoursToBoxes(a_whiteRectList);
 		}
 	}
 	if(!a_whiteRectList.empty() && a_whiteRectList.size()<6){
+
 		populateRedRobots();
 	}
 }
@@ -178,11 +221,11 @@ void Detection::redRobotSearch(cv::Mat* img)
 // Takes Mask stored in a_pMask
 // Finds contours associated with mask
 // Down-samples and populates a_rectList with bounding rectangles
-void Detection::getContoursToBoxes(std::string type){
-	a_contours1.resize(1);
+void Detection::getContoursToBoxes(std::vector<cv::Rect> type){
 	//TODO: add clearing function for counterlists and hierarchy
-	cv::findContours((*a_pMask), a_contours1, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
+	cv::findContours(*a_pMask, a_contours1, a_hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
 	//a_imgSz,
+	cout<<"a_contours1 size: " << a_contours1.size()<<endl;
 	downSampleContours(type);
 }
 
@@ -194,28 +237,19 @@ void Detection::applyFilter(cv::Mat inFrame, cv::Mat* outFrame, std::vector<int>
 // pixThresh should be different for each threshold, ie less green than white, more white than black, less black than green
 // could be accomplished with a thresh struct
 
-void Detection::downSampleContours(std::string type)
+void Detection::downSampleContours(std::vector<cv::Rect> type)
 {
 	a_contoursPoly.resize(a_contours1.size());
 	a_rect.resize(a_contours1.size());
+
 	for(uint8_t i=0; i<a_contours1.size(); i++)
 	{
 		cv::approxPolyDP(cv::Mat(a_contours1[i]), a_contoursPoly[i], 3, true);
 
-		if(cv::contourArea(a_contoursPoly[i]) > a_pixelThresh)
+		if(cv::contourArea(a_contoursPoly[i]) > 500)
 		{
-			if(type == "Green"){
-				a_greenRectList.push_back(cv::boundingRect(cv::Mat(a_contoursPoly[i])));
-			}
-			if(type == "Red"){
-				a_redRectList.push_back(cv::boundingRect(cv::Mat(a_contoursPoly[i])));
-			}
-			if(type == "Black"){
-				a_blackRectList.push_back(cv::boundingRect(cv::Mat(a_contoursPoly[i])));
-			}
-			if(type == "White"){
-				a_whiteRectList.push_back(cv::boundingRect(cv::Mat(a_contoursPoly[i])));
-			}
+			type.push_back(cv::boundingRect(cv::Mat(a_contoursPoly[i])));
+			cout<<"push_back successful"<<endl;
 			//TODO:change to pass in associated rectlist in each if
 			//Detection::addROIBuffer(a_rect[i]);
 		}

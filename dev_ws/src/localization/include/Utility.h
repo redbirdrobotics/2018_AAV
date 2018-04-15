@@ -14,7 +14,7 @@ public:
 	static std::vector<cv::Mat> combineFilters(std::vector<cv::Mat>, std::vector<cv::Mat>, std::vector<cv::Mat>, std::vector<cv::Mat>);
 
 	//static void drawRect(cv::Mat, cv::Rect);
-	static void drawRect(cv::Mat*, std::vector<cv:Rect>);
+	static void drawRect(cv::Mat*, std::vector<cv::Rect>);
 };
 
 #endif

@@ -269,8 +269,10 @@ localization/CMakeFiles/localization.dir/src/Communication.cpp.o: /opt/ros/kinet
 localization/CMakeFiles/localization.dir/src/Communication.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/xfeatures2d/cuda.hpp
 localization/CMakeFiles/localization.dir/src/Communication.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/xfeatures2d/nonfree.hpp
 
+localization/CMakeFiles/localization.dir/src/Detection.cpp.o: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/include/Camera.h
 localization/CMakeFiles/localization.dir/src/Detection.cpp.o: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/include/Detection.h
 localization/CMakeFiles/localization.dir/src/Detection.cpp.o: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/include/Robot.h
+localization/CMakeFiles/localization.dir/src/Detection.cpp.o: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/include/Utility.h
 localization/CMakeFiles/localization.dir/src/Detection.cpp.o: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/Detection.cpp
 localization/CMakeFiles/localization.dir/src/Detection.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h
 localization/CMakeFiles/localization.dir/src/Detection.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/calib3d.hpp

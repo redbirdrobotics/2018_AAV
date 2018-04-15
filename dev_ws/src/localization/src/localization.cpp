@@ -73,6 +73,9 @@ int main(int argc, char **argv)
     return -1;
   }
 
+  //test
+  //cv::namedWindow("TEST", CV_WINDOW_AUTOSIZE);
+
   // // Get Robot Parameters
   Communication::getDetection_XMLData(&Detect);
 
@@ -85,9 +88,12 @@ int main(int argc, char **argv)
 
     // Get Frame
     Camera::updateFrameList(camStream, CamList, CamList.size(), std::ref(MUTEX));
-
+    std::cout<<" Line: " << __LINE__ <<std::endl;
     Detect.Search(camStream);
+    std::cout<<" Line: " << __LINE__ <<std::endl;
+    // Detect.showMask();
 
+    //cv::imshow("TEST",Detect.showMask());
   }
 
   ros::spin();
