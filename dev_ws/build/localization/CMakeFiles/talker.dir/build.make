@@ -43,42 +43,42 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src
+CMAKE_SOURCE_DIR = /home/redbird-general/2018_AAV/dev_ws/src/localization
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build
+CMAKE_BINARY_DIR = /home/redbird-general/2018_AAV/dev_ws/build/localization
 
 # Include any dependencies generated for this target.
-include localization/CMakeFiles/talker.dir/depend.make
+include CMakeFiles/talker.dir/depend.make
 
 # Include the progress variables for this target.
-include localization/CMakeFiles/talker.dir/progress.make
+include CMakeFiles/talker.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include localization/CMakeFiles/talker.dir/flags.make
+include CMakeFiles/talker.dir/flags.make
 
-localization/CMakeFiles/talker.dir/src/talker.cpp.o: localization/CMakeFiles/talker.dir/flags.make
-localization/CMakeFiles/talker.dir/src/talker.cpp.o: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/talker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object localization/CMakeFiles/talker.dir/src/talker.cpp.o"
-	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/talker.dir/src/talker.cpp.o -c /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/talker.cpp
+CMakeFiles/talker.dir/src/talker.cpp.o: CMakeFiles/talker.dir/flags.make
+CMakeFiles/talker.dir/src/talker.cpp.o: /home/redbird-general/2018_AAV/dev_ws/src/localization/src/talker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/redbird-general/2018_AAV/dev_ws/build/localization/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/talker.dir/src/talker.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/talker.dir/src/talker.cpp.o -c /home/redbird-general/2018_AAV/dev_ws/src/localization/src/talker.cpp
 
-localization/CMakeFiles/talker.dir/src/talker.cpp.i: cmake_force
+CMakeFiles/talker.dir/src/talker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/talker.dir/src/talker.cpp.i"
-	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/talker.cpp > CMakeFiles/talker.dir/src/talker.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/redbird-general/2018_AAV/dev_ws/src/localization/src/talker.cpp > CMakeFiles/talker.dir/src/talker.cpp.i
 
-localization/CMakeFiles/talker.dir/src/talker.cpp.s: cmake_force
+CMakeFiles/talker.dir/src/talker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/talker.dir/src/talker.cpp.s"
-	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/talker.cpp -o CMakeFiles/talker.dir/src/talker.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/redbird-general/2018_AAV/dev_ws/src/localization/src/talker.cpp -o CMakeFiles/talker.dir/src/talker.cpp.s
 
-localization/CMakeFiles/talker.dir/src/talker.cpp.o.requires:
+CMakeFiles/talker.dir/src/talker.cpp.o.requires:
 
-.PHONY : localization/CMakeFiles/talker.dir/src/talker.cpp.o.requires
+.PHONY : CMakeFiles/talker.dir/src/talker.cpp.o.requires
 
-localization/CMakeFiles/talker.dir/src/talker.cpp.o.provides: localization/CMakeFiles/talker.dir/src/talker.cpp.o.requires
-	$(MAKE) -f localization/CMakeFiles/talker.dir/build.make localization/CMakeFiles/talker.dir/src/talker.cpp.o.provides.build
-.PHONY : localization/CMakeFiles/talker.dir/src/talker.cpp.o.provides
+CMakeFiles/talker.dir/src/talker.cpp.o.provides: CMakeFiles/talker.dir/src/talker.cpp.o.requires
+	$(MAKE) -f CMakeFiles/talker.dir/build.make CMakeFiles/talker.dir/src/talker.cpp.o.provides.build
+.PHONY : CMakeFiles/talker.dir/src/talker.cpp.o.provides
 
-localization/CMakeFiles/talker.dir/src/talker.cpp.o.provides.build: localization/CMakeFiles/talker.dir/src/talker.cpp.o
+CMakeFiles/talker.dir/src/talker.cpp.o.provides.build: CMakeFiles/talker.dir/src/talker.cpp.o
 
 
 # Object files for target talker
@@ -88,45 +88,45 @@ talker_OBJECTS = \
 # External object files for target talker
 talker_EXTERNAL_OBJECTS =
 
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: localization/CMakeFiles/talker.dir/src/talker.cpp.o
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: localization/CMakeFiles/talker.dir/build.make
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /opt/ros/kinetic/lib/libroscpp.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /opt/ros/kinetic/lib/librosconsole.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /opt/ros/kinetic/lib/librostime.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /opt/ros/kinetic/lib/libcpp_common.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker: localization/CMakeFiles/talker.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker"
-	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/talker.dir/link.txt --verbose=$(VERBOSE)
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: CMakeFiles/talker.dir/src/talker.cpp.o
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: CMakeFiles/talker.dir/build.make
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /opt/ros/kinetic/lib/libroscpp.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /opt/ros/kinetic/lib/librosconsole.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /opt/ros/kinetic/lib/librostime.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /opt/ros/kinetic/lib/libcpp_common.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker: CMakeFiles/talker.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/redbird-general/2018_AAV/dev_ws/build/localization/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/talker.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-localization/CMakeFiles/talker.dir/build: /home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker
+CMakeFiles/talker.dir/build: /home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker
 
-.PHONY : localization/CMakeFiles/talker.dir/build
+.PHONY : CMakeFiles/talker.dir/build
 
-localization/CMakeFiles/talker.dir/requires: localization/CMakeFiles/talker.dir/src/talker.cpp.o.requires
+CMakeFiles/talker.dir/requires: CMakeFiles/talker.dir/src/talker.cpp.o.requires
 
-.PHONY : localization/CMakeFiles/talker.dir/requires
+.PHONY : CMakeFiles/talker.dir/requires
 
-localization/CMakeFiles/talker.dir/clean:
-	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization && $(CMAKE_COMMAND) -P CMakeFiles/talker.dir/cmake_clean.cmake
-.PHONY : localization/CMakeFiles/talker.dir/clean
+CMakeFiles/talker.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/talker.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/talker.dir/clean
 
-localization/CMakeFiles/talker.dir/depend:
-	cd /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src /home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization /home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization/CMakeFiles/talker.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : localization/CMakeFiles/talker.dir/depend
+CMakeFiles/talker.dir/depend:
+	cd /home/redbird-general/2018_AAV/dev_ws/build/localization && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/redbird-general/2018_AAV/dev_ws/src/localization /home/redbird-general/2018_AAV/dev_ws/src/localization /home/redbird-general/2018_AAV/dev_ws/build/localization /home/redbird-general/2018_AAV/dev_ws/build/localization /home/redbird-general/2018_AAV/dev_ws/build/localization/CMakeFiles/talker.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/talker.dir/depend
 

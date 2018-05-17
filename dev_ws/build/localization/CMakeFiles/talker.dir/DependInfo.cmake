@@ -4,23 +4,23 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/src/talker.cpp" "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/build/localization/CMakeFiles/talker.dir/src/talker.cpp.o"
+  "/home/redbird-general/2018_AAV/dev_ws/src/localization/src/talker.cpp" "/home/redbird-general/2018_AAV/dev_ws/build/localization/CMakeFiles/talker.dir/src/talker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "ROSCONSOLE_BACKEND_LOG4CXX"
-  "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"localization\""
   )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/include"
+  "/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/include"
   "/opt/ros/kinetic/include/opencv-3.3.1-dev"
   "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/include"
+  "/usr/local/include"
+  "/home/redbird-general/2018_AAV/dev_ws/src/localization/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

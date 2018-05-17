@@ -52,14 +52,16 @@ int main(int argc, char **argv)
   Robot rorschach(2);
 
   // Initialize Robot Vector
-  //Robots
-	std::vector<Robot*> redRobotList = {&daredevil, &deadpool, &elmo, &hellboy, &flash};
-  std::vector<Robot*> greenRobotList = {&hulk, &yoshi, &yoda, &arrow, &beastboy};
-  std::vector<Robot*> whiteRobotList = {&baymax, &stayPuft, &kingBoo, &rorschach};
+  std::vector<Robot> redRobotList = {daredevil, deadpool, elmo, hellboy, flash};
+  std::vector<Robot> greenRobotList = {hulk, yoshi, yoda, arrow, beastboy};
+  std::vector<Robot> whiteRobotList = {baymax, stayPuft, kingBoo, rorschach};
+
+  boost::shared_ptr< std::vector< Robot > > pRedRobotList2 = boost::make_shared< std::vector< Robot > >(redRobotList);
+  boost::shared_ptr< std::vector< Robot > > pGreenRobotList = boost::make_shared< std::vector< Robot > >(greenRobotList);
+  boost::shared_ptr< std::vector< Robot > > pWhiteRobotList = boost::make_shared< std::vector< Robot > >(whiteRobotList);
 
   // Initialize Detection Instance
   Detection Detect(CamList.size());
-
 
   Detect.setRedRobots(&redRobotList);
   Detect.setGreenRobots(&greenRobotList);

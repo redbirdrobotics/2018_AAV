@@ -1,7 +1,1 @@
-(cl:defpackage localization-msg
-  (:use )
-  (:export
-   "<NUM>"
-   "NUM"
-  ))
-
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/common-lisp/ros/localization/msg/_package.lisp

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/localization_generate_messages_eus"
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/share/roseus/ros/localization/msg/Num.l"
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/share/roseus/ros/localization/manifest.l"
+  "/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/roseus/ros/localization/msg/Num.l"
+  "/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/roseus/ros/localization/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,0 +1,8 @@
+Symlinking /home/redbird-general/2018_AAV/dev_ws/devel/./setup.zsh
+Symlinking /home/redbird-general/2018_AAV/dev_ws/devel/./setup.sh
+Symlinking /home/redbird-general/2018_AAV/dev_ws/devel/./env.sh
+Symlinking /home/redbird-general/2018_AAV/dev_ws/devel/./_setup_util.py
+Symlinking /home/redbird-general/2018_AAV/dev_ws/devel/./setup.bash
+Symlinking /home/redbird-general/2018_AAV/dev_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+Symlinking /home/redbird-general/2018_AAV/dev_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
+Symlinking /home/redbird-general/2018_AAV/dev_ws/devel/lib/pkgconfig/catkin_tools_prebuild.pc

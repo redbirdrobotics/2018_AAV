@@ -1,4 +1,1 @@
-# generated from genmsg/cmake/pkg-msg-paths.cmake.develspace.in
-
-set(localization_MSG_INCLUDE_DIRS "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg")
-set(localization_MSG_DEPENDENCIES std_msgs)
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/localization/cmake/localization-msg-paths.cmake

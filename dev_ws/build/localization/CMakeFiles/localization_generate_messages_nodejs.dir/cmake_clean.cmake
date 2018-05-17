@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/localization_generate_messages_nodejs"
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/share/gennodejs/ros/localization/msg/Num.js"
+  "/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/gennodejs/ros/localization/msg/Num.js"
 )
 
 # Per-language clean rules from dependency scanning.

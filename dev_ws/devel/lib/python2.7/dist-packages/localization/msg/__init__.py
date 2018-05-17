@@ -1,1 +1,1 @@
-from ._Num import *
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/python2.7/dist-packages/localization/msg/__init__.py

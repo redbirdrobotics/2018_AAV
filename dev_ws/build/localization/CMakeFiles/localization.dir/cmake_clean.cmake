@@ -4,8 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/localization.dir/src/Communication.cpp.o"
   "CMakeFiles/localization.dir/src/Robot.cpp.o"
   "CMakeFiles/localization.dir/src/Detection.cpp.o"
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization.pdb"
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/localization"
+  "/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/localization.pdb"
+  "/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/localization"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,6 +1,1 @@
-
-"use strict";
-
-module.exports = {
-  msg: require('./msg/_index.js'),
-};
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/gennodejs/ros/localization/_index.js

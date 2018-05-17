@@ -1,0 +1,22 @@
+localization
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/localization/cmake/localizationConfig.cmake /home/redbird-general/2018_AAV/dev_ws/devel/share/localization/cmake/localizationConfig.cmake
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/localization/cmake/localization-msg-paths.cmake /home/redbird-general/2018_AAV/dev_ws/devel/share/localization/cmake/localization-msg-paths.cmake
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/localization/cmake/localization-msg-extras.cmake /home/redbird-general/2018_AAV/dev_ws/devel/share/localization/cmake/localization-msg-extras.cmake
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/localization/cmake/localizationConfig-version.cmake /home/redbird-general/2018_AAV/dev_ws/devel/share/localization/cmake/localizationConfig-version.cmake
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/roseus/ros/localization/manifest.l /home/redbird-general/2018_AAV/dev_ws/devel/share/roseus/ros/localization/manifest.l
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/roseus/ros/localization/msg/Num.l /home/redbird-general/2018_AAV/dev_ws/devel/share/roseus/ros/localization/msg/Num.l
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/gennodejs/ros/localization/_index.js /home/redbird-general/2018_AAV/dev_ws/devel/share/gennodejs/ros/localization/_index.js
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/gennodejs/ros/localization/msg/Num.js /home/redbird-general/2018_AAV/dev_ws/devel/share/gennodejs/ros/localization/msg/Num.js
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/gennodejs/ros/localization/msg/_index.js /home/redbird-general/2018_AAV/dev_ws/devel/share/gennodejs/ros/localization/msg/_index.js
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/common-lisp/ros/localization/msg/_package_Num.lisp /home/redbird-general/2018_AAV/dev_ws/devel/share/common-lisp/ros/localization/msg/_package_Num.lisp
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/common-lisp/ros/localization/msg/localization-msg.asd /home/redbird-general/2018_AAV/dev_ws/devel/share/common-lisp/ros/localization/msg/localization-msg.asd
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/common-lisp/ros/localization/msg/Num.lisp /home/redbird-general/2018_AAV/dev_ws/devel/share/common-lisp/ros/localization/msg/Num.lisp
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/common-lisp/ros/localization/msg/_package.lisp /home/redbird-general/2018_AAV/dev_ws/devel/share/common-lisp/ros/localization/msg/_package.lisp
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/include/localization/Num.h /home/redbird-general/2018_AAV/dev_ws/devel/include/localization/Num.h
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/pkgconfig/localization.pc /home/redbird-general/2018_AAV/dev_ws/devel/lib/pkgconfig/localization.pc
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker /home/redbird-general/2018_AAV/dev_ws/devel/lib/localization/talker
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/listener /home/redbird-general/2018_AAV/dev_ws/devel/lib/localization/listener
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/localization /home/redbird-general/2018_AAV/dev_ws/devel/lib/localization/localization
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/python2.7/dist-packages/localization/__init__.py /home/redbird-general/2018_AAV/dev_ws/devel/lib/python2.7/dist-packages/localization/__init__.py
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/python2.7/dist-packages/localization/msg/__init__.py /home/redbird-general/2018_AAV/dev_ws/devel/lib/python2.7/dist-packages/localization/msg/__init__.py
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/python2.7/dist-packages/localization/msg/_Num.py /home/redbird-general/2018_AAV/dev_ws/devel/lib/python2.7/dist-packages/localization/msg/_Num.py

@@ -1,0 +1,31 @@
+[01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/src/localization.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/src/localization.cpp:66:36:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KDetection::setRedRobots(std::vector<Robot>*)[m[K’
+   Detect.setRedRobots(&redRobotList);
+[01;32m[K                                    ^[m[K
+In file included from [01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/include/Communication.h:5:0[m[K,
+                 from [01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/src/localization.cpp:11[m[K:
+[01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/include/Detection.h:89:7:[m[K [01;36m[Knote: [m[Kcandidate: void Detection::setRedRobots(std::vector<Robot*>*)
+  void setRedRobots(std::vector<Robot*>*);
+[01;32m[K       ^[m[K
+[01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/include/Detection.h:89:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::vector<Robot>*[m[K’ to ‘[01m[Kstd::vector<Robot*>*[m[K’
+[01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/src/localization.cpp:67:40:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KDetection::setGreenRobots(std::vector<Robot>*)[m[K’
+   Detect.setGreenRobots(&greenRobotList);
+[01;32m[K                                        ^[m[K
+In file included from [01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/include/Communication.h:5:0[m[K,
+                 from [01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/src/localization.cpp:11[m[K:
+[01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/include/Detection.h:90:7:[m[K [01;36m[Knote: [m[Kcandidate: void Detection::setGreenRobots(std::vector<Robot*>*)
+  void setGreenRobots(std::vector<Robot*>*);
+[01;32m[K       ^[m[K
+[01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/include/Detection.h:90:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::vector<Robot>*[m[K’ to ‘[01m[Kstd::vector<Robot*>*[m[K’
+[01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/src/localization.cpp:68:40:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KDetection::setWhiteRobots(std::vector<Robot>*)[m[K’
+   Detect.setWhiteRobots(&whiteRobotList);
+[01;32m[K                                        ^[m[K
+In file included from [01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/include/Communication.h:5:0[m[K,
+                 from [01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/src/localization.cpp:11[m[K:
+[01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/include/Detection.h:91:7:[m[K [01;36m[Knote: [m[Kcandidate: void Detection::setWhiteRobots(std::vector<Robot*>*)
+  void setWhiteRobots(std::vector<Robot*>*);
+[01;32m[K       ^[m[K
+[01m[K/home/redbird-general/2018_AAV/dev_ws/src/localization/include/Detection.h:91:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::vector<Robot>*[m[K’ to ‘[01m[Kstd::vector<Robot*>*[m[K’
+make[2]: *** [CMakeFiles/localization.dir/src/localization.cpp.o] Error 1
+make[1]: *** [CMakeFiles/localization.dir/all] Error 2
+make: *** [all] Error 2

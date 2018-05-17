@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/listener.dir/src/listener.cpp.o"
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/listener.pdb"
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/listener"
+  "/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/listener.pdb"
+  "/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/listener"
 )
 
 # Per-language clean rules from dependency scanning.

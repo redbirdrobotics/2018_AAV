@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/talker.dir/src/talker.cpp.o"
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker.pdb"
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel/lib/localization/talker"
+  "/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker.pdb"
+  "/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/talker"
 )
 
 # Per-language clean rules from dependency scanning.

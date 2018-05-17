@@ -1,2 +1,0 @@
-localization
--DCATKIN_DEVEL_PREFIX=/home/ghost/Desktop/RedBird/2017-2018/dev_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ghost/Desktop/RedBird/2017-2018/dev_ws/install -G Unix Makefiles

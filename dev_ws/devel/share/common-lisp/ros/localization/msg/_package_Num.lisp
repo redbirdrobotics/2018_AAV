@@ -1,4 +1,1 @@
-(cl:in-package localization-msg)
-(cl:export '(NUM-VAL
-          NUM
-))
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/common-lisp/ros/localization/msg/_package_Num.lisp

@@ -2,7 +2,7 @@
 
 message(STATUS "localization: 1 messages, 0 services")
 
-set(MSG_I_FLAGS "-Ilocalization:/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ilocalization:/home/redbird-general/2018_AAV/dev_ws/src/localization/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,9 +17,9 @@ add_custom_target(localization_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg" NAME_WE)
+get_filename_component(_filename "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg" NAME_WE)
 add_custom_target(_localization_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "localization" "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "localization" "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg" ""
 )
 
 #
@@ -29,7 +29,7 @@ add_custom_target(_localization_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(localization
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg"
+  "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/localization
@@ -49,7 +49,7 @@ add_custom_target(localization_generate_messages_cpp
 add_dependencies(localization_generate_messages localization_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg" NAME_WE)
+get_filename_component(_filename "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg" NAME_WE)
 add_dependencies(localization_generate_messages_cpp _localization_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -62,7 +62,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS localization_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(localization
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg"
+  "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/localization
@@ -82,7 +82,7 @@ add_custom_target(localization_generate_messages_eus
 add_dependencies(localization_generate_messages localization_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg" NAME_WE)
+get_filename_component(_filename "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg" NAME_WE)
 add_dependencies(localization_generate_messages_eus _localization_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -95,7 +95,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS localization_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(localization
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg"
+  "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/localization
@@ -115,7 +115,7 @@ add_custom_target(localization_generate_messages_lisp
 add_dependencies(localization_generate_messages localization_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg" NAME_WE)
+get_filename_component(_filename "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg" NAME_WE)
 add_dependencies(localization_generate_messages_lisp _localization_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -128,7 +128,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS localization_generate_messages_lisp
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(localization
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg"
+  "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/localization
@@ -148,7 +148,7 @@ add_custom_target(localization_generate_messages_nodejs
 add_dependencies(localization_generate_messages localization_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg" NAME_WE)
+get_filename_component(_filename "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg" NAME_WE)
 add_dependencies(localization_generate_messages_nodejs _localization_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -161,7 +161,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS localization_generate_messages_node
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(localization
-  "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg"
+  "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/localization
@@ -181,7 +181,7 @@ add_custom_target(localization_generate_messages_py
 add_dependencies(localization_generate_messages localization_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ghost/Desktop/RedBird/2017-2018/dev_ws/src/localization/msg/Num.msg" NAME_WE)
+get_filename_component(_filename "/home/redbird-general/2018_AAV/dev_ws/src/localization/msg/Num.msg" NAME_WE)
 add_dependencies(localization_generate_messages_py _localization_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

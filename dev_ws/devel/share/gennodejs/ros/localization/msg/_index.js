@@ -1,8 +1,1 @@
-
-"use strict";
-
-let Num = require('./Num.js');
-
-module.exports = {
-  Num: Num,
-};
+/home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/share/gennodejs/ros/localization/msg/_index.js

@@ -1,0 +1,20 @@
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target _localization_generate_messages_check_deps_Num
+[  5%] Built target localization_generate_messages_cpp
+[ 23%] Built target localization_generate_messages_lisp
+[ 23%] Built target localization_generate_messages_py
+[ 29%] Built target localization_generate_messages_nodejs
+[ 41%] Built target localization_generate_messages_eus
+[ 41%] Built target localization_generate_messages
+[ 64%] Built target listener
+[ 64%] Built target talker
+[35m[1mScanning dependencies of target localization[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/localization.dir/src/localization.cpp.o[0m
+[ 76%] [32m[1mLinking CXX executable /home/redbird-general/2018_AAV/dev_ws/devel/.private/localization/lib/localization/localization[0m
+/usr/bin/ld: warning: libboost_chrono.so.1.58.0, needed by /opt/ros/kinetic/lib/libroscpp.so, may conflict with libboost_chrono.so.1.61.0
+/usr/bin/ld: warning: libboost_system.so.1.61.0, needed by /usr/local/lib/libboost_chrono.so, may conflict with libboost_system.so.1.58.0
+[100%] Built target localization
