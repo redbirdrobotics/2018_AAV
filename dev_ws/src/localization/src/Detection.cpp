@@ -99,6 +99,21 @@ void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > pImgList)
 	}
 }
 
+void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > p_imglist)
+{
+	if(p_imglist->empty()) return;
+
+	for(int i=0; i<p_imglist->size(); i++)
+	{
+		if((*p_imglist)[i]->empty()) {std::cout<<"Empty Frame"<<std::endl; return;}
+
+		cv::GaussianBlur((*p_imglist)[i], _blurlist[i], Size(5, 5), 0);
+		cv::cvtColor(_blurlist[i], _hsvlist][i], CV_BGR2HSV);
+
+		
+	}
+}
+
 void Detection::redRobotSearch(cv::Mat* img)
 {
 	applyRedFilter(*img, a_pMask, a_redRobotThresh[0], a_redRobotThresh[1]);

@@ -198,3 +198,10 @@ void Camera::showFrame(boost::shared_ptr< std::vector< cv::Mat > > frameList, bo
 	// 	//MUTEX.unlock();
 	}
 }
+
+get_tegra_pipeline() 
+{
+    return "nvcamerasrc ! video/x-raw(memory:NVMM), width=(int)" + std::to_string(tegra_width) + ", height=(int)" +
+           std::to_string(tegra_height) + ", format=(string)I420, framerate=(fraction)" + std::to_string(tegra_fps) +
+           "/1 ! nvvidconv flip-method=2 ! video/x-raw, format=(string)BGRx ! videoconvert ! video/x-raw, format=(string)BGR ! appsink";
+}

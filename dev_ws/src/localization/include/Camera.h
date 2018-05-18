@@ -15,15 +15,16 @@ private:
 	uint32_t a_port;
 	std::string a_ID;
 	bool a_connect;
-	//std::vector< Camera > a_camlist;
 	std::vector< cv::Mat > a_frameList;
+	int tegra_width, tegra_height, tegra_fps;
+	std::string = tegra_pipline; 
 
 public:
 	Camera(std::string, uint32_t);
 	bool getStatus();
 	std::string getID();
-	//boost::shared_ptr< cv::Mat > getFrame(boost::shared_ptr< cv::Mat >);	
 	cv::Mat getFrame(cv::Mat, bool = false);
+	std::string get_tegra_pipeline();
 
 	static bool getListStatus(std::vector< Camera* >, int);
 	static void updateFrameList(boost::shared_ptr< std::vector< cv::Mat > >, std::vector< Camera* >, int, boost::mutex&);
