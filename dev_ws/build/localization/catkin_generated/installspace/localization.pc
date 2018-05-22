@@ -1,8 +1,8 @@
-prefix=/home/redbird-general/2018_AAV/dev_ws/install
+prefix=/home/redbird_general/2018_AAV/dev_ws/install
 
 Name: localization
 Description: Description of localization
 Version: 0.0.0
-Cflags: -I/home/redbird-general/2018_AAV/dev_ws/install/include -I/usr/local/include
-Libs: -L/home/redbird-general/2018_AAV/dev_ws/install/lib -llocalization -lCamera -lCommunication -lRobot /usr/local/lib/libboost_system.so /usr/local/lib/libboost_filesystem.so /usr/local/lib/libboost_thread.so /usr/local/lib/libboost_chrono.so /usr/local/lib/libboost_date_time.so /usr/local/lib/libboost_atomic.so /usr/lib/x86_64-linux-gnu/libpthread.so /usr/lib/x86_64-linux-gnu/libSM.so /usr/lib/x86_64-linux-gnu/libICE.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so
+Cflags: -I/home/redbird_general/2018_AAV/dev_ws/install/include
+Libs: -L/home/redbird_general/2018_AAV/dev_ws/install/lib -llocalization -lCamera -lCommunication -lRobot /usr/lib/x86_64-linux-gnu/libSM.so /usr/lib/x86_64-linux-gnu/libICE.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so
 Requires: roscpp rospy std_msgs message_runtime

@@ -1,2 +1,0 @@
-/usr/bin/ld: warning: libboost_chrono.so.1.58.0, needed by /opt/ros/kinetic/lib/libroscpp.so, may conflict with libboost_chrono.so.1.61.0
-/usr/bin/ld: warning: libboost_system.so.1.61.0, needed by /usr/local/lib/libboost_chrono.so, may conflict with libboost_system.so.1.58.0

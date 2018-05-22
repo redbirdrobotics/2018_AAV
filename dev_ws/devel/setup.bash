@@ -1,1 +1,1 @@
-/home/redbird-general/2018_AAV/dev_ws/devel/.private/catkin_tools_prebuild/setup.bash
+/home/redbird_general/2018_AAV/dev_ws/devel/.private/catkin_tools_prebuild/setup.bash

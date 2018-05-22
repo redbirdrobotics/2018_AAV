@@ -27,8 +27,9 @@ int main(int argc, char **argv)
   boost::mutex MUTEX;
 
   // Initialize Cameras
-  Camera Cam1("Augustus", 0);
-  std::vector< Camera* > CamList = {&Cam1};
+  Camera Cam1("Augustus", Camera::port_id_t{0});
+  std::vector< Camera > CamList = {Cam1};
+  boost::shared_ptr< std::vector< Camera > > pCamList = boost::make_shared< stdLLvetor< Camera > >(CamList)
 
   // Initialize Robots
   // Red

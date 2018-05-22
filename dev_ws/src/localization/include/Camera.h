@@ -10,9 +10,11 @@
 
 class Camera
 {
+public:
+	using port_id_t = uint8_t;
 private:
 	cv::VideoCapture a_stream;
-	uint32_t a_port;
+	port_id_t a_port;
 	std::string a_ID;
 	bool a_connect;
 	std::vector< cv::Mat > a_frameList;
@@ -20,7 +22,7 @@ private:
 	std::string = tegra_pipline; 
 
 public:
-	Camera(std::string, uint32_t);
+	Camera(std::string, port_id_t port);
 	bool getStatus();
 	std::string getID();
 	cv::Mat getFrame(cv::Mat, bool = false);
