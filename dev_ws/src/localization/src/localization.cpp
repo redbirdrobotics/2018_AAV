@@ -21,15 +21,14 @@ int main(int argc, char **argv)
   XInitThreads();
 
   // Initialize Pointers for Thread
-  boost::shared_ptr< std::vector< cv::Mat > > camStream = boost::make_shared< std::vector< cv::Mat > >();
+  boost::shared_ptr< std::vector< cv::Mat > > imgvect_ptr = boost::make_shared< std::vector< cv::Mat > >();
   boost::shared_ptr< bool > advance = boost::make_shared< bool >(true);
   boost::shared_ptr< bool > capture = boost::make_shared< bool >(false);
   boost::mutex MUTEX;
 
   // Initialize Cameras
-  Camera Cam1("Augustus", Camera::port_id_t{0});
-  std::vector< Camera > CamList = {Cam1};
-  boost::shared_ptr< std::vector< Camera > > pCamList = boost::make_shared< stdLLvetor< Camera > >(CamList)
+  boost::shared_ptr< std::vector< Camera > > camvect_ptr = boost::make_shared< stdLLvetor< Camera > >()
+  Camera::FillCamVect_Ptr(camvect_ptr, 1);
 
   // Initialize Robots
   // Red
@@ -64,10 +63,6 @@ int main(int argc, char **argv)
   // Initialize Detection Instance
   Detection Detect(CamList.size());
 
-  Detect.setRedRobots(&redRobotList);
-  Detect.setGreenRobots(&greenRobotList);
-  Detect.setWhiteRobots(&whiteRobotList);
-
   // Check Connection to Cameras
   *advance = Camera::getListStatus(CamList, CamList.size());
   if(!*advance)
@@ -80,18 +75,15 @@ int main(int argc, char **argv)
   Communication::getDetection_XMLData(&Detect);
 
   // Begin Visualization Thread
-  boost::thread workerThread1(&Camera::showFrame, camStream, advance, capture, std::ref(MUTEX));
+  boost::thread workerThread1(&Camera::ShowFrame, imgvect_ptr, advance, capture, std::ref(MUTEX));
 
   // Main Loop
   while(*advance)
   {
 
     // Get Frame
-    Camera::updateFrameList(camStream, CamList, CamList.size(), std::ref(MUTEX));
-    Detect.Search(camStream);
-    // Detect.showMask();
-
-    //cv::imshow("TEST",Detect.showMask());
+    Camera::UpdateFrameList(camvect_ptr, imgvect_ptr, std::ref(MUTEX));
+    Detect.Search(imgvect_ptr);
   }
 
   ros::spin();

@@ -1,171 +1,118 @@
 #include "Camera.h"
 
-Camera::Camera(std::string name,uint32_t port) : a_connect(false), a_ID(name)
+Camera::Camera(uint8_t port, cv::Size frame_size, uint8_t fps) 
+: _connected(false), _port(port), _frame_size(frame_size), _fps(fps)
 {
-	a_stream.open(port);
-	if(a_stream.isOpened())
+	_cam_stream.open(port);
+	if(_cam_stream.isOpened())
 	{
-		std::cout<< a_ID << " Connected" <<std::endl;
-		a_connect = true;
+		_cam_stream.set(CV_CAP_PROP_FRAME_WIDTH, frame_size[0]);
+		_cam_stream.set(CV_CAP_PROP_FRAME_HEIGHT, frame_size[1]);
+		_cam_stream.set(CV_CAP_PROP_FPS, fps);
+		_connected = true;
+		std::cout<< "Camera " <<port<< " Connected" <<std::endl;
 	}
 }
 
-bool Camera::getStatus() {return a_connect;}
-
-std::string Camera::getID() {return a_ID;}
-
-// boost::shared_ptr< cv::Mat > Camera::getFrame(boost::shared_ptr< cv::Mat > frame)
-// {
-// 	a_stream.read(*frame);
-// 	if(frame->empty())
-// 	{
-// 		std::cout<<"empty frame"<<std::endl;
-// 	}
-// 	return frame;
-// }
-
-cv::Mat Camera::getFrame(cv::Mat frame, bool add)
+void Camera::FillCamVect_Ptr(boost::shared_ptr< std::vector< Camera > > camvect_ptr, uint8_t num_cams, cv::Size frame_size, uint8_t fps)
 {
-	a_stream.read(frame);
+	for(uint8_t i=0; i<num_cams; i++)
+	{
+		Camera cam(i, frame_size, fps);
+		camvect_ptr->push_back(cam);
+	}
+}
+
+uint8_t Camera::GetPort() return _port;
+
+bool Camera::GetStatus() return _connected;
+
+bool Camera::GetStatus_CamVect_Ptr(boost::shared_ptr< std::vector< Camera > > camvect_ptr)
+{
+	bool total_connect = true;
+	for(uint8_t i=0; i<camvect_ptr->size(); i++)
+	{
+		if(!(*camvect_ptr)[i]->GetStatus())
+		{
+			std::cout<<"Camera "<<i<<" is not connected"<<std::endl;
+			total_connect = false;
+		}
+	}
+	return total_connect;
+}
+
+cv::Mat Camera::GetFrame(cv::Mat frame)
+{
+	_cam_stream.read(frame);
 	if(frame.empty())
 	{
 		std::cout<<"empty frame"<<std::endl;
 	}
-	if(add == true)
-	{
-		a_frameList.push_back(frame);
-	}
 	return frame;
 }
 
-// cv::Mat Camera::getFrame(cv::Mat frame, std::vector< cv::Mat >* imgList)
+// Used to populate an image vector which will be displayed in another thread
+void Camera::UpdateFrameVect(boost::shared_ptr< std::vector< Camera > > camvect_ptr, boost::shared_ptr< std::vector< cv::Mat > > framevect_ptr, boost::mutex& MUTEX)
+{
+	if(framevect_ptr->empty())
+	{
+		// framevect_ptr
+		for(uint8_t i=0; i<(_num_displayimgs); i++)
+		{
+			cv::Mat displayimgs;
+			frameList->push_back(displayimgs);
+		}
+	}
+
+	for(uint8_t i=0; i<camvect_ptr->size(); i++)
+	{
+		(*framevect_ptr)[i] = camvect_ptr[i]->getFrame((*framevect_ptr)[i]);
+	}
+}
+
+// void Camera::UpdateFrameList(boost::shared_ptr< std::vector< Camera > camvect_ptr, boost::shared_ptr< std::vector< std::vector< cv::Mat > > > frameList, int size, boost::mutex& MUTEX)
 // {
-// 	a_stream.read(frame);
-// 	if(frame.empty())
+// 	if(frameList->empty())
 // 	{
-// 		std::cout<<"empty frame"<<std::endl;
+// 		std::cout<<"Creating 2 Containers for "<<size<<" Frames"<<std::endl;
+// 		std::vector<cv::Mat> row1, row2;
+// 		(*frameList).push_back(row1);
+// 		(*frameList).push_back(row2);
 // 	}
-// 	else
+
+// 	for(int i=0; i<2; i++)
 // 	{
-// 		imgList->push_back(frame);
+// 		cv::Mat* pMat = new cv::Mat;
+
+// 		(*frameList)[i].push_back(CamList[i]->getFrame(*pMat));
 // 	}
-// 	return frame;
-//}
 
-//cv::Mat Camera::getFrame(cv::Mat)
+// 	std::printf( "%d Pictures Captured! \n", (int)((*frameList)[0].size()) );
+// }
 
-bool Camera::getListStatus(std::vector< Camera* > CamList, int size)
+void Camera::ShowFrameVect_Ptr(boost::shared_ptr< std::vector< cv::Mat > > framevect_ptr, boost::shared_ptr< bool > connected, boost::shared_ptr< bool > capture, boost::mutex& MUTEX)
 {
-	bool totalConnect = true;
-	for(int i=0; i<size; i++)
-	{
-		if(!CamList[i]->getStatus())
-		{
-			std::cout<<"Camera "<<i<<" is not connected"<<std::endl;
-			totalConnect = false;
-		}
-	}
-	return totalConnect;
-}
-
-void Camera::updateFrameList(boost::shared_ptr< std::vector< cv::Mat > > frameList, std::vector< Camera* > CamList, int size, boost::mutex& MUTEX)
-{
-	//std::unique_ptr<> std::make_unique<>()
-	//boost::lock_guard<boost::mutex> guard(MUTEX);
-	//std::cout<<"Grabbing "<<size<<" Frames"<<std::endl;
-
-	if(frameList->empty())
-	{
-		//Creates 1 extra empty matrix for use later when computing disparity
-		for(int i=0; i<(size+1); i++)
-		{
-			cv::Mat* pMat = new cv::Mat;
-			frameList->push_back(*pMat);
-		}
-	}
-
-	for(int i=0; i<size; i++)
-	{
-		//MUTEX.lock();
-
-		(*frameList)[i]=CamList[i]->getFrame((*frameList)[i]);
-
-		//MUTEX.unlock();
-	}
-}
-
-void Camera::updateFrameList(boost::shared_ptr< std::vector< std::vector< cv::Mat > > > frameList, std::vector< Camera* > CamList, int size, boost::mutex& MUTEX)
-{
-
-	if(frameList->empty())
-	{
-		std::cout<<"Creating 2 Containers for "<<size<<" Frames"<<std::endl;
-		std::vector<cv::Mat> row1, row2;
-		(*frameList).push_back(row1);
-		(*frameList).push_back(row2);
-	}
-
-	for(int i=0; i<2; i++)
-	{
-		cv::Mat* pMat = new cv::Mat;
-
-		//MUTEX.lock();
-
-		(*frameList)[i].push_back(CamList[i]->getFrame(*pMat));
-
-		//MUTEX.unlock();
-	}
-
-	// cv::Mat frame1, frame2;
-	// (*frameList)[0].push_back(CamList[0]->getFrame(frame1));
-	// (*frameList)[1].push_back(CamList[1]->getFrame(frame2));
-
-	std::printf( "%d Pictures Captured! \n", (int)((*frameList)[0].size()) );
-}
-
-//void Camera::getFrame()[]
-
-/*void Camera::showFrame(std::string window, boost::shared_ptr< std::vector< cv::Mat > > frameList, boost::shared_ptr< bool > connected, boost::mutex& MUTEX)
-{
-	int size = frameList->size();
-	while(*connected == true)
-	{
-		for(int i=0; i<size; i++)
-		{
-			if(! (*frameList)[i].empty() )
-			{
-				cv::imshow(window+std::to_string(i), (*frameList)[i]);
-			}
-		}
-		if(cv::waitKey(30) >= 0)
-		{
-			*connected = false;
-			//cv::destroyWindow(window);
-			return;
-		}
-	}
-}*/
-
-void Camera::showFrame(boost::shared_ptr< std::vector< cv::Mat > > frameList, boost::shared_ptr< bool > connected, boost::shared_ptr< bool > capture, boost::mutex& MUTEX)
-{
-	//boost::lock_guard<boost::mutex> guard(MUTEX);
-	int key;
+	uint8_t key;
 	bool toggle = true;
 
 	while(*connected == true)
 	{
 		key = cv::waitKey(30);
+
+		// Close program (esc)
 		if(key == 27)
 		{
 			*connected = false;
 			return;
 		}
 
+		// Capture image (space)
 		else if(key == 32)
 		{
 			*capture = true;
 		}
 
+		// Toggle display (t)
 		if(key == 116)
 		{
 			toggle = !toggle;
@@ -175,27 +122,19 @@ void Camera::showFrame(boost::shared_ptr< std::vector< cv::Mat > > frameList, bo
 			}
 		}
 
-	// 	//MUTEX.lock();
 	 	if(toggle == true)
 		{
-	// 		int size = frameList->size();
 
-	 		if(! (*frameList)[0].empty() )
+	 		if(! (*framevect_ptr)[0].empty() )
 			{
-	 			cv::imshow("window1", (*frameList)[0]);
+	 			cv::imshow("window1", (*framevect_ptr)[0]);
 			}
 
-			if(! (*frameList)[1].empty() )
+			if(! (*framevect_ptr)[1].empty() )
 			{
-				cv::imshow("window2", (*frameList)[1]);
+				cv::imshow("window2", (*framevect_ptr)[1]);
 			}
-
-	// 		if(! (*frameList)[2].empty() )
-	// 		{
-	// 			cv::imshow("window3", (*frameList)[2]);
-	// 		}
 		}
-	// 	//MUTEX.unlock();
 	}
 }
 

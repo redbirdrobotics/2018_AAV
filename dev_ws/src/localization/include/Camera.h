@@ -13,25 +13,25 @@ class Camera
 public:
 	using port_id_t = uint8_t;
 private:
-	cv::VideoCapture a_stream;
-	port_id_t a_port;
-	std::string a_ID;
-	bool a_connect;
-	std::vector< cv::Mat > a_frameList;
+	cv::VideoCapture _cam_stream;
+	uint8_t _port;
+	cv::Size _framesize;
+	uint8_t _fps;
+	bool _connected;
 	int tegra_width, tegra_height, tegra_fps;
 	std::string = tegra_pipline; 
 
 public:
-	Camera(std::string, port_id_t port);
-	bool getStatus();
-	std::string getID();
-	cv::Mat getFrame(cv::Mat, bool = false);
+	Camera(uint8_t, cv::Size, uint8_t);
+	bool GetStatus();
+	uint8_t GetPort();
+	cv::Mat GetFrame(cv::Mat);
 	std::string get_tegra_pipeline();
 
-	static bool getListStatus(std::vector< Camera* >, int);
-	static void updateFrameList(boost::shared_ptr< std::vector< cv::Mat > >, std::vector< Camera* >, int, boost::mutex&);
-	static void updateFrameList(boost::shared_ptr< std::vector< std::vector< cv::Mat > > >, std::vector< Camera* >, int, boost::mutex&);
-	static void showFrame(boost::shared_ptr< std::vector< cv::Mat > >, boost::shared_ptr< bool >, boost::shared_ptr< bool >, boost::mutex&);
+	static void FillCamVect_Ptr(boost::shared_ptr< std::vector< Camera > >, uint8_t, cv::Size, uint8_t);
+	static bool GetStatus_CamVect_Ptr(boost::shared_ptr< std::vector< Camera > > camvect_ptr);
+	static void UpdateFrameVect(boost::shared_ptr< std::vector< Camera > >, boost::shared_ptr< std::vector< cv::Mat > >, boost::mutex&);
+	static void ShowFrameVect_Ptr(boost::shared_ptr< std::vector< cv::Mat > >, boost::shared_ptr< bool >, boost::shared_ptr< bool >, boost::mutex&);
 };
 
 #endif
