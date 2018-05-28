@@ -27,45 +27,45 @@ void Communication::getDetection_XMLData(Detection* pClass)
 		std::cout<< "Failed to Open XML FILE \n";
 	}
 
-	in["red1LowerH"] >> pClass->a_redThresh1[0];
-	in["red1LowerS"] >> pClass->a_redThresh1[1];
-	in["red1LowerV"] >> pClass->a_redThresh1[2];
+	in["red1LowerH"] >> (*pClass->_red_thresh_lower_ptr)[0];
+	in["red1LowerS"] >> (*pClass->_red_thresh_lower_ptr)[1];
+	in["red1LowerV"] >> (*pClass->_red_thresh_lower_ptr)[2];
 
-	in["red1UpperH"] >> pClass->a_redThresh1[3];
-	in["red1UpperS"] >> pClass->a_redThresh1[4];
-	in["red1UpperV"] >> pClass->a_redThresh1[5];
+	in["red1UpperH"] >> (*pClass->_red_thresh_lower_ptr)[3];
+	in["red1UpperS"] >> (*pClass->_red_thresh_lower_ptr)[4];
+	in["red1UpperV"] >> (*pClass->_red_thresh_lower_ptr)[5];
 
-	in["red2LowerH"] >> pClass->a_redThresh2[0];
-	in["red2LowerS"] >> pClass->a_redThresh2[1];
-	in["red2LowerV"] >> pClass->a_redThresh2[2];
+	in["red2LowerH"] >> (*pClass->_red_thresh_upper_ptr)[0];
+	in["red2LowerS"] >> (*pClass->_red_thresh_upper_ptr)[1];
+	in["red2LowerV"] >> (*pClass->_red_thresh_upper_ptr)[2];
 
-	in["red2UpperH"] >> pClass->a_redThresh2[3];
-	in["red2UpperS"] >> pClass->a_redThresh2[4];
-	in["red2UpperV"] >> pClass->a_redThresh2[5];
+	in["red2UpperH"] >> (*pClass->_red_thresh_upper_ptr)[3];
+	in["red2UpperS"] >> (*pClass->_red_thresh_upper_ptr)[4];
+	in["red2UpperV"] >> (*pClass->_red_thresh_upper_ptr)[5];
 
-	in["greenLowerH"] >> pClass->a_greenThresh[0];
-	in["greenLowerS"] >> pClass->a_greenThresh[1];
-	in["greenLowerV"] >> pClass->a_greenThresh[2];
+	in["greenLowerH"] >> (*pClass->_green_thresh_ptr)[0];
+	in["greenLowerS"] >> (*pClass->_green_thresh_ptr)[1];
+	in["greenLowerV"] >> (*pClass->_green_thresh_ptr)[2];
 
-	in["greenUpperH"] >> pClass->a_greenThresh[3];
-	in["greenUpperS"] >> pClass->a_greenThresh[4];
-	in["greenUpperV"] >> pClass->a_greenThresh[5];
+	in["greenUpperH"] >> (*pClass->_green_thresh_ptr)[3];
+	in["greenUpperS"] >> (*pClass->_green_thresh_ptr)[4];
+	in["greenUpperV"] >> (*pClass->_green_thresh_ptr)[5];
 
-	in["whiteLowerH"] >> pClass->a_whiteThresh[0];
-	in["whiteLowerS"] >> pClass->a_whiteThresh[1];
-	in["whiteLowerV"] >> pClass->a_whiteThresh[2];
+	in["whiteLowerH"] >> (*pClass->_white_thresh_ptr)[0];
+	in["whiteLowerS"] >> (*pClass->_white_thresh_ptr)[1];
+	in["whiteLowerV"] >> (*pClass->_white_thresh_ptr)[2];
 
-	in["whiteUpperH"] >> pClass->a_whiteThresh[3];
-	in["whiteUpperS"] >> pClass->a_whiteThresh[4];
-	in["whiteUpperV"] >> pClass->a_whiteThresh[5];
+	in["whiteUpperH"] >> (*pClass->_white_thresh_ptr)[3];
+	in["whiteUpperS"] >> (*pClass->_white_thresh_ptr)[4];
+	in["whiteUpperV"] >> (*pClass->_white_thresh_ptr)[5];
 
-	in["blackLowerH"] >> pClass->a_blackThresh[0];
-	in["blackLowerS"] >> pClass->a_blackThresh[1];
-	in["blackLowerV"] >> pClass->a_blackThresh[2];
+	in["blackLowerH"] >> (*pClass->_black_thresh_ptr)[0];
+	in["blackLowerS"] >> (*pClass->_black_thresh_ptr)[1];
+	in["blackLowerV"] >> (*pClass->_black_thresh_ptr)[2];
 
-	in["blackUpperH"] >> pClass->a_blackThresh[3];
-	in["blackUpperS"] >> pClass->a_blackThresh[4];
-	in["blackupperV"] >> pClass->a_blackThresh[5];
+	in["blackUpperH"] >> (*pClass->_black_thresh_ptr)[3];
+	in["blackUpperS"] >> (*pClass->_black_thresh_ptr)[4];
+	in["blackupperV"] >> (*pClass->_black_thresh_ptr)[5];
 
 	in.release();
 }

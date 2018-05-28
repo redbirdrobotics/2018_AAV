@@ -6,11 +6,10 @@ Camera::Camera(uint8_t port, cv::Size frame_size, uint8_t fps)
 	_cam_stream.open(port);
 	if(_cam_stream.isOpened())
 	{
-		_cam_stream.set(CV_CAP_PROP_FRAME_WIDTH, frame_size[0]);
-		_cam_stream.set(CV_CAP_PROP_FRAME_HEIGHT, frame_size[1]);
+		_cam_stream.set(CV_CAP_PROP_FRAME_WIDTH, frame_size.width);
+		_cam_stream.set(CV_CAP_PROP_FRAME_HEIGHT, frame_size.height);
 		_cam_stream.set(CV_CAP_PROP_FPS, fps);
 		_connected = true;
-		std::cout<< "Camera " <<port<< " Connected" <<std::endl;
 	}
 }
 
@@ -23,20 +22,21 @@ void Camera::FillCamVect_Ptr(boost::shared_ptr< std::vector< Camera > > camvect_
 	}
 }
 
-uint8_t Camera::GetPort() return _port;
+uint8_t Camera::GetPort() {return _port;}
 
-bool Camera::GetStatus() return _connected;
+bool Camera::GetStatus() {return _connected;}
 
-bool Camera::GetStatus_CamVect_Ptr(boost::shared_ptr< std::vector< Camera > > camvect_ptr)
+bool Camera::GetStatus_CamVect(boost::shared_ptr< std::vector< Camera > > camvect_ptr)
 {
 	bool total_connect = true;
 	for(uint8_t i=0; i<camvect_ptr->size(); i++)
 	{
-		if(!(*camvect_ptr)[i]->GetStatus())
+		if(!(*camvect_ptr)[i].GetStatus())
 		{
-			std::cout<<"Camera "<<i<<" is not connected"<<std::endl;
+			std::cout<<"Camera "<<(int)i<<": Not Connected"<<std::endl;
 			total_connect = false;
 		}
+		std::cout<< "Camera " <<(int)i<< ": Connected" <<std::endl;
 	}
 	return total_connect;
 }
@@ -54,19 +54,20 @@ cv::Mat Camera::GetFrame(cv::Mat frame)
 // Used to populate an image vector which will be displayed in another thread
 void Camera::UpdateFrameVect(boost::shared_ptr< std::vector< Camera > > camvect_ptr, boost::shared_ptr< std::vector< cv::Mat > > framevect_ptr, boost::mutex& MUTEX)
 {
+	boost::lock_guard<boost::mutex> guard(MUTEX);
 	if(framevect_ptr->empty())
 	{
 		// framevect_ptr
-		for(uint8_t i=0; i<(_num_displayimgs); i++)
+		for(uint8_t i=0; i<2; i++)
 		{
 			cv::Mat displayimgs;
-			frameList->push_back(displayimgs);
+			framevect_ptr->push_back(displayimgs);
 		}
 	}
 
 	for(uint8_t i=0; i<camvect_ptr->size(); i++)
 	{
-		(*framevect_ptr)[i] = camvect_ptr[i]->getFrame((*framevect_ptr)[i]);
+		(*framevect_ptr)[i] = (*camvect_ptr)[i].GetFrame((*framevect_ptr)[i]);
 	}
 }
 
@@ -90,13 +91,15 @@ void Camera::UpdateFrameVect(boost::shared_ptr< std::vector< Camera > > camvect_
 // 	std::printf( "%d Pictures Captured! \n", (int)((*frameList)[0].size()) );
 // }
 
-void Camera::ShowFrameVect_Ptr(boost::shared_ptr< std::vector< cv::Mat > > framevect_ptr, boost::shared_ptr< bool > connected, boost::shared_ptr< bool > capture, boost::mutex& MUTEX)
+void Camera::ShowFrameVect(boost::shared_ptr< std::vector< cv::Mat > > framevect_ptr, boost::shared_ptr< bool > connected, boost::shared_ptr< bool > capture, boost::mutex& MUTEX)
 {
 	uint8_t key;
 	bool toggle = true;
 
 	while(*connected == true)
 	{
+		if(framevect_ptr->empty()) continue;
+
 		key = cv::waitKey(30);
 
 		// Close program (esc)
@@ -124,6 +127,7 @@ void Camera::ShowFrameVect_Ptr(boost::shared_ptr< std::vector< cv::Mat > > frame
 
 	 	if(toggle == true)
 		{
+			boost::lock_guard<boost::mutex> guard(MUTEX);
 
 	 		if(! (*framevect_ptr)[0].empty() )
 			{
@@ -138,7 +142,7 @@ void Camera::ShowFrameVect_Ptr(boost::shared_ptr< std::vector< cv::Mat > > frame
 	}
 }
 
-get_tegra_pipeline() 
+std:: string Camera::get_tegra_pipeline() 
 {
     return "nvcamerasrc ! video/x-raw(memory:NVMM), width=(int)" + std::to_string(tegra_width) + ", height=(int)" +
            std::to_string(tegra_height) + ", format=(string)I420, framerate=(fraction)" + std::to_string(tegra_fps) +

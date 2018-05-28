@@ -23,6 +23,7 @@ Not searching for unused variables given on the command line.
 [36m--[0m Using CATKIN_ENABLE_TESTING: ON
 [36m--[0m Call enable_testing()
 [36m--[0m Using CATKIN_TEST_RESULTS_DIR: /home/redbird_general/2018_AAV/dev_ws/build/localization/test_results
+[36m--[0m Found gmock sources under '/usr/src/gmock': gmock will be built
 [36m--[0m Looking for pthread.h
 [36m--[0m Looking for pthread.h - found
 [36m--[0m Looking for pthread_create
@@ -32,48 +33,73 @@ Not searching for unused variables given on the command line.
 [36m--[0m Looking for pthread_create in pthread
 [36m--[0m Looking for pthread_create in pthread - found
 [36m--[0m Found Threads: TRUE
-[36m--[0m Found gtest sources under '/usr/src/gtest': gtests will be built
+[36m--[0m Found gtest sources under '/usr/src/gmock': gtests will be built
 [36m--[0m Using Python nosetests: /usr/bin/nosetests-2.7
-[36m--[0m catkin 0.7.8
+[36m--[0m catkin 0.7.11
 [36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
 [36m--[0m Found OpenCV: /opt/ros/kinetic (found version "3.3.1")
-[33m[1mCMake Warning[0m at /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:552 (message):
-  Imported targets and dependency information not available for Boost version
-  (all versions older than 1.33)
+[33m[1mCMake Warning[0m at /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:786 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
 [36mCall Stack (most recent call first):[0m
   /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:892 (_Boost_COMPONENT_DEPENDENCIES)
   /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:1523 (_Boost_MISSING_DEPENDENCIES)
-  CMakeLists.txt:24 (find_package)
+  CMakeLists.txt:27 (find_package)
 
 
-[33m[1mCMake Warning[0m at /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:552 (message):
-  Imported targets and dependency information not available for Boost version
-  (all versions older than 1.33)
+[33m[1mCMake Warning[0m at /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:786 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
 [36mCall Stack (most recent call first):[0m
   /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:892 (_Boost_COMPONENT_DEPENDENCIES)
   /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:1523 (_Boost_MISSING_DEPENDENCIES)
-  CMakeLists.txt:24 (find_package)
+  CMakeLists.txt:27 (find_package)
 
 
-[33m[1mCMake Warning[0m at /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:552 (message):
-  Imported targets and dependency information not available for Boost version
-  (all versions older than 1.33)
+[33m[1mCMake Warning[0m at /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:786 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
 [36mCall Stack (most recent call first):[0m
   /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:892 (_Boost_COMPONENT_DEPENDENCIES)
   /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:1523 (_Boost_MISSING_DEPENDENCIES)
-  CMakeLists.txt:24 (find_package)
+  CMakeLists.txt:27 (find_package)
 
 
-[31m[1mCMake Error[0m at /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:1900 (message):
-  Unable to find the requested Boost libraries.
-
-  Unable to find the Boost header files.  Please set BOOST_ROOT to the root
-  directory containing Boost or BOOST_INCLUDEDIR to the directory containing
-  Boost's headers.
+[33m[1mCMake Warning[0m at /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:786 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
 [36mCall Stack (most recent call first):[0m
-  CMakeLists.txt:24 (find_package)
+  /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:892 (_Boost_COMPONENT_DEPENDENCIES)
+  /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:1523 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:27 (find_package)
 
 
+[33m[1mCMake Warning[0m at /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:786 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
+[36mCall Stack (most recent call first):[0m
+  /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:892 (_Boost_COMPONENT_DEPENDENCIES)
+  /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:1523 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:27 (find_package)
+
+
+[33m[1mCMake Warning[0m at /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:786 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
+[36mCall Stack (most recent call first):[0m
+  /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:892 (_Boost_COMPONENT_DEPENDENCIES)
+  /usr/local/share/cmake-3.9/Modules/FindBoost.cmake:1523 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:27 (find_package)
+
+
+[36m--[0m Boost version: 1.66.0
+[36m--[0m Found the following Boost libraries:
+[36m--[0m   system
+[36m--[0m   filesystem
+[36m--[0m   thread
+[36m--[0m   chrono
+[36m--[0m   date_time
+[36m--[0m   atomic
 [36m--[0m Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
 [36m--[0m Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
 [36m--[0m Looking for gethostbyname
@@ -88,52 +114,6 @@ Not searching for unused variables given on the command line.
 [36m--[0m Looking for IceConnectionNumber in ICE - found
 [36m--[0m Found X11: /usr/lib/x86_64-linux-gnu/libX11.so
 [36m--[0m localization: 1 messages, 0 services
-CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
-Please set them or make sure they are set and tested correctly in the CMake files:
-Boost_INCLUDE_DIR (ADVANCED)
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-[36m--[0m Configuring incomplete, errors occurred!
-See also "/home/redbird_general/2018_AAV/dev_ws/build/localization/CMakeFiles/CMakeOutput.log".
-See also "/home/redbird_general/2018_AAV/dev_ws/build/localization/CMakeFiles/CMakeError.log".
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-   used as include directory in directory /home/redbird_general/2018_AAV/dev_ws/src/localization
-
+[36m--[0m Configuring done
+[36m--[0m Generating done
+[36m--[0m Build files have been written to: /home/redbird_general/2018_AAV/dev_ws/build/localization

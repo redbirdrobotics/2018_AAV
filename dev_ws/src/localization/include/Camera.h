@@ -15,11 +15,11 @@ public:
 private:
 	cv::VideoCapture _cam_stream;
 	uint8_t _port;
-	cv::Size _framesize;
+	cv::Size _frame_size;
 	uint8_t _fps;
 	bool _connected;
 	int tegra_width, tegra_height, tegra_fps;
-	std::string = tegra_pipline; 
+	std::string tegra_pipline; 
 
 public:
 	Camera(uint8_t, cv::Size, uint8_t);
@@ -29,9 +29,9 @@ public:
 	std::string get_tegra_pipeline();
 
 	static void FillCamVect_Ptr(boost::shared_ptr< std::vector< Camera > >, uint8_t, cv::Size, uint8_t);
-	static bool GetStatus_CamVect_Ptr(boost::shared_ptr< std::vector< Camera > > camvect_ptr);
+	static bool GetStatus_CamVect(boost::shared_ptr< std::vector< Camera > > camvect_ptr);
 	static void UpdateFrameVect(boost::shared_ptr< std::vector< Camera > >, boost::shared_ptr< std::vector< cv::Mat > >, boost::mutex&);
-	static void ShowFrameVect_Ptr(boost::shared_ptr< std::vector< cv::Mat > >, boost::shared_ptr< bool >, boost::shared_ptr< bool >, boost::mutex&);
+	static void ShowFrameVect(boost::shared_ptr< std::vector< cv::Mat > >, boost::shared_ptr< bool >, boost::shared_ptr< bool >, boost::mutex&);
 };
 
 #endif

@@ -27,8 +27,8 @@ int main(int argc, char **argv)
   boost::mutex MUTEX;
 
   // Initialize Cameras
-  boost::shared_ptr< std::vector< Camera > > camvect_ptr = boost::make_shared< stdLLvetor< Camera > >()
-  Camera::FillCamVect_Ptr(camvect_ptr, 1);
+  boost::shared_ptr< std::vector< Camera > > camvect_ptr = boost::make_shared< std::vector< Camera > >();
+  Camera::FillCamVect_Ptr(camvect_ptr, 1, cv::Size(640, 480), 15);
 
   // Initialize Robots
   // Red
@@ -59,12 +59,13 @@ int main(int argc, char **argv)
   boost::shared_ptr< std::vector< Robot > > pRedRobotList2 = boost::make_shared< std::vector< Robot > >(redRobotList);
   boost::shared_ptr< std::vector< Robot > > pGreenRobotList = boost::make_shared< std::vector< Robot > >(greenRobotList);
   boost::shared_ptr< std::vector< Robot > > pWhiteRobotList = boost::make_shared< std::vector< Robot > >(whiteRobotList);
+  std::cout<<"Robots Initialized"<<std::endl;
 
   // Initialize Detection Instance
-  Detection Detect(CamList.size());
+  Detection Detect(camvect_ptr->size());
 
   // Check Connection to Cameras
-  *advance = Camera::getListStatus(CamList, CamList.size());
+  *advance = Camera::GetStatus_CamVect(camvect_ptr);
   if(!*advance)
   {
     std::cout<<"Connection Error, \n program terminated"<<std::endl;
@@ -73,17 +74,23 @@ int main(int argc, char **argv)
 
   // // Get Robot Parameters
   Communication::getDetection_XMLData(&Detect);
+  //Detect.PrintRedThreshParameters();
 
   // Begin Visualization Thread
-  boost::thread workerThread1(&Camera::ShowFrame, imgvect_ptr, advance, capture, std::ref(MUTEX));
+  boost::thread workerThread1(&Camera::ShowFrameVect, imgvect_ptr, advance, capture, std::ref(MUTEX));
 
   // Main Loop
   while(*advance)
   {
-
     // Get Frame
-    Camera::UpdateFrameList(camvect_ptr, imgvect_ptr, std::ref(MUTEX));
+    Camera::UpdateFrameVect(camvect_ptr, imgvect_ptr, std::ref(MUTEX));
+
     Detect.Search(imgvect_ptr);
+    Detect.PrintSearchResults();
+
+    Detect.DrawRects(imgvect_ptr, std::ref(MUTEX));
+
+    Detect.ClearMembers();
   }
 
   ros::spin();

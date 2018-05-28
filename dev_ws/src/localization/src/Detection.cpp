@@ -1,127 +1,112 @@
 #include "Detection.h"
 #include "Utility.h"
 
-Detection::Detection(uint8_t cam_num)
-:_cam_num(cam_num)
+Detection::Detection(uint8_t _num_cams)
+:_num_cams(_num_cams)
 {}
 
-void Detection::drawRect(cv::Mat* img, std::vector<cv::Rect> rectList)
+void Detection::ApplyFilter(cv::Mat* in_frame, cv::Mat* out_frame, boost::shared_ptr< std::vector<uint8_t> > threshold_ptr)
 {
-  for(int i=0; i<rectList.size(); i++)
-  {
-    cv::rectangle(*img, rectList[i], cv::Scalar(180,105,255));
-  }
-}
-
-void Detection::PrintRedThreshParameters()
-{
-	for(uint8_t i=0; i< _redThresh1.size();i++)
-	{
-		std::cout<<i<<" "<<"red lower: "<<_redThresh1[i]<<"  red upper: "<<_redThresh2[i]<<std::endl;
-	}
-}
-
-void Detection::ApplyFilter(cv::Mat& inFrame, cv::Mat& outFrame, boost::shared_ptr< std::vector<uint8_t> > threshold)
-{
- 	cv::inRange(inFrame, cv::Scalar((*threshold)[0], (*threshold)[1], (*threshold)[2]), cv::Scalar((*threshold)[3], (*threshold)[4], (*threshold)[5]), outFrame);
+ 	cv::inRange((*in_frame), cv::Scalar((*threshold_ptr)[0], (*threshold_ptr)[1], (*threshold_ptr)[2]), cv::Scalar((*threshold_ptr)[3], (*threshold_ptr)[4], (*threshold_ptr)[5]), (*out_frame));
 }
 
 
-void Detection::ApplyFilter_Red(cv::Mat& inFrame, cv::Mat& outFrame)
+void Detection::ApplyFilter_Red(cv::Mat* inFrame, cv::Mat* outFrame)
 {
 	cv::Mat frame1, frame2;
 	// Red1
-	cv::inRange(inFrame, cv::Scalar(_red_lower[0], _red_lower[1], _red_lower[2]), cv::Scalar(_red_lower[3], _red_lower[4], _red_lower[5]), frame1);
+	cv::inRange((*inFrame), cv::Scalar((*_red_thresh_lower_ptr)[0], (*_red_thresh_lower_ptr)[1], (*_red_thresh_lower_ptr)[2]), cv::Scalar((*_red_thresh_lower_ptr)[3], (*_red_thresh_lower_ptr)[4], (*_red_thresh_lower_ptr)[5]), frame1);
 
 	// Red2
-	cv::inRange(inFrame, cv::Scalar(_red_upper[0], _red_upper[1], _red_upper[2]), cv::Scalar(_red_upper[3], _red_upper[4], _red_upper[5]), frame2);
+	cv::inRange((*inFrame), cv::Scalar((*_red_thresh_upper_ptr)[0], (*_red_thresh_upper_ptr)[1], (*_red_thresh_upper_ptr)[2]), cv::Scalar((*_red_thresh_upper_ptr)[3], (*_red_thresh_upper_ptr)[4], (*_red_thresh_upper_ptr)[5]), frame2);
 
 	// Add Red1 and Red2 (upper and lower)
-	cv::addWeighted(frame1, 1, frame2, 1, 0.0, outFrame);
+	cv::addWeighted(frame1, 1, frame2, 1, 0.0, (*outFrame));
 }
 
-void Detection::DownSampleContours()
+void Detection::ExtendROI(cv::Rect* roi)
+{
+	(*roi).height += 100;
+}
+
+void Detection::DownSampleContours(boost::shared_ptr< std::vector< cv::Rect > > roi_vect_ptr)
 {	
 	std::vector< std::vector< cv::Point > > contours_downsampled;
-	contours_downsampled.resize(_contours.size());
+	contours_downsampled.resize(_red_contours.size());
 
-	//a_rect.resize(a_contours1.size());
-
-	for(uint8_t i=0; i<_contours.size(); i++)
+	for(uint8_t i=0; i<_red_contours.size(); i++)
 	{
-		cv::approxPolyDP((_contours[i]), contours_downsample[i], 3, true);
+		cv::approxPolyDP(_red_contours[i], contours_downsampled[i], 3, true);
 
-		if(cv::contourArea(contours_downsample[i]) > 500)
+		if(cv::contourArea(contours_downsampled[i]) > 10)
 		{
-			_roi_vect.push_back(cv::boundingRect(cv::Mat(contours_downsample[i])));
-			//Detection::addROIBuffer(a_rect[i]);
+			cv::Rect roi = cv::boundingRect(contours_downsampled[i]);
+			ExtendROI(&roi);
+			roi_vect_ptr->push_back(roi);
 		}
 	}
 }
 
-void Detection::GetROIs(cv::Mat& mask, std::vector< cv::Rect > >& roi_vect)
+void Detection::GetROIs(cv::Mat* mask, boost::shared_ptr< std::vector< cv::Rect > > roi_vect)
 {
-	cv::findContours(mask, _contours, _hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
-	if(_contours.empty()) {std::cout"No contours found"std::endl; return;}
+	cv::findContours((*mask), _red_contours, _hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
+	if(_red_contours.empty()) {std::cout<<"No red contours found"<<std::endl; return;}
 	DownSampleContours(roi_vect);
 }
 
-void Detection::GetROI_Largest(cv::Mat& mask, cv::Rect& roi)
+void Detection::GetROI_Largest(cv::Mat* mask, cv::Rect* roi)
 {
-	cv::findContours(mask, _contours, _hierarchy, CV_RETR_LIST, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
+	std::vector< cv::Point > largest_contour;
 
-	if(_contours.empty()) {std::cout"No contours found"std::endl; return;}
+	cv::findContours((*mask), _contours, _hierarchy, CV_RETR_LIST, CV_CHAIN_APPROX_SIMPLE, cv::Point(0,0));
 
-	_largestcontour = _contours[0];
-	for(uint8_t i=1; i<a_contours1.size(); i++)
+	if(_contours.empty()) {std::cout<<"No contours found"<<std::endl; return;}
+
+	largest_contour = _contours[0];
+	for(uint8_t i=1; i<_contours.size(); i++)
 	{
-		_largestcontour = cv::contourArea(_largestcontour) > cv::contourArea(_contours[i]) ? _largestcontour : _contours[i];
+		largest_contour = cv::contourArea(largest_contour) > cv::contourArea(_contours[i]) ? largest_contour : _contours[i];
 	}
-	roi = cv::boundingRect(cv::Mat(_largestcontour));	
-}
-
-void Detection::ClearMembers()
-{
-	_contours.clear();
-	_hierarchy.clear();
-	_largestcontour.clear();
+	(*roi) = cv::boundingRect(cv::Mat(largest_contour));	
 }
 
 // Search for red robots
-void Detection::search_for_redrobots(boost::shared_ptr< std::vector< cv::Rect > > red_roi_vect)
+void Detection::Search_RedRobots(cv::Mat* hsv_img, boost::shared_ptr< std::vector< cv::Rect > > redrobot_roi_vect_ptr)
 {
-	cv::Mat red_mask
-
 	// Apply red mask
-	ApplyFilter_Red(&_hsv_img, &red_mask);
+	ApplyFilter_Red(hsv_img, &_red_mask);
 
 	// Find contours of red shapes and place a bounding box around each
-	GetROIs(&red_mask, red_roi_vect);
+	GetROIs(&_red_mask, _red_roi_vect_ptr);
+
+	if(_red_roi_vect_ptr->empty()) return;
 
 	// For each red bounding box
-	for(uint8_t i=0; i<red_roi_vect->size(); i++)
+	for(uint8_t i=0; i<_red_roi_vect_ptr->size(); i++)
 	{
 		cv::Mat black_mask, white_mask;
-		cv::Mat red_roi = img((*red_roi_vect)[i]);
+		cv::Rect black_roi, white_roi;
+		cv::Mat red_roi = (*hsv_img)((*_red_roi_vect_ptr)[i]);
 
 		// Look for a black section (shadow + sensor lens)
-		ApplyFilter(red_roi, black_mask, _blackthresh);
+		ApplyFilter(&red_roi, &black_mask, _black_thresh_ptr);
 
 		// Apply a box around largest black section
-		GetROI_Largest(black_mask, _black_roi);
+		GetROI_Largest(&black_mask, &black_roi);
 
 		// If no black region was found in any red ROIs, iterate to next red rect
-		if(_black_roi.empty()) continue;
-
+		if(black_roi.empty()) continue;
+		std::cout<<"found black region\n";
 		// Apply white mask to Red ROI
-		ApplyFilter(red_roi, white_mask, _whitethresh);
+		ApplyFilter(&red_roi, &white_mask, _white_thresh_ptr);
 
 		// Apply a box around largest white region
-		GetROI_Largest(white_mask, _white_roi);
+		GetROI_Largest(&white_mask, &white_roi);
 
-		if(_white_roi.empty()) continue;
+		if(white_roi.empty()) continue;
+		std::cout<<"found white region\n";
 
-		_redrobot_roi_vect->push_back((*red_roi_vect)[i]);
+		redrobot_roi_vect_ptr->push_back((*_red_roi_vect_ptr)[i]);
 	}
 }
 
@@ -129,15 +114,56 @@ void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > imgvect_ptr)
 {
 	if(imgvect_ptr->empty()) return;
 
-	for(int i=0; i<imgvect_ptr->size(); i++)
+	for(int i=0; i<_num_cams; i++)
 	{
-		if((*imgvect_ptr)[i]->empty()) {std::cout<<"Empty Frame"<<std::endl; return;}
+		if((*imgvect_ptr)[i].empty()) {std::cout<<"Empty Frame"<<std::endl; return;}
 
-		cv::GaussianBlur((*imglist)[i], _blur_img, Size(5, 5), 0);
+		cv::GaussianBlur((*imgvect_ptr)[i], _blur_img, cv::Size(5, 5), 0);
 		cv::cvtColor(_blur_img, _hsv_img, CV_BGR2HSV);
 
-		Search_RedRobots();
+		Search_RedRobots(&_hsv_img, _redrobot_roi_vect_ptr);
 	}
+}
+
+boost::shared_ptr< std::vector< cv::Rect > > Detection::GetRedRobotROIs() {return (_redrobot_roi_vect_ptr);}
+
+void Detection::ClearMembers()
+{
+	_blur_img.release(); 
+	_hsv_img.release();
+	_red_mask.release();
+	_red_contours.clear();
+	_contours.clear();
+	_hierarchy.clear();
+	_red_roi_vect_ptr->clear();
+	_redrobot_roi_vect_ptr->clear();
+}
+
+void Detection::DrawRects(boost::shared_ptr< std::vector< cv::Mat > > imgvect_ptr, boost::mutex& MUTEX)
+{
+	boost::lock_guard<boost::mutex> guard(MUTEX);
+	(*imgvect_ptr)[0].copyTo((*imgvect_ptr)[1]);
+	for(int i=0; i<_redrobot_roi_vect_ptr->size(); i++)
+	{
+		std::cout<<(*_redrobot_roi_vect_ptr)[i].width<<" "<<(*_redrobot_roi_vect_ptr)[i].height<<"\n";
+		cv::rectangle((*imgvect_ptr)[1], (*_redrobot_roi_vect_ptr)[i], cv::Scalar(0,0,255));
+	}
+}
+
+void Detection::PrintRedThreshParameters()
+{
+	std::cout<<"\n###########################\nRed Threshold Parameters\n###########################\n";
+	std::cout<<"red lower: "<<(int)(*_red_thresh_lower_ptr)[0]<<", "<<(int)(*_red_thresh_lower_ptr)[1]<<", "<<(int)(*_red_thresh_lower_ptr)[2]<<", "<<(int)(*_red_thresh_lower_ptr)[3]<<", "<<(int)(*_red_thresh_lower_ptr)[4]<<", "<<(int)(*_red_thresh_lower_ptr)[5]<<std::endl;
+	std::cout<<"red upper: "<<(int)(*_red_thresh_upper_ptr)[0]<<", "<<(int)(*_red_thresh_upper_ptr)[1]<<", "<<(int)(*_red_thresh_upper_ptr)[2]<<", "<<(int)(*_red_thresh_upper_ptr)[3]<<", "<<(int)(*_red_thresh_upper_ptr)[4]<<", "<<(int)(*_red_thresh_upper_ptr)[5]<<std::endl;
+	std::cout<<"\n";
+}
+
+void Detection::PrintSearchResults()
+{
+	std::cout<<"\n###########################\nRed Search Results\n###########################\n";
+	std::cout<<"Number of found red contours: "<<_red_contours.size()<<"\n";
+	std::cout<<"Number of viable red contours: "<<_red_roi_vect_ptr->size()<<"\n";
+	std::cout<<"Number of confirmed redrobots: "<<_redrobot_roi_vect_ptr->size()<<"\n";
 }
 
 // Need to add a_buffer, a_imgSz to header
@@ -152,9 +178,9 @@ void Detection::Search(boost::shared_ptr< std::vector< cv::Mat> > imgvect_ptr)
 // 	if(rect.br.y > imgSz.y) rect.br.y = imgSz.y;
 // }
 
-void Detection::populateRedRobots(){
-	for(size_t i=0; i< a_whiteRectList.size(); i++){
-		(*a_pRedRobotList)[i]->a_coordinates = a_whiteRectList[i].tl();
-	}
-}
+// void Detection::populateRedRobots(){
+// 	for(size_t i=0; i< a_whiteRectList.size(); i++){
+// 		(*a_pRedRobotList)[i]->a_coordinates = a_whiteRectList[i].tl();
+// 	}
+// }
 

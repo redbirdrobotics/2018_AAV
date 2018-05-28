@@ -21,7 +21,11 @@ find_package(OpenCV)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 ## Boost
+set(BOOST_ROOT=/usr/local/include/boost_1_66_0)
+set(BOOST_INCLUDEDIR=/usr/local/include/boost_1_66_0)
+set(Boost_LIBRARYDIR=/usr/local/include/boost_1_66_0/stage/lib)
 find_package(Boost REQUIRED COMPONENTS system filesystem thread)
+#find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 
 ## X11
