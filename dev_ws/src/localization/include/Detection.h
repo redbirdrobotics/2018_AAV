@@ -29,6 +29,7 @@ class Detection
 {
 private:
 	uint8_t _num_cams;
+	cv::Size _frame_size;
 
 	cv::Mat _blur_img, _hsv_img;
 	cv::Mat _red_mask;
@@ -60,7 +61,7 @@ public:
 
 	int a_pixelThresh;
 
-	Detection(uint8_t);
+	Detection(uint8_t, cv::Size);
 
 	void PrintRedThreshParameters();
 	void PrintSearchResults();

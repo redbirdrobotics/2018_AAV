@@ -1,8 +1,8 @@
 #include "Detection.h"
 #include "Utility.h"
 
-Detection::Detection(uint8_t _num_cams)
-:_num_cams(_num_cams)
+Detection::Detection(uint8_t num_cams, cv::Size frame_size)
+:_num_cams(num_cams), _frame_size(frame_size)
 {}
 
 void Detection::ApplyFilter(cv::Mat* in_frame, cv::Mat* out_frame, boost::shared_ptr< std::vector<uint8_t> > threshold_ptr)
@@ -26,8 +26,14 @@ void Detection::ApplyFilter_Red(cv::Mat* inFrame, cv::Mat* outFrame)
 
 void Detection::ExtendROI(cv::Rect* roi)
 {
-	(*roi).height += 100;
+	(*roi) = cv::Rect(roi->x-10, roi->y, roi->width+10, roi->height+80);
+
+	if(roi->x < 0) roi->x = 0;
+	if(roi->y < 0) roi->y = 0;
+	if(roi->br().x > _frame_size.width) roi->width = _frame_size.width - roi->x;
+	if(roi->br().y > _frame_size.height) roi->height = _frame_size.height - roi->y;
 }
+
 
 void Detection::DownSampleContours(boost::shared_ptr< std::vector< cv::Rect > > roi_vect_ptr)
 {	
@@ -165,22 +171,3 @@ void Detection::PrintSearchResults()
 	std::cout<<"Number of viable red contours: "<<_red_roi_vect_ptr->size()<<"\n";
 	std::cout<<"Number of confirmed redrobots: "<<_redrobot_roi_vect_ptr->size()<<"\n";
 }
-
-// Need to add a_buffer, a_imgSz to header
-// void Detection::addROIBuffer(cv::Rect rect) //explain
-// {
-// 	//IDEA: remove the 50s? I say we make it 10% of a_pixelThresh
-// 	rect = cv::Rect(rect.tl().x-50, rect.tl().y-50, rect.br().x-rect.tl().x+100, rect.br().y-rect.tl().y+100);
-//
-// 	if(rect.tl.x < 0) rect.tl.x = 0;
-// 	if(rect.tl.y < 0) rect.tl.y = 0;
-// 	if(rect.br.x > imgSz.x) rect.br.x = imgSz.x;
-// 	if(rect.br.y > imgSz.y) rect.br.y = imgSz.y;
-// }
-
-// void Detection::populateRedRobots(){
-// 	for(size_t i=0; i< a_whiteRectList.size(); i++){
-// 		(*a_pRedRobotList)[i]->a_coordinates = a_whiteRectList[i].tl();
-// 	}
-// }
-

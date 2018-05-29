@@ -221,7 +221,7 @@ add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
 add_dependencies(listener localization_generate_messages_cpp)
 
-add_executable(localization src/localization.cpp src/Camera.cpp src/Communication.cpp src/Robot.cpp src/Detection.cpp)
+add_executable(localization src/localization.cpp src/Camera.cpp src/Communication.cpp src/Robot.cpp src/Detection.cpp src/Calibration)
 target_link_libraries(localization ${catkin_LIBRARIES} 
     ${OpenCV_LIBRARIES} 
     ${Boost_LIBRARIES} 

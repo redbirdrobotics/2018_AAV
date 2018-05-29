@@ -10,6 +10,8 @@
 #include "Robot.h"
 #include "Communication.h"
 #include "Detection.h"
+#include "Calibration.h"
+#include "Constants.h"
 
 int main(int argc, char **argv)
 {
@@ -62,7 +64,7 @@ int main(int argc, char **argv)
   std::cout<<"Robots Initialized"<<std::endl;
 
   // Initialize Detection Instance
-  Detection Detect(camvect_ptr->size());
+  Detection Detect(cam_consts::_NUM_CAMS_, cam_consts::_FRAME_SIZE_);
 
   // Check Connection to Cameras
   *advance = Camera::GetStatus_CamVect(camvect_ptr);
@@ -72,9 +74,11 @@ int main(int argc, char **argv)
     return -1;
   }
 
-  // // Get Robot Parameters
+  // Get Detection Parameters
   Communication::getDetection_XMLData(&Detect);
   //Detect.PrintRedThreshParameters();
+
+  Calibration Calib(cam_consts::_NUM_CAMS_, cam_consts::_FRAME_SIZE_, cam_consts::_FOV_);
 
   // Begin Visualization Thread
   boost::thread workerThread1(&Camera::ShowFrameVect, imgvect_ptr, advance, capture, std::ref(MUTEX));
