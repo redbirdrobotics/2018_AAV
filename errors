@@ -1,4 +1,4 @@
-Symlinking /home/lukas/Desktop/redBirdRobotics/2017-2018/cuda_dev/dev_ws/devel/./env.sh
+Errors     << catkin_tools_prebuild:symlink /home/lukas/Desktop/redBirdRobotics/2017-2018/cuda_dev/dev_ws/logs/catkin_tools_prebuild/build.symlink.001.log
 Could not create symlink `/home/lukas/Desktop/redBirdRobotics/2017-2018/cuda_dev/dev_ws/devel/./env.sh` referencing `/home/lukas/Desktop/redBirdRobotics/2017-2018/cuda_dev/dev_ws/devel/.private/catkin_tools_prebuild/env.sh`
 Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/catkin_tools/execution/stages.py", line 174, in function_proxy
@@ -15,3 +15,4 @@ Stage `symlink` failed with arguments:
   package_path: /home/lukas/Desktop/redBirdRobotics/2017-2018/cuda_dev/dev_ws/build/catkin_tools_prebuild
   dest_devel_path: /home/lukas/Desktop/redBirdRobotics/2017-2018/cuda_dev/dev_ws/devel
   source_devel_path: /home/lukas/Desktop/redBirdRobotics/2017-2018/cuda_dev/dev_ws/devel/.private/catkin_tools_prebuild
+

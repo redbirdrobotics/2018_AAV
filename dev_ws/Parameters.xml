@@ -4,8 +4,11 @@
 <!-- COLOR DETECTION -->
 
 	<!-- NOTES -->
+	<depend package="localizationPackage"/>
 
 	<!-- INPUT PARAMETERS -->
+	<build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
 
 	<!-- <Color Thresholds> -->
 

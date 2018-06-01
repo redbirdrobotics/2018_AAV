@@ -12,9 +12,14 @@
 #include "Detection.h"
 #include "Calibration.h"
 #include "Constants.h"
+#include "talk.h"
 
 int main(int argc, char **argv)
 {
+  //Test MSG
+  int x=5;
+  int y=6;
+
   // ROS node information
   ros::init(argc, argv, "localization");
   ros::NodeHandle n;
@@ -90,9 +95,12 @@ int main(int argc, char **argv)
     Camera::UpdateFrameVect(camvect_ptr, imgvect_ptr, std::ref(MUTEX));
 
     Detect.Search(imgvect_ptr);
+
     Detect.PrintSearchResults();
 
     Detect.DrawRects(imgvect_ptr, std::ref(MUTEX));
+
+    talk::Talker(n,x,y);
 
     Detect.ClearMembers();
   }

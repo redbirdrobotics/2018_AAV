@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   message_generation
+  localizationPackage
 )
 
 # System dependencies are found with CMake's conventions
@@ -68,12 +69,13 @@ add_message_files(
    msg
    FILES
    Num.msg
+   localization.msg
 )
 
 ## Generate services in the 'srv' folder
 #add_service_files(
 #   FILES
-#   
+#
 #)
 
 ## Generate actions in the 'action' folder
@@ -87,6 +89,7 @@ add_message_files(
 generate_messages(
    DEPENDENCIES
    std_msgs
+   localizationPackage
 )
 
 ################################################
@@ -121,7 +124,7 @@ generate_messages(
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES localization Camera Communication Robot
-  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
+  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime localizationPackage
   DEPENDS Boost X11
 )
 
@@ -222,9 +225,9 @@ target_link_libraries(listener ${catkin_LIBRARIES})
 add_dependencies(listener localization_generate_messages_cpp)
 
 add_executable(localization src/localization.cpp src/Camera.cpp src/Communication.cpp src/Robot.cpp src/Detection.cpp src/Calibration)
-target_link_libraries(localization ${catkin_LIBRARIES} 
-    ${OpenCV_LIBRARIES} 
-    ${Boost_LIBRARIES} 
+target_link_libraries(localization ${catkin_LIBRARIES}
+    ${OpenCV_LIBRARIES}
+    ${Boost_LIBRARIES}
     ${Boost_SYSTEM_LIBRARY}
-    ${X11_LIBRARIES})    
+    ${X11_LIBRARIES})
 add_dependencies(localization localization_generate_messages_cpp)
